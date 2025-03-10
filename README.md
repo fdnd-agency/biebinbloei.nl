@@ -6,8 +6,8 @@ Bieb in Bloei is een digitaal platform met daarop een overzicht van de duurzame 
 Ties, Saif, Nadira, Kerem, Nayome, Sascha
 
 
-**Release Candidate**  
-[Live site](https://biebinbloei.agency.fdnd.nl/)
+**Branch: dev**  
+[Live site](https://biebinbloei.dev.fdnd.nl/)
 
 **Studentenwerk Sprint 5: Fix The Flow** 
 
@@ -71,7 +71,7 @@ Om de build versie van de website te bekijken run je `npm run build` in plaats v
 
 ## Resources
 
-- [Live site](https://biebinbloei.agency.fdnd.nl/)
+- [Live site](https://biebinbloei.dev.fdnd.nl/)
 - [Minor 1 @CMD](https://plantswap-identifier.vercel.app/) 
 - [Experiment Minor Web](https://buurtcampus-oost.onrender.com/)
 - [Hygraph](https://hygraph.com)
