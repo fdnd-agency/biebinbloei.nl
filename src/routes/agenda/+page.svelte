@@ -40,7 +40,7 @@
 						<img src={agenda.cardImage.url} alt="" />
 					</picture>
 					<h2>{agenda.event}</h2>
-					<div>
+					<div class="rest-card-text">
 						<address>{agenda.address}</address>
 						<span>{agenda.price}</span>
 						<time>{agenda.time}</time>
@@ -167,12 +167,13 @@
 
 	.rest-cards > li div {
 		display: flex;
+		margin-bottom: 1rem;
 		flex-direction: column;
 		align-items: flex-start;
 	}
 
 	.rest-cards > li h2 {
-		padding: 0 0 0.5rem 0;
+		margin-top: 1rem;
 		font-size: 1.1rem;
 	}
 
