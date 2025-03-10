@@ -6,7 +6,7 @@ Bieb in Bloei is een digitaal platform met daarop een overzicht van de duurzame 
 Ties, Saif, Nadira, Kerem, Nayome, Sascha
 
 
-**Release Candidate**  
+**Branch: dev**  
 [Live site](https://biebinbloei.dev.fdnd.nl/)
 
 **Studentenwerk Sprint 5: Fix The Flow** 
