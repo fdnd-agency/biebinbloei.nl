@@ -35,6 +35,8 @@
 
 	<picture>
 		<img src={data.facadeGardenActions[0].image.url} alt="" />
+
+		<p class="buurtbewoner-henk">{data.facadeGardenActions[1].description}</p>
 	</picture>
 </section>
 
@@ -50,8 +52,12 @@
 		background-color: var(--main-color-beige);
 	}
 
-	p{
+	p {
 		line-height: var(--line-height-paragraph);
+	}
+
+	.buurtbewoner-henk {
+		margin-top: 0;
 	}
 
 	p,
@@ -149,7 +155,7 @@
 		}
 
 		img {
-			width: 45vw;
+			width: 37vw;
 		}
 	}
 
