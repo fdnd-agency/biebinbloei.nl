@@ -20,6 +20,10 @@ export async function load() {
 				}
 			}
 
+			copyrights {
+				title
+			}
+
 			overviewPages {
 				titel
 				product {

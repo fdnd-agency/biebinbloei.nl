@@ -100,6 +100,10 @@ export async function load() {
 				id
 				description
 			}
+
+			copyrights {
+				title
+			}
 		}
 	`;
 
