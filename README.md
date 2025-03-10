@@ -53,7 +53,7 @@ Voorbeelden van verbeteringen die we hebben doorgevoerd:
 
 ![Group 2](https://github.com/user-attachments/assets/d1a639eb-9bcd-4881-bdbf-36cfec543f5c)
 
-- [Livelink](https://biebinbloei.agency.fdnd.nl/)
+
 
 ## Kenmerken
 
