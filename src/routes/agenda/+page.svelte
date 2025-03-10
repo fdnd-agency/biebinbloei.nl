@@ -6,6 +6,7 @@
 <HeroHeaders heroInfo={data.heroHeaders[3]} />
 
 <section>
+	<h2 class="Aankondiging-texts">Binnenkort vind je hier de actuele activiteiten (workshops).</h2>
 	<ul>
 		<!-- laad de meest recente event in -->
 		<li class="recent-card">
@@ -61,6 +62,13 @@
 <style>
 	section {
 		padding: 2rem;
+	}
+
+	.Aankondiging-texts {
+		font-family: var(--header-font);
+		font-size: clamp(1em, 10vw, 2em);
+		margin-top: 1em;
+		padding: 0em 2em 1em 1em;
 	}
 
 	ul {
@@ -227,6 +235,10 @@
 
 	/* MEDIA QUERY TABLET = 1100px */
 	@media (min-width: 68.75rem) {
+		.Aankondiging-texts {
+			font-size: clamp(2em, 10vw, 3em);
+		}
+
 		li {
 			width: auto;
 			margin: 0;

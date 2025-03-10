@@ -48,7 +48,6 @@ export async function load() {
 					}
 				}
 			}
-
 		}
 	`;
 
