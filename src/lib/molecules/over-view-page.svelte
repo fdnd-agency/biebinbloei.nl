@@ -2,10 +2,10 @@
 	let data;
 	import { Button } from '$lib/index.js';
 	export let viewPageData;
-	console.log(viewPageData);
 </script>
 
 <h2>Binnenkort vind je hier de nieuwste Zaden!</h2>
+
 <h2>{viewPageData.titel}</h2>
 
 <section>
@@ -26,14 +26,6 @@
 </section>
 
 <style>
-	h2 {
-		font-family: var(--header-font);
-		font-size: clamp(2em, 10vw, 3em);
-		line-height: 1.25;
-		margin-top: 1em;
-		padding: 0.5em 1em 0 1em;
-	}
-
 	section {
 		padding: 2em;
 		display: grid;
@@ -66,6 +58,13 @@
 	article a:focus img,
 	article a:focus h3 {
 		border: 8px solid var(--card-color-orange);
+	}
+
+	h2 {
+		font-family: var(--header-font);
+		font-size: clamp(2em, 10vw, 3em);
+		line-height: 1.5em;
+		padding: 0 1em 0 1em;
 	}
 
 	img {
