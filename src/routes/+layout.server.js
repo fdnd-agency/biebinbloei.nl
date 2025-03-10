@@ -12,7 +12,6 @@ export async function load() {
             titleContact
             email
             number
-            btwCode
             titleCollaborate
             collaborateParagraph
           }

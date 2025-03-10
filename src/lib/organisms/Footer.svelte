@@ -1,6 +1,6 @@
 <script>
 	export let data;
-    import { LeafRight, LeafLeft } from '$lib/index.js';
+	import { LeafRight, LeafLeft } from '$lib/index.js';
 </script>
 
 <footer>
@@ -14,30 +14,30 @@
 	</section>
 
 	<section class="information">
-			<ul>
-				<li class="title">{data.footers[0].titleAdres}</li>
-				<li>{data.footers[0].location}</li>
-				<li>
-					<a 
-						target="_blank" 
-						href={`https://www.google.com/maps/dir/?api=1&destination=${encodeURIComponent(data.footers[0].adres)}`}
-					>
-						{data.footers[0].adres}
-					</a>
-				</li>
-				<li>{data.footers[0].postalCode}</li>
-			</ul>
-			<ul>
-				<li class="title">{data.footers[0].titleContact}</li>
-				<li><a href="{`mailto:${data.footers[0].email}`}">{data.footers[0].email}</a></li>
-				<li><a href={`tel:${data.footers[0].number.replace(/\s+/g, '')}`}>{data.footers[0].number}</a></li>
-				
-				<li>{data.footers[0].btwCode}</li>
-			</ul>
-			<ul>
-				<li class="title">{data.footers[0].titleCollaborate}</li>
-				<li>{data.footers[0].collaborateParagraph}</li>
-			</ul>
+		<ul>
+			<li class="title">{data.footers[0].titleAdres}</li>
+			<li>{data.footers[0].location}</li>
+			<li>
+				<a
+					target="_blank"
+					href={`https://www.google.com/maps/dir/?api=1&destination=${encodeURIComponent(data.footers[0].adres)}`}
+				>
+					{data.footers[0].adres}
+				</a>
+			</li>
+			<li>{data.footers[0].postalCode}</li>
+		</ul>
+		<ul>
+			<li class="title">{data.footers[0].titleContact}</li>
+			<li><a href={`mailto:${data.footers[0].email}`}>{data.footers[0].email}</a></li>
+			<li>
+				<a href={`tel:${data.footers[0].number.replace(/\s+/g, '')}`}>{data.footers[0].number}</a>
+			</li>
+		</ul>
+		<ul>
+			<li class="title">{data.footers[0].titleCollaborate}</li>
+			<li>{data.footers[0].collaborateParagraph}</li>
+		</ul>
 	</section>
 </footer>
 
@@ -49,9 +49,9 @@
 		background-color: var(--main-color-beige);
 		overflow: hidden;
 		padding: var(--section-padding-y) 0;
-        display: flex;
-        align-items: center;
-        justify-content: center;
+		display: flex;
+		align-items: center;
+		justify-content: center;
 	}
 
 	footer a {
@@ -65,11 +65,12 @@
 		height: 100%;
 	}
 
-	.right-svg, .left-svg {
+	.right-svg,
+	.left-svg {
 		position: absolute;
 		z-index: 0;
-		opacity: .3;
-		transition: .6s;
+		opacity: 0.3;
+		transition: 0.6s;
 	}
 
 	.right-svg {
@@ -84,8 +85,9 @@
 		left: -20%;
 	}
 
-	.left-svg, .right-svg {
-    	transition: transform 0.3s ease-in-out; 
+	.left-svg,
+	.right-svg {
+		transition: transform 0.3s ease-in-out;
 	}
 
 	.information {
@@ -97,9 +99,9 @@
 		z-index: 1;
 	}
 
-    ul { 
-        width: 30%;
-    }
+	ul {
+		width: 30%;
+	}
 
 	li {
 		list-style-type: none;
@@ -111,22 +113,24 @@
 		font-weight: 700;
 	}
 
-    .background:hover .left-svg {
-        transform: translateY(20%) translateX(-20%) rotate(-20deg);
-    }
+	.background:hover .left-svg {
+		transform: translateY(20%) translateX(-20%) rotate(-20deg);
+	}
 
-    .background:hover .right-svg {
-        transform: translateY(-5%) translateX(20%) rotate(20deg);
-    }
+	.background:hover .right-svg {
+		transform: translateY(-5%) translateX(20%) rotate(20deg);
+	}
 
-	.background .left-svg, .background .right-svg {
-    	transition-delay: 0.1s;
+	.background .left-svg,
+	.background .right-svg {
+		transition-delay: 0.1s;
 	}
 
 	@media (prefers-reduced-motion: reduce) {
-		.left-svg, .right-svg {
+		.left-svg,
+		.right-svg {
 			transition: none;
-			transform: none; 
+			transform: none;
 		}
 		.background:hover .left-svg,
 		.background:hover .right-svg {
@@ -162,7 +166,7 @@
 			width: 80%;
 		}
 
-		ul { 
+		ul {
 			width: 100%;
 			z-index: 2;
 		}
