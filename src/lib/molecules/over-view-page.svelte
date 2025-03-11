@@ -4,8 +4,6 @@
 	export let viewPageData;
 </script>
 
-<h2>Binnenkort vind je hier de nieuwste Zaden!</h2>
-
 <h2>{viewPageData.titel}</h2>
 
 <section>
@@ -63,8 +61,8 @@
 	h2 {
 		font-family: var(--header-font);
 		font-size: clamp(2em, 10vw, 3em);
-		line-height: 1.5em;
-		padding: 0 1em 0 1em;
+		line-height: 1.25;
+		padding: 2em 1em 0 1em;
 	}
 
 	img {
