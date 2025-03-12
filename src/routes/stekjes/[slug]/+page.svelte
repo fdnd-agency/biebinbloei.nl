@@ -1,6 +1,6 @@
 <script>
     export let data;
-    import { HarryWeather, Features } from '$lib/index.js';
+    import { HarryWeather, Features, Button } from '$lib/index.js';
     
     let mood; 
     let environment; 
@@ -15,6 +15,20 @@
 <HarryWeather textTemp={data.stekje.absoluteTemperatuur} name={data.stekje.naam} />
 
 <section class="container">
+	<div class="button-overzichtspagina-container">
+		<Button
+			href="/stekjes"
+			buttonText="Stekjes overzichtspagina"
+			buttonClass="btn-brown"
+			svgFill="svg-beige"
+		/>
+	</div>
+	
+	<div>
+		<Button buttonText="Overige stekje" buttonClass="btn-brown" svgFill="svg-beige" />
+	
+		<Button buttonText="Volgende stekje" buttonClass="btn-brown" svgFill="svg-beige" />
+	</div>
   <div class="stekje-container">
     <article>
         <h1>{data.stekje.naam}</h1>
@@ -50,6 +64,13 @@
       margin: 0;
       overflow-x: hidden;
     }
+
+	.button-overzichtspagina-container {
+    	width: 15em;
+    	margin-top: 3em;
+    	margin-left: 1em;
+    	margin-bottom: 1em;
+  	}
   
     h1 {
       color: var(--main-color-brown);
@@ -129,5 +150,11 @@
         width: 15em; 
         height: auto; 
       }
+
+	  .button-overzichtspagina-container {
+    	margin-top: -1em;
+    	margin-bottom: 3em;
+    	position: relative;
+	}
     }
 </style>
