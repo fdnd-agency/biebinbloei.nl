@@ -2,26 +2,6 @@
 
 Bieb in Bloei is een digitaal platform met daarop een overzicht van de duurzame projecten van de Buurtcampus Oost. 
 
-**Team Sprint 8**  
-Ties, Saif, Nadira, Kerem, Nayome, Sascha
-
-
-**Branch: dev**  
-[Live site](https://biebinbloei.dev.fdnd.nl/)
-
-**Studentenwerk Sprint 5: Fix The Flow** 
-
-|  |  |  | 
-| :--------------- | :--------------- | :--------------- |
-| Amber	| [repository](https://github.com/ambersr/fix-the-flow-interactive-website) | [live site](https://ambersr.github.io/fix-the-flow-interactive-website/) 
-| Clarice	| [repository](https://github.com/Clarice-COD/fix-the-flow-interactive-website)  | [live site](https://clarice-cod.github.io/fix-the-flow-interactive-website/) 
-| Kim	| [repository](https://github.com/kimnikitaschijf/fix-the-flow-interactive-website) | [live site](https://kimnikitaschijf.github.io/fix-the-flow-interactive-website/) 
-| Ole	| [repository](https://github.com/OFRqq/fix-the-flow-interactive-website) | [live site](https://ofrqq.github.io/fix-the-flow-interactive-website/)
-| Anouar | [repository](https://github.com/Anouarab2/fix-the-flow-interactive-website) | [live site](https://anouarab2.github.io/fix-the-flow-interactive-website/) 
-| Anouk	| [repository](https://github.com/AnoukdeRooij24/fix-the-flow-interactive-website) | [live site](https://anoukderooij24.github.io/fix-the-flow-interactive-website/) 
-| Miel	| [repository](https://github.com/miel775/fix-the-flow-interactive-website)	| [live site](https://miel775.github.io/fix-the-flow-interactive-website/) 
-| Sidney	| [repository](https://github.com/Sidopjescherm/fix-the-flow-interactive-website)	| [live site](https://sidopjescherm.github.io/fix-the-flow-interactive-website/index.html)
-
 ## Buurtcampus Oost
 
 De Buurtcampus is een dynamische, laagdrempelige plek waar iedereen zich welkom en uitgenodigd voelt om kennis op te doen, te ontwikkelen en te delen. Met als doel: samen de buurt duurzamer, gezonder en inclusiever maken.
