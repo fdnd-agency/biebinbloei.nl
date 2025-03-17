@@ -7,33 +7,36 @@
 	{#if data?.cardSlides?.length}
 		{#each data.cardSlides as cardSlide}
 			<article class={cardSlide.cardStyles.backgroundColor}>
-				<header>
-					<CardslidesLeaf svgFill={cardSlide.leafStyles.svgFill} />
-					<Dot svgFill={cardSlide.svgStyles.svgFill} />
+				<div class="card-content">
+					<!-- Header van de card -->
+					<header>
+						<CardslidesLeaf svgFill={cardSlide.leafStyles.svgFill} />
+						<Dot svgFill={cardSlide.svgStyles.svgFill} />
+						<CardslidesContent
+							titleCard={cardSlide.titleCard}
+							titleColor={cardSlide.cardStyles.titleColor}
+						/>
+					</header>
+
 					<CardslidesContent
-						titleCard={cardSlide.titleCard}
-						titleColor={cardSlide.cardStyles.titleColor}
+						paragraphCard={cardSlide.paragraphCard}
+						paragraphCard2={cardSlide.paragraphCard2}
+						paragraphColor={cardSlide.cardStyles.paragraphColor}
 					/>
-				</header>
+
+					<div class="btn-container">
+						<Button
+							href={cardSlide.buttonStyles.href}
+							buttonText={cardSlide.buttonStyles.buttonText}
+							buttonClass={cardSlide.buttonStyles.buttonClass}
+							svgFill={cardSlide.buttonStyles.svgFill}
+						/>
+					</div>
+				</div>
 
 				<picture>
 					<img width="100" height="100" loading="lazy" src={cardSlide.imageCard.url} alt="" />
 				</picture>
-
-				<CardslidesContent
-					paragraphCard={cardSlide.paragraphCard}
-					paragraphCard2={cardSlide.paragraphCard2}
-					paragraphColor={cardSlide.cardStyles.paragraphColor}
-				/>
-
-				<div class="btn-container">
-					<Button
-						href={cardSlide.buttonStyles.href}
-						buttonText={cardSlide.buttonStyles.buttonText}
-						buttonClass={cardSlide.buttonStyles.buttonClass}
-						svgFill={cardSlide.buttonStyles.svgFill}
-					/>
-				</div>
 			</article>
 		{/each}
 	{:else}
@@ -42,27 +45,40 @@
 </section>
 
 <style>
+	/* Mobile styling */
 	.card-container {
 		container-type: inline-size;
 		container-name: slidecards;
 	}
 
 	article {
-		align-items: center;
+		gap: 1rem;
+		z-index: 1;
+		bottom: 3rem;
+		display: flex;
+		margin: 0 auto;
+		overflow: hidden;
 		position: relative;
 		padding: 2rem 1rem;
-		bottom: 3rem;
-		margin: 0 auto;
-		z-index: 1;
-		overflow: hidden;
+		align-items: center;
+		flex-direction: column-reverse;
 		border-radius: var(--border-bigCard);
 	}
 
-	img,
 	picture {
 		width: 100%;
 		height: 100%;
+		min-height: 300px;
+		position: relative;
+	}
+
+	img {
+		top: 0;
+		right: 0;
+		width: 100%;
+		height: 100%;
 		object-fit: cover;
+		position: absolute;
 		border-radius: var(--border-bigCard);
 	}
 
@@ -88,18 +104,14 @@
 		color: var(--main-color-red);
 	}
 
-	/* Container Queries */
+	/* Container Queries styling */
 
-	/* Ipad mini */
+	/* Ipad mini styling */
 	@container slidecards (min-width: 37.5rem) and (max-width: 50rem) {
 		header {
 			display: flex;
 			margin-top: 3rem;
 			align-items: flex-start;
-		}
-
-		img {
-			height: 50vw;
 		}
 
 		.btn-container {
@@ -108,7 +120,7 @@
 		}
 	}
 
-	/* Ipad air and Ipad pro */
+	/* Ipad air and Ipad pro styling */
 	@container slidecards (min-width: 50rem) and (max-width: 64rem) {
 		header {
 			display: flex;
@@ -122,7 +134,6 @@
 		}
 
 		article picture {
-			display: flex;
 			justify-content: end;
 			grid-column-start: 2;
 			grid-row-start: 1;
@@ -135,7 +146,7 @@
 		}
 	}
 
-	/* Desktop */
+	/* Desktop styling */
 	@container slidecards (min-width: 64rem) {
 		header {
 			display: flex;
@@ -143,10 +154,10 @@
 		}
 
 		article {
-			padding: 2rem 1rem;
 			width: 95vw;
 			display: grid;
-			grid-template-rows: auto 1fr auto;
+			align-items: start;
+			padding: 2rem 1rem;
 			grid-template-columns: 1fr 1fr;
 		}
 
@@ -156,7 +167,6 @@
 		}
 
 		article picture {
-			display: flex;
 			justify-content: end;
 			grid-column-start: 2;
 			grid-row-start: 1;
@@ -171,18 +181,44 @@
 		.btn-container {
 			width: 14rem;
 			padding-top: 1rem;
-			margin: 0rem 7rem 0 4rem;
+			margin: 0rem 7rem 0 3.8rem;
+		}
+
+		@supports (animation-timeline: view()) {
+			article {
+				animation-timeline: view(inline);
+				animation: fancy-in;
+				animation-timeline: view();
+			}
+
+			article:first-of-type {
+				animation: none !important;
+			}
+
+			@keyframes fancy-in {
+				/* card entry */
+				0% {
+					transform: translatey(25vw);
+				}
+
+				/* card on stage */
+				20% {
+					opacity: 1;
+					transform: none;
+				}
+			}
 		}
 	}
 
+	/* Large desktop styling */
 	@container slidecards (min-width: 100rem) {
 		header {
 			display: flex;
 			align-items: baseline;
 		}
 
-		/* article {
+		article {
 			max-width: 1600px;
-		} */
+		}
 	}
 </style>

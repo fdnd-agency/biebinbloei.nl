@@ -17,6 +17,7 @@
 </div>
 
 <style>
+	/* Mobile styling */
 	h2 {
 		line-height: 95%;
 		margin-bottom: 0.5em;
@@ -46,9 +47,9 @@
 		color: var(--main-color-brown);
 	}
 
-	/* Container Queries */
+	/* Container Queries styling */
 
-	/* Ipad mini */
+	/* Ipad mini styling */
 	@container slidecards (min-width: 37.5em) and (max-width: 50em) {
 		p {
 			margin: 0.5em;
@@ -57,7 +58,7 @@
 		}
 	}
 
-	/* Ipad air and Ipad pro */
+	/* Ipad air and Ipad pro styling */
 	@container slidecards (min-width: 50em) and (max-width: 64em) {
 		h2 {
 			max-width: 80%;
@@ -69,7 +70,7 @@
 		}
 	}
 
-	/* Desktop */
+	/* Desktop styling */
 	@container slidecards (min-width: 64em) {
 		h2 {
 			width: 4em;
@@ -82,6 +83,7 @@
 		}
 	}
 
+	/* Large desktop styling */
 	@container slidecards (min-width: 100em){
 		p {
 			font-size: 19px;
