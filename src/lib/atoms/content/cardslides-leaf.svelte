@@ -2,7 +2,7 @@
 	export let svgFill;
 </script>
 
-<article class={svgFill}></article>
+<div class={svgFill}></div>
 
 <style>
 	.card-stekjes-svgFill::before,

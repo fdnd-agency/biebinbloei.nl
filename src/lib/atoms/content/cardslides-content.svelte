@@ -2,7 +2,7 @@
 	export let titleColor, paragraphColor, titleCard, paragraphCard, paragraphCard2;
 </script>
 
-<article>
+<div>
 	{#if titleCard}
 		<h2 class={titleColor}>{titleCard}</h2>
 	{/if}
@@ -14,7 +14,7 @@
 	{#if paragraphCard2}
 		<p class={paragraphColor}>{paragraphCard2}</p>
 	{/if}
-</article>
+</div>
 
 <style>
 	h2 {
@@ -79,6 +79,13 @@
 		p {
 			max-width: 43em;
 			margin: 0em 7em 0 4em;
+		}
+	}
+
+	@container slidecards (min-width: 100em){
+		p {
+			font-size: 19px;
+			margin: 0em 7em 0 3em;
 		}
 	}
 </style>
