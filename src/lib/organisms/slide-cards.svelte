@@ -146,7 +146,8 @@
 			padding: 2rem 1rem;
 			width: 95vw;
 			display: grid;
-			grid-template-columns: 2fr 2fr;
+			grid-template-rows: auto 1fr auto;
+			grid-template-columns: 1fr 1fr;
 		}
 
 		article::before {
@@ -169,6 +170,7 @@
 
 		.btn-container {
 			width: 14rem;
+			padding-top: 1rem;
 			margin: 0rem 7rem 0 4rem;
 		}
 	}
@@ -178,5 +180,9 @@
 			display: flex;
 			align-items: baseline;
 		}
+
+		/* article {
+			max-width: 1600px;
+		} */
 	}
 </style>
