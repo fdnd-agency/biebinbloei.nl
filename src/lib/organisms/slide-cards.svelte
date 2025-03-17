@@ -82,23 +82,6 @@
 		border-radius: var(--border-bigCard);
 	}
 
-	/* backgroundColor variants */
-	.bg-green {
-		background-color: var(--card-color-green);
-	}
-
-	.bg-beige {
-		background-color: var(--main-color-beige);
-	}
-
-	.bg-brown {
-		background-color: var(--card-color-brown);
-	}
-
-	.bg-orange {
-		background-color: var(--card-color-orange);
-	}
-
 	.error-message {
 		font-size: 1.5rem;
 		color: var(--main-color-red);
@@ -184,27 +167,28 @@
 			margin: 0rem 7rem 0 3.8rem;
 		}
 
-		@supports (animation-timeline: view()) {
-			article {
-				animation-timeline: view(inline);
-				animation: fancy-in;
-				animation-timeline: view();
-			}
-
-			article:first-of-type {
-				animation: none !important;
-			}
-
-			@keyframes fancy-in {
-				/* card entry */
-				0% {
-					transform: translatey(25vw);
+		/* scroll-driven-animations styling */
+		@media (prefers-reduced-motion: no-preference) {
+			@supports (animation-timeline: view()) {
+				article {
+					animation-timeline: view(inline);
+					animation: fancy-in;
+					animation-timeline: view();
 				}
 
-				/* card on stage */
-				20% {
-					opacity: 1;
-					transform: none;
+				article:first-of-type {
+					animation: none !important;
+				}
+
+				@keyframes fancy-in {
+					0% {
+						transform: translatey(25vw);
+					}
+
+					20% {
+						opacity: 1;
+						transform: none;
+					}
 				}
 			}
 		}
@@ -220,5 +204,23 @@
 		article {
 			max-width: 1600px;
 		}
+	}
+
+	/* Background custom Properties styling  */
+	/* backgroundColor variants */
+	.bg-green {
+		background-color: var(--card-color-green);
+	}
+
+	.bg-beige {
+		background-color: var(--main-color-beige);
+	}
+
+	.bg-brown {
+		background-color: var(--card-color-brown);
+	}
+
+	.bg-orange {
+		background-color: var(--card-color-orange);
 	}
 </style>
