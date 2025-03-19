@@ -202,7 +202,14 @@
 		}
 
 		article {
+			font-size: 19px;
 			max-width: 1600px;
+		}
+
+		.btn-container {
+			width: 14rem;
+			padding-top: 1rem;
+			margin: 0rem 7rem 0 7rem;
 		}
 	}
 
