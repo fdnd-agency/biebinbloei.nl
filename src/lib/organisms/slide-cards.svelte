@@ -11,7 +11,7 @@
 					<!-- Header van de card -->
 					<header>
 						<CardslidesLeaf svgFill={cardSlide.leafStyles.svgFill} />
-						<!-- <Dot svgFill={cardSlide.svgStyles.svgFill} /> -->
+						<Dot svgFill={cardSlide.svgStyles.svgFill} />
 						<CardslidesContent
 							titleCard={cardSlide.titleCard}
 							titleColor={cardSlide.cardStyles.titleColor}
