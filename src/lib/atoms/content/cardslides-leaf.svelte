@@ -42,4 +42,16 @@
 			transform: rotate(202deg);
 		}
 	}
+
+	@container slidecards (min-width: 100rem) {
+		.card-stekjes-svgFill::before,
+		.card-zaden-svgFill::before,
+		.card-gevel-svgFill::before,
+		.card-groenebieb-svgFill::before {
+			top: -3rem;
+			height: 30rem;
+			width: 30rem;
+
+		}
+	}
 </style>
