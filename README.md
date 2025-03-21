@@ -22,6 +22,7 @@ Ties, Saif, Nadira, Kerem, Nayome, Sascha
 | Miel	| [repository](https://github.com/miel775/fix-the-flow-interactive-website)	| [live site](https://miel775.github.io/fix-the-flow-interactive-website/) 
 | Sidney	| [repository](https://github.com/Sidopjescherm/fix-the-flow-interactive-website)	| [live site](https://sidopjescherm.github.io/fix-the-flow-interactive-website/index.html)
 
+
 ## Buurtcampus Oost
 
 De Buurtcampus is een dynamische, laagdrempelige plek waar iedereen zich welkom en uitgenodigd voelt om kennis op te doen, te ontwikkelen en te delen. Met als doel: samen de buurt duurzamer, gezonder en inclusiever maken.
@@ -53,7 +54,7 @@ Voorbeelden van verbeteringen die we hebben doorgevoerd:
 
 ![Group 2](https://github.com/user-attachments/assets/d1a639eb-9bcd-4881-bdbf-36cfec543f5c)
 
-- [Livelink](https://biebinbloei.agency.fdnd.nl/)
+
 
 ## Kenmerken
 
