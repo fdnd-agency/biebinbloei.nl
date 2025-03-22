@@ -146,7 +146,7 @@
 		}
 		h1 {
 			max-width: 9em;
-			font-size: clamp(5.8em, 12vw, 7em);
+			font-size: clamp(5em, 12vw, 6em);
 		}
 		h1,
 		h2 {
@@ -162,7 +162,7 @@
 	/* MEDIA QUERY DESKTOP = 1700px */
 	@media (min-width: 106.25rem) {
 		h1 {
-			font-size: clamp(5em, 12vw, 10em);
+			font-size: clamp(5em, 12vw, 7em);
 		}
 
 		h2{

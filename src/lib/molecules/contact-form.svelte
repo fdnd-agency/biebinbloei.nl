@@ -268,4 +268,16 @@ button[type='submit']:hover {
     }
 }
 
+@media (min-width: 50rem) and (max-width: 64rem) {
+		form {
+			margin-bottom: 2em;
+		}
+	}
+
+    @media (min-width: 37.5rem) and (max-width: 50rem) {
+		form {
+			margin-bottom: 2em;
+		}
+	}
+
 </style>

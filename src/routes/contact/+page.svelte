@@ -136,6 +136,30 @@
         }
     }
 
+    @media (min-width: 37.5rem) and (max-width: 50rem) {
+		section {
+			display: flex;
+			padding: 3.5em 2em 1em 5em;
+			gap: 0 5em;
+		}
+
+		iframe {
+			height: 50vh;
+		}
+	}
+
+    @media (min-width: 50rem) and (max-width: 64rem) {
+		section {
+			display: flex;
+			padding: 3.5em 2em 1em 5em;
+			gap: 0 5em;
+		}
+
+		iframe {
+			height: 50vh;
+		}
+	}
+
     /* MEDIA QUERY TABLET = 1200px */
     @media (min-width: 75rem) {
         header{

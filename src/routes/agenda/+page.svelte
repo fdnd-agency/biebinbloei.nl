@@ -6,6 +6,7 @@
 <HeroHeaders heroInfo={data.heroHeaders[3]} />
 
 <section>
+	<h2 class="Aankondiging-texts">Binnenkort vind je hier de actuele activiteiten (workshops).</h2>
 	<ul>
 		<!-- laad de meest recente event in -->
 		<li class="recent-card">
@@ -18,7 +19,7 @@
 				<span>{data.agendas[0].price}</span>
 				<time>{data.agendas[0].time}</time>
 				<time>{data.agendas[0].date}</time>
-				<Button href="/agenda" buttonText="Meld je aan" buttonClass="btn-green" svgFill="svg-beige" />
+				<Button href="/agenda" buttonText="Aanmelden" buttonClass="btn-green" svgFill="svg-beige" />
 			</div>
 		</li>
 
@@ -40,10 +41,17 @@
 						<img src={agenda.cardImage.url} alt="" />
 					</picture>
 					<h2>{agenda.event}</h2>
-					<div>
+					<div class="rest-card-text">
 						<address>{agenda.address}</address>
 						<span>{agenda.price}</span>
+						<time>{agenda.time}</time>
 						<time>{agenda.date}</time>
+						<Button
+							href="/contact"
+							buttonText="Aanmelden"
+							buttonClass="btn-brown"
+							svgFill="svg-beige"
+						/>
 					</div>
 				</li>
 			{/each}
@@ -54,6 +62,13 @@
 <style>
 	section {
 		padding: 2rem;
+	}
+
+	.Aankondiging-texts {
+		font-family: var(--header-font);
+		font-size: clamp(1em, 10vw, 2em);
+		margin-top: 1em;
+		padding: 0em 2em 1em 1em;
 	}
 
 	ul {
@@ -150,7 +165,6 @@
 		flex-direction: column;
 		flex-wrap: wrap;
 		justify-content: center;
-		max-height: 12.5rem;
 		padding-right: 2rem;
 	}
 
@@ -161,12 +175,18 @@
 
 	.rest-cards > li div {
 		display: flex;
+		margin-bottom: 1rem;
 		flex-direction: column;
+		align-items: flex-start;
 	}
 
 	.rest-cards > li h2 {
-		padding: 0 0 2rem 0;
+		margin-top: 1rem;
 		font-size: 1.1rem;
+	}
+
+	.rest-cards > li div time {
+		margin-bottom: 1rem;
 	}
 
 	.no-styling {
@@ -215,6 +235,10 @@
 
 	/* MEDIA QUERY TABLET = 1100px */
 	@media (min-width: 68.75rem) {
+		.Aankondiging-texts {
+			font-size: clamp(2em, 10vw, 3em);
+		}
+
 		li {
 			width: auto;
 			margin: 0;
@@ -252,7 +276,7 @@
 			z-index: 1;
 		}
 
-		.no-styling::after {
+		.no-styling::before {
 			content: url('assets/leaf-light-green.svg');
 			position: absolute;
 			height: 75%;

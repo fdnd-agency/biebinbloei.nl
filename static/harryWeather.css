@@ -2,8 +2,9 @@
 
 .harryMascot {
     position: absolute;
+    overflow: hidden;
     right: 0;
-    bottom: 0;
+    bottom: -1em;
     font-style: italic;
     display: flex;
     align-items: center;
@@ -34,7 +35,7 @@
     animation: popUp 0.5s ease forwards;
     animation-delay: 1400ms;
     height: min-content;
-    margin-bottom: 2rem;
+    margin-bottom: 1em;
     z-index: 2;
 }
 
@@ -132,7 +133,7 @@
 
 .stekjes, .zaden {
     animation: appearStekje 0.5s ease forwards;
-    top: 0;
+    top: 2em;
 }
 
 /* Media Queries ------------------------------------------------- */
@@ -146,7 +147,8 @@
 
     .weather-bubble {
         rotate: 18deg;
-        margin-bottom: 3rem;    
+        margin-bottom: 3rem;  
+        margin-left: 1rem;  
         max-width: 15rem;
     }
 
@@ -157,6 +159,6 @@
 
     .stekjes .weather-bubble, .zaden .weather-bubble {
         rotate: 0deg;
-        margin-bottom: 6rem;
+        margin-bottom: 4rem;
     }
 }
