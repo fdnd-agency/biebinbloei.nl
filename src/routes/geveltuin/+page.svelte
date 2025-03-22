@@ -36,7 +36,9 @@
 	<picture>
 		<img src={data.facadeGardenActions[0].image.url} alt="" />
 
-		<p class="buurtbewoner-henk">{data.facadeGardenActions[1].description}</p>
+		<p class="resident-henk">
+			{data.facadeGardenActions[1].description}
+		</p>
 	</picture>
 </section>
 
@@ -56,7 +58,7 @@
 		line-height: var(--line-height-paragraph);
 	}
 
-	.buurtbewoner-henk {
+	.resident-henk {
 		margin-top: 0;
 	}
 
