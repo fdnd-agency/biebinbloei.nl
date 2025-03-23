@@ -2,7 +2,7 @@
 	export let titleColor, paragraphColor, titleCard, paragraphCard, paragraphCard2;
 </script>
 
-<article>
+<div>
 	{#if titleCard}
 		<h2 class={titleColor}>{titleCard}</h2>
 	{/if}
@@ -14,9 +14,10 @@
 	{#if paragraphCard2}
 		<p class={paragraphColor}>{paragraphCard2}</p>
 	{/if}
-</article>
+</div>
 
 <style>
+	/* Mobile styling */
 	h2 {
 		line-height: 95%;
 		margin-bottom: 0.5em;
@@ -30,7 +31,6 @@
 	}
 
 	/* titleColor & paragraphColor variants */
-
 	.title-green,
 	.paragraph-green {
 		color: var(--main-color-green);
@@ -79,6 +79,13 @@
 		p {
 			max-width: 43em;
 			margin: 0em 7em 0 4em;
+		}
+	}
+
+	/* Large desktop styling */
+	@container slidecards (min-width: 100em) {
+		p {
+			margin: 0em 7em 0 3em;
 		}
 	}
 </style>
