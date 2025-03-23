@@ -65,12 +65,12 @@
 		border-radius: var(--border-bigCard);
 	}
 
-	 picture {
+	picture {
 		width: 100%;
 		height: 100%;
 		min-height: 300px;
 		position: relative;
-	} 
+	}
 
 	img {
 		top: 0;
@@ -167,6 +167,32 @@
 			width: 14rem;
 			padding-top: 1rem;
 			margin: 0rem 7rem 0 3.8rem;
+		}
+
+		/* scroll-driven-animations styling */
+		@media (prefers-reduced-motion: no-preference) {
+			@supports (animation-timeline: view()) {
+				article {
+					animation-timeline: view(inline);
+					animation: fancy-in;
+					animation-timeline: view();
+				}
+
+				article:first-of-type {
+					animation: none !important;
+				}
+
+				@keyframes fancy-in {
+					0% {
+						transform: translatey(25vw);
+					}
+
+					20% {
+						opacity: 1;
+						transform: none;
+					}
+				}
+			}
 		}
 	}
 
