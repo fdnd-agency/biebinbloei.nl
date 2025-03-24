@@ -125,6 +125,12 @@
 		--svg-fill: var(--main-color-brown);
 	}
 
+	@container slidecards (min-width: 64rem) {
+		a {
+			width: 14em;
+		}
+	}
+
 	@container slidecards (min-width: 100rem) {
 		a {
 			width: 14em;

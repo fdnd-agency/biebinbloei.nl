@@ -65,6 +65,7 @@
 		}
 
 		p {
+			margin-left: 3em;
 			max-width: 40ch;
 		}
 	}

@@ -126,7 +126,7 @@
 
 		.btn-container {
 			width: 14em;
-			margin: 0rem 7em 0 0;
+			margin: 0rem 7em 0 2rem;
 		}
 	}
 
@@ -166,9 +166,9 @@
 		.btn-container {
 			width: 14rem;
 			padding-top: 1rem;
-			margin: 0rem 7rem 0 3.8rem;
+			margin: 0rem 7rem 0 4.5rem;
 		}
-
+		
 		/* scroll-driven-animations styling */
 		@media (prefers-reduced-motion: no-preference) {
 			@supports (animation-timeline: view()) {
@@ -210,7 +210,7 @@
 		.btn-container {
 			width: 14rem;
 			padding-top: 1rem;
-			margin: 0rem 7rem 0 7rem;
+			margin: 0rem 7rem 0 5rem;
 		}
 	}
 
