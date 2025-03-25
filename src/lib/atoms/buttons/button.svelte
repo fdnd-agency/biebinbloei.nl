@@ -3,7 +3,7 @@
 </script>
 
 <div class="button-wrapper">
-	<img src="/assets/blije Harry.svg" alt="Harry" />
+	<img src="/assets/blije Harry.svg" alt="" />
 
 	<a {href} class={buttonClass}>
 		{buttonText}
