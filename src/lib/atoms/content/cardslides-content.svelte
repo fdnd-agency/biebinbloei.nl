@@ -86,7 +86,8 @@
 	/* Large desktop styling */
 	@container slidecards (min-width: 100em) {
 		p {
-			margin: 0em 7em 0 3em;
+			font-size: 1.3em;
+			margin: 0em 7em 0 2.1em;
 		}
 	}
 </style>
