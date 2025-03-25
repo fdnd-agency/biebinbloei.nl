@@ -3,9 +3,7 @@
 </script>
 
 <div class="button-wrapper">
-	<div class="harry">
-		<img src="/assets/blije Harry.svg" alt="Harry" />
-	</div>
+	<img src="/assets/blije Harry.svg" alt="Harry" />
 
 	<a {href} class={buttonClass}>
 		{buttonText}
@@ -52,7 +50,7 @@
 		align-items: center;
 	}
 
-	.harry {
+	img {
 		position: absolute;
 		top: -18px;
 		left: 50%;
@@ -66,7 +64,7 @@
 
 	/* Animatie bij focus via Tab */
 	@media (prefers-reduced-motion: no-preference) {
-		.button-wrapper:has(a:focus-visible) .harry {
+		.button-wrapper:has(a:focus-visible) img {
 			opacity: 1;
 			transform: translateX(-50%) translateY(-30%);
 		}
