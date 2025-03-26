@@ -70,6 +70,7 @@
 
 	@media (min-width: 100rem) {
 		p {
+			font-size: 1.1em;
 			position: relative;
 			z-index: 100;
 		}

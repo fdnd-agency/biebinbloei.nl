@@ -110,6 +110,7 @@
 
 		article,
 		p {
+			font-size: 1.1em;
 			max-width: 43em;
 		}
 	}

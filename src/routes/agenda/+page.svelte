@@ -285,4 +285,10 @@
 			transform: translateX(10rem);
 		}
 	}
+
+	@media (min-width: 100rem){
+		p{
+			font-size: 1.1em;
+		}
+	}
 </style>
