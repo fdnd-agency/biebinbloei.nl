@@ -277,7 +277,7 @@
 		}
 
 		.no-styling::before {
-			content: url('assets/leaf-light-green.svg');
+			content: url(assets/leaf-light-green.svg);
 			position: absolute;
 			height: 75%;
 			width: 75%;
