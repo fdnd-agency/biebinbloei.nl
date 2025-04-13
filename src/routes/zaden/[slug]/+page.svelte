@@ -122,5 +122,12 @@
         height: auto; 
       }
     }
+
+    @media screen and (min-width: 100em) {
+      p{
+        font-size: 1.1em;
+      }
+    }
+
 </style>
   

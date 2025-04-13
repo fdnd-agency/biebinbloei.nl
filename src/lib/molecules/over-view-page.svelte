@@ -72,7 +72,7 @@
 		width: 100%;
 		height: 100%;
 		object-fit: cover;
-		transition: ease-out 0.35s;
+		transition: ease-out .35s;
 	}
 
 	h3 {

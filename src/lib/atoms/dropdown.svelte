@@ -144,4 +144,10 @@
     details[open] summary::after{
         content: "-";
     }
+
+    @media (min-width: 100em) {
+		details{
+			font-size: 19px;
+		}
+	}
 </style>

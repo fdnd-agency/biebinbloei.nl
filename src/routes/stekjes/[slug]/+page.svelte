@@ -21,6 +21,7 @@
 <HarryWeather textTemp={data.stekje.absoluteTemperatuur} name={data.stekje.naam} />
 
 <section class="container">
+
 	<div class="button-overzichtspagina-container">
 		<Button
 			href="/stekjes"
@@ -152,13 +153,13 @@
 	}
 
 	/* temporary fix */
-	@media screen and (max-width: 375px) {
+  @media (max-width: 375px) {
 		.stekje-container {
 			grid-template-columns: 1fr;
 		}
 	}
 
-	@media screen and (min-width: 32em) {
+	@media (min-width: 32em) {
 		.container {
 			padding: 2em;
 		}
@@ -173,7 +174,8 @@
 	}
 
 	/* desktop */
-	@media screen and (min-width: 64em) {
+
+	@media (min-width: 64em) {
 		article img {
 			width: 15em;
 			height: auto;
@@ -183,6 +185,12 @@
 			margin-top: -1em;
 			margin-bottom: 3em;
 			position: relative;
+	}
+
+	@media (min-width: 100em) {
+		article{
+			font-size: 19px;
+
 		}
 	}
 </style>

@@ -277,12 +277,18 @@
 		}
 
 		.no-styling::before {
-			content: url('assets/leaf-light-green.svg');
+			content: url(assets/leaf-light-green.svg);
 			position: absolute;
 			height: 75%;
 			width: 75%;
 			rotate: -25deg;
 			transform: translateX(10rem);
+		}
+	}
+
+	@media (min-width: 100rem){
+		p{
+			font-size: 1.1em;
 		}
 	}
 </style>
