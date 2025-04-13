@@ -30,7 +30,7 @@
 		/>
 	</div>
 
-	<div>
+	<div class="vorige-volgende-container">
 		{#if data.vorige}
 			<Button
 				href="/stekjes/{data.vorige}"
@@ -49,6 +49,7 @@
 			/>
 		{/if}
 	</div>
+
 	<div class="stekje-container">
 		<article>
 			<h1>{data.stekje.naam}</h1>
@@ -90,6 +91,13 @@
 		margin-top: 3em;
 		margin-left: 1em;
 		margin-bottom: 1em;
+	}
+
+	.vorige-volgende-container{
+		display: flex;
+		justify-content: space-between;
+		width: 100%;
+		margin: 0 0.5em;
 	}
 
 	h1 {
