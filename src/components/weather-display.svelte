@@ -173,10 +173,10 @@
     /* 🌫️ Fog Effect */
     .fog-layer {
       position: absolute;
-      top: 0;
+      bottom: 0;
       left: -100%;
       width: 200%;
-      height: 100%;
+      height: 50%;
       background: rgba(255, 255, 255, 0.2); 
       animation: fog-move 20s linear infinite;
       z-index: 1;
@@ -227,9 +227,9 @@
       clip-path: circle(40% at 30% 50%);
   }
 
-    .cloud-1 { width: 60px; height: 60px; left: 20px; top: 20px; }
-    .cloud-2 { width: 80px; height: 80px; left: 60px; top: 10px; }
-    .cloud-3 { width: 50px; height: 50px; left: 110px; top: 25px; }
+    .cloud-1 { width: 30em; height: 30em; left: 60px; top: 60px; }
+    .cloud-2 { width: 25em; height: 25em; left: 180px; top: 30px; }
+    .cloud-3 { width: 15em; height: 15em; left: 330px; top: 75px; }
 
   /* .cloud::before,
   .cloud::after {

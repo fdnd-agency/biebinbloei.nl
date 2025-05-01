@@ -37,11 +37,13 @@
 		}
 	});
 </script>
-
+<WeatherDisplay />
 <section>
+	
 	<section class="hero-slider">
 		<div class="overlay">
 			<div class="header-wrapper">
+				
 
 
 		</div>
@@ -50,7 +52,6 @@
 			<h1>{data.headerTexts[0].heading1}</h1>
 			<h2>{data.headerTexts[0].description}</h2>
 			<HarryWeather />
-			<WeatherDisplay />
 		</header>
 
 		<ul class="hero-img-list">
