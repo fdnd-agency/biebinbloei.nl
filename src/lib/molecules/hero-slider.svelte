@@ -2,41 +2,9 @@
 	export let data;
 	import { onDestroy, onMount } from 'svelte';
 	import { HarryWeather } from '$lib/index.js';
-
-	import { weatherEffects } from '$lib/weatherMap.js';
-
-	import FogAnimation from './../../components/animations/fog-animation.svelte';
-	import RainAnimation from './../../components/animations/rain-animation.svelte';
-	import SunAnimation from './../../components/animations/sun-animation.svelte';
-	import CloudsAnimation from './../../components/animations/cloud-animation.svelte';
-	import SnowAnimation from './../../components/animations/snow-animation.svelte';
-	import StormAnimation from './../../components/animations/storm-animation.svelte';
+	import WeatherDisplay from '../../components/weather-display.svelte';
 
 
-	let animationType = '';
-
-const animations = {
-  fog: FogAnimation,
-  rain: RainAnimation,
-  clear: SunAnimation,
-  clouds: CloudsAnimation,
-  snow: SnowAnimation,
-  storm: StormAnimation,
-};
-
-async function getWeather() {
-  const res = await fetch('https://api.weatherapi.com/v1/current.json?key=35d06ad897c84f6e8c7112446251504&q=Amsterdam&aqi=yes');
-  const data = await res.json();
-
-  const weather = data.weather[0].main.toLowerCase();
-  animationType = weatherEffects[weather] || '';
-}
-
-onMount(() => {
-  getWeather();
-});
-
-	let intervalId;
 
 	onMount(() => {
 		const carrouselContainer = document.querySelector('.hero-slider');
@@ -74,11 +42,7 @@ onMount(() => {
 	<section class="hero-slider">
 		<div class="overlay">
 			<div class="header-wrapper">
-				<div class="animation-layer">
-				  {#if animationType}
-					<svelte:component this={animations[animationType]} />
-				  {/if}
-				</div>
+
 
 		</div>
 
@@ -86,6 +50,7 @@ onMount(() => {
 			<h1>{data.headerTexts[0].heading1}</h1>
 			<h2>{data.headerTexts[0].description}</h2>
 			<HarryWeather />
+			<WeatherDisplay />
 		</header>
 
 		<ul class="hero-img-list">
