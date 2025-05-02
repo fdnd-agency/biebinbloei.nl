@@ -50,7 +50,6 @@
 
 		<header>
 			<h1>{data.headerTexts[0].heading1}</h1>
-			<h2>{data.headerTexts[0].description}</h2>
 			<HarryWeather />
 		</header>
 
@@ -107,14 +106,7 @@
 		width: 60%;
 	}
 
-	h2 {
-		font-size: 1.2rem;
-		color: var(--text-color-white);
-		font-weight: 900;
-		line-height: 1.1em;
-		padding: 0.5em 0;
-		margin: 0;
-	}
+
 	.hero-img-list img {
 		width: 100%;
 		height: 100vh;
@@ -155,15 +147,13 @@
 			max-width: 9em;
 			font-size: clamp(5em, 12vw, 6em);
 		}
-		h1,
-		h2 {
+		h1
+		 {
 			width: 100%;
 			text-align: center;
 		}
 
-		h2{
-			font-size: 2rem;
-		}
+
 	}
 
 	/* MEDIA QUERY DESKTOP = 1700px */
@@ -172,16 +162,11 @@
 			font-size: clamp(5em, 12vw, 7em);
 		}
 
-		h2{
-			font-size: 2rem;
-		}
 	}
 
 	@media (min-width: 100rem) {
 
-		h2{
-			font-size: 4em;
-		}
+
 	}
 
 </style>

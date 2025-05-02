@@ -98,7 +98,6 @@ export async function load() {
 				createdAt
 				heading1
 				id
-				description
 			}
 
 			copyrights {
