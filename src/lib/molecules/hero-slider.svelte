@@ -31,11 +31,12 @@
 		}, interval);
 	});
 
-	onDestroy(() => {
-		if (intervalId) {
-			clearInterval(intervalId);
-		}
-	});
+	// onDestroy(() => {
+	// 	if (intervalId) {
+	// 		clearInterval(intervalId);
+	// 	}
+	// });
+
 </script>
 <WeatherDisplay />
 <section>

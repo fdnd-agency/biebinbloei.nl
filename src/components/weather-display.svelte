@@ -81,7 +81,7 @@
       {/if}
 
       {#if weatherClass === 'rain'}
-  <div class="rain">
+      <div class="rain">
     {#each Array(100) as _, i}
       <div class="raindrop" style="left: {Math.random() * 100}vw; animation-delay: {Math.random() * 2}s;"></div>
     {/each}
@@ -221,15 +221,15 @@
 
 
     .cloud {
-      background: white;
+      background: radial-gradient(circle at 30% 30%, #fff, #f0f0f0);
       border-radius: 50%;
       position: absolute;
       clip-path: circle(40% at 30% 50%);
   }
 
-    .cloud-1 { width: 30em; height: 30em; left: 60px; top: 60px; }
-    .cloud-2 { width: 25em; height: 25em; left: 180px; top: 30px; }
-    .cloud-3 { width: 15em; height: 15em; left: 330px; top: 75px; }
+     .cloud-1 { width: 60px; height: 60px; left: 20px; top: 20px; }
+     .cloud-2 { width: 80px; height: 80px; left: 60px; top: 10px; }
+     .cloud-3 { width: 50px; height: 50px; left: 110px; top: 25px; }
 
   /* .cloud::before,
   .cloud::after {
