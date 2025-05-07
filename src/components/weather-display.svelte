@@ -182,8 +182,6 @@
   100% { background-color: #ffffe0; }
 }
   
-    
-
   
     /* ⛈️ Thunderstorm */
     .thunderstorm {
@@ -262,48 +260,48 @@
 
      .cloud-wrapper {
        position: absolute;
-       top: 50px;
-       left: -200px;
-       width: 200px;
-       height: 180px;
-       filter: url(#blurFilter);
+       top: 0;
+       left: 0;
+       width: 100%;
+       height: 100vh;
+       /* background-image: url(./cloud-6.png);
+       background-repeat: no-repeat;
+       background-size: 100% auto;
+       background-position:  top;
+       object-fit: cover; */
        animation: moveCloud 20s linear infinite;
        z-index: 10;
      }
- 
- 
+
+     .cloud-1 { background-image: url(./cloud.png); width: 100px; height: 90px; left: 20px; top: 20px; }
+     .cloud-2 { width: 80px; height: 120px; left: 60px; top: 10px; }
+     .cloud-3 { width: 150px; height: 80px; left: 110px; top: 25px; }
+
      .cloud {
-      height: 80px; /* control the size */
-    aspect-ratio: 4.8;
+    height: 180px; /* control the size */
+    aspect-ratio: 1.8;
     --g: radial-gradient(50% 50%, #000 98%, #0000) no-repeat;
     mask: var(--g) 100% 100%/30% 60%,var(--g) 70% 0/50% 100%,var(--g) 0 100%/36% 68%,var(--g) 27% 18%/26% 40%,linear-gradient(#000 0 0) bottom/67% 58% no-repeat;
     background: #269af2;
-    margin-bottom: 2em;
-   }
- 
-     .cloud-1 { width: 1000px; height: 90px; left: 20px; top: 20px; }
-     .cloud-2 { width: 980px; height: 120px; left: 60px; top: 10px; }
-     .cloud-3 { width: 1150px; height: 80px; left: 110px; top: 25px; }
- 
+}
 
-   
-     .cloud-1 {
-     top: 30px;
-     left: -100px;
-     animation-delay: 0s;
-   }
- 
-   .cloud-2 {
-     top: 80px;
-     left: -150px;
-     animation-delay: 10s;
-   }
-   
-     .cloud-3 {
-       top: 50px;
-       left: -200px;
-       animation-delay: 5s;
-     }
+.cloud-1 {
+    top: 30px;
+    left: -100px;
+    animation-delay: 0s;
+  }
+
+  .cloud-2 {
+    top: 80px;
+    left: -150px;
+    animation-delay: 10s;
+  }
+  
+    .cloud-3 {
+      top: 50px;
+      left: -200px;
+      animation-delay: 5s;
+    }
  
      @keyframes moveCloud {
        0% { transform: translateX(0); }
