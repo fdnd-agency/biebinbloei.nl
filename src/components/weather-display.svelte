@@ -4,7 +4,7 @@
     let weather = null;
     let loading = true;
     let error = null;
-    let cloud = 65; // Default cloud coverage value
+    let cloud = 65; 
     let weatherClass = 'default';
   
     const API_URL = 'https://api.weatherapi.com/v1/current.json';
@@ -14,7 +14,7 @@
     function getWeatherClass(condition) {
     const text = condition.toLowerCase();
     if (text.includes('thunder')) return 'thunderstorm';
-    if (text.includes('partly') || text.includes('cloudy')) return 'partly-cloudy';  // Correct weather check
+    if (text.includes('partly') || text.includes('cloudy')) return 'partly-cloudy';  
     if (text.includes('sunny')) return 'sunny';
     if (text.includes('clear')) return 'sunny';
     if (text.includes('fog') || text.includes('mist') || text.includes('overcast')) return 'fog';
@@ -70,8 +70,11 @@
       <div class="cloud cloud-3"></div>
   </div>
     {/if}
-      {#if weatherClass === 'sunny'}
-    <div class="sun"></div>
+      
+    {#if weatherClass === 'sunny'}
+    <div class="sun">
+      <div class="rays"></div>
+    </div>
       {/if}
   
       {#if weatherClass === 'thunderstorm'}
@@ -162,14 +165,50 @@
 .sun {
   position: absolute;
   top: 60px;
-  right: 60px;
-  width: 120px;
-  height: 120px;
+  left: 60px;
+  width: 300px;
+  height: 300px;
   background: radial-gradient(circle, #FFD700 60%, #FFA500 100%);
   border-radius: 50%;
   box-shadow: 0 0 20px 10px rgba(255, 223, 0, 0.6);
   animation: rotateSun 12s linear infinite;
   z-index: 2;
+}
+
+.rays {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 800px;       /* Extended from 200px */
+  height: 800px;
+  margin-left: -400px;
+  margin-top: -400px;
+  border-radius: 50%;
+  background: repeating-conic-gradient(
+    rgba(255, 215, 0, 0.15) 0deg 6deg,     /* More transparent */
+    transparent 6deg 12deg
+  );
+  animation: rotateRays 20s linear infinite, rayPulse 4s ease-in-out infinite;
+  z-index: 1; /* Behind the sun */
+  pointer-events: none;
+}
+
+@keyframes rotateRays {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes rayPulse {
+  0%, 100% {
+    opacity: 0.3;
+  }
+  50% {
+    opacity: 0.5;
+  }
 }
 
 @keyframes rotateSun {
@@ -264,35 +303,28 @@
        left: 0;
        width: 100%;
        height: 100vh;
-       /* background-image: url(./cloud-6.png);
-       background-repeat: no-repeat;
-       background-size: 100% auto;
-       background-position:  top;
-       object-fit: cover; */
-       animation: moveCloud 20s linear infinite;
+       animation: moveCloud 60s linear infinite;
        z-index: 10;
      }
 
-     .cloud-1 { background-image: url(./cloud.png); width: 100px; height: 90px; left: 20px; top: 20px; }
-     .cloud-2 { width: 80px; height: 120px; left: 60px; top: 10px; }
-     .cloud-3 { width: 150px; height: 80px; left: 110px; top: 25px; }
-
      .cloud {
-    height: 180px; /* control the size */
-    aspect-ratio: 1.8;
-    --g: radial-gradient(50% 50%, #000 98%, #0000) no-repeat;
-    mask: var(--g) 100% 100%/30% 60%,var(--g) 70% 0/50% 100%,var(--g) 0 100%/36% 68%,var(--g) 27% 18%/26% 40%,linear-gradient(#000 0 0) bottom/67% 58% no-repeat;
-    background: #269af2;
+       background-repeat: no-repeat;
+       background-size: 100% auto;
+       background-position:  top;
+       object-fit: cover;
+       width: 100%;
+       height: 33%;
 }
 
 .cloud-1 {
-    top: 30px;
+    top: 0;
     left: -100px;
     animation-delay: 0s;
+    background-image: url(./cloud.png);
   }
 
   .cloud-2 {
-    top: 80px;
+    top: -100px;
     left: -150px;
     animation-delay: 10s;
   }
