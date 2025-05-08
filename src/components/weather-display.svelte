@@ -9,7 +9,7 @@
   
     const API_URL = 'https://api.weatherapi.com/v1/current.json';
     const API_KEY = '35d06ad897c84f6e8c7112446251504';
-    const CITY = 'Amsterdam';  
+    const CITY = 'Rio de Janeiro';  
   
     function getWeatherClass(condition) {
     const text = condition.toLowerCase();
@@ -179,13 +179,13 @@
   position: absolute;
   top: 50%;
   left: 50%;
-  width: 800px;       /* Extended from 200px */
+  width: 800px;       
   height: 800px;
   margin-left: -400px;
   margin-top: -400px;
   border-radius: 50%;
   background: repeating-conic-gradient(
-    rgba(255, 215, 0, 0.15) 0deg 6deg,     /* More transparent */
+    rgba(255, 215, 0, 0.15) 0deg 6deg,     
     transparent 6deg 12deg
   );
   animation: rotateRays 20s linear infinite, rayPulse 4s ease-in-out infinite;
