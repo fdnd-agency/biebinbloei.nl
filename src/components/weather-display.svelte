@@ -9,7 +9,7 @@
   
     const API_URL = 'https://api.weatherapi.com/v1/current.json';
     const API_KEY = '35d06ad897c84f6e8c7112446251504';
-    const CITY = 'Hanoi';  
+    const CITY = 'Amsterdam';  
   
     function getWeatherClass(condition) {
     const text = condition.toLowerCase();
@@ -67,7 +67,6 @@
   <div class="cloud-wrapper">
       <div class="cloud cloud-1"></div>
       <div class="cloud cloud-2"></div>
-      <div class="cloud cloud-3"></div>
   </div>
     {/if}
       
@@ -189,7 +188,7 @@
     transparent 6deg 12deg
   );
   animation: rotateRays 20s linear infinite, rayPulse 4s ease-in-out infinite;
-  z-index: 1; /* Behind the sun */
+  z-index: 1; 
   pointer-events: none;
 }
 
@@ -313,27 +312,29 @@
        background-position:  top;
        object-fit: cover;
        width: 100%;
-       height: 33%;
+       height: 50%;
 }
 
 .cloud-1 {
     top: 0;
     left: -100px;
     animation-delay: 0s;
-    background-image: url(./small-cloud-1);
+    background-image: url(./small-cloud-1.png);
+    background-position: top center;
+    background-size: 100% 100%;
+    opacity: 0.85;
   }
 
   .cloud-2 {
     top: -100px;
     left: -150px;
     animation-delay: 10s;
+    background-image: url(./small-cloud-2.png);
+    background-position: top center;
+    background-size: 100% 100%;
+    opacity: 0.75;
   }
   
-    .cloud-3 {
-      top: 50px;
-      left: -200px;
-      animation-delay: 5s;
-    }
  
      @keyframes moveCloud {
        0% { transform: translateX(0); }
