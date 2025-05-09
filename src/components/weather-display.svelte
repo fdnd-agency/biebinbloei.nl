@@ -9,7 +9,7 @@
   
     const API_URL = 'https://api.weatherapi.com/v1/current.json';
     const API_KEY = '35d06ad897c84f6e8c7112446251504';
-    const CITY = 'Rio de Janeiro';  
+    const CITY = 'Amsterdam';  
   
     function getWeatherClass(condition) {
     const text = condition.toLowerCase();
