@@ -9,7 +9,7 @@
   
     const API_URL = 'https://api.weatherapi.com/v1/current.json';
     const API_KEY = '35d06ad897c84f6e8c7112446251504';
-    const CITY = 'Amsterdam';  
+    const CITY = 'Hanoi';  
   
     function getWeatherClass(condition) {
     const text = condition.toLowerCase();
@@ -320,7 +320,7 @@
     top: 0;
     left: -100px;
     animation-delay: 0s;
-    background-image: url(./cloud.png);
+    background-image: url(./small-cloud-1);
   }
 
   .cloud-2 {
