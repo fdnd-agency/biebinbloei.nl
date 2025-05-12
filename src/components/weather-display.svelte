@@ -9,7 +9,7 @@
   
     const API_URL = 'https://api.weatherapi.com/v1/current.json';
     const API_KEY = '35d06ad897c84f6e8c7112446251504';
-    const CITY = 'Amsterdam';  
+    const CITY = 'Kumru';  
   
     function getWeatherClass(condition) {
     const text = condition.toLowerCase();
@@ -64,10 +64,10 @@
 
       {#if weatherClass === 'partly-cloudy' || weatherClass === 'default'}
       <!-- Cloud Divs -->
-  <div class="cloud-wrapper">
+  <section class="cloud-wrapper">
       <div class="cloud cloud-1"></div>
       <div class="cloud cloud-2"></div>
-  </div>
+  </section>
     {/if}
       
     {#if weatherClass === 'sunny'}
@@ -77,9 +77,11 @@
       {/if}
   
       {#if weatherClass === 'thunderstorm'}
-        <div class="cloud cloud-1"></div>
-        <div class="cloud cloud-2"></div>
+      <section class="cloud-wrapper">
+        <div class="cloud stormcloud-1"></div>
+        <div class="cloud stormcloud-2"></div>
         <div class="lightning"></div>
+      </section>
       {/if}
   
       {#if weatherClass === 'fog'}
@@ -250,9 +252,8 @@
       bottom: 0;
       left: -100%;
       width: 200%;
-      height: 50%;
-      background: rgba(255, 255, 255, 0.2); 
-      background-image: url(./small-cloud-3.png);
+      height: 25%;
+      background-image: url(./small-cloud-2.png);
       animation: fog-move 20s linear infinite;
       z-index: 1;
 
@@ -305,14 +306,14 @@
        height: 50%;
 }
 
-.cloud-1 {
-    top: 0;
-    left: -100px;
-    animation-delay: 0s;
-    background-image: url(./small-cloud-1.png);
-    background-position: top center;
-    background-size: 100% 100%;
-    opacity: 0.85;
+      .cloud-1 {
+        top: 0;
+        left: -100px;
+        animation-delay: 0s;
+        background-image: url(./small-cloud-1.png);
+        background-position: top center;
+        background-size: 100% 100%;
+        opacity: 0.85;
   }
 
   .cloud-2 {
@@ -343,12 +344,34 @@
       opacity: 0;
       animation: lightning-strike 3s infinite;
     }
+
+    .stormcloud-1 {
+    top: 0;
+    left: -100px;
+    animation-delay: 0s;
+    background-image: url(./stormcloud-1.png);
+    background-position: top center;
+    background-size: 100% 100%;
+    opacity: 1;
+  }
+
+  .stormcloud-2 {
+    top: -100px;
+    left: -150px;
+    animation-delay: 10s;
+    background-image: url(./stormcloud-2.png);
+    background-position: top center;
+    background-size: 100% 100%;
+    opacity: 1;
+  }
   
     @keyframes lightning-strike {
       0%, 97%, 100% { opacity: 0; }
       98% { opacity: 1; }
       99% { opacity: 0.5; }
     }
+
+
 
   .rain {
   position: absolute;
@@ -367,7 +390,7 @@
   width: 2px;
   height: 20px;
   background: rgba(255, 255, 255, 0.6);
-  animation: drop 1s linear infinite;
+  animation: drop .75s linear infinite;
 }
 
 @keyframes drop {
