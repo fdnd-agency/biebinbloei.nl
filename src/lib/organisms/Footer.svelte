@@ -38,7 +38,27 @@
 			<li class="title">{data.footers[0].titleCollaborate}</li>
 			<li>{data.footers[0].collaborateParagraph}</li>
 		</ul>
+
+		<ul>
+  <li class="title">Licentie</li>
+  <li>
+    <p xmlns:cc="http://creativecommons.org/ns#" xmlns:dct="http://purl.org/dc/terms/">
+      <a property="dct:title" rel="cc:attributionURL" href="http://www.biebinbloei.nl/">Bieb in Bloei</a> by
+      <a rel="cc:attributionURL dct:creator" property="cc:attributionName" href="https://www.buurtcampus.amsterdam/oost">Buurtcampus Oost</a>
+      is licensed under
+      <a href="https://creativecommons.org/licenses/by-nc/4.0/?ref=chooser-v1" target="_blank" rel="license noopener noreferrer">
+        CC BY-NC 4.0
+        <img src="https://mirrors.creativecommons.org/presskit/icons/cc.svg?ref=chooser-v1" alt="CC" />
+        <img src="https://mirrors.creativecommons.org/presskit/icons/by.svg?ref=chooser-v1" alt="BY" />
+        <img src="https://mirrors.creativecommons.org/presskit/icons/nc.svg?ref=chooser-v1" alt="NC" />
+      </a>
+    </p>
+  </li>
+</ul>
 	</section>
+
+		
+
 </footer>
 
 <style>
@@ -100,12 +120,23 @@
 	}
 
 	ul {
-		width: 30%;
+		width: 20%;
 	}
 
 	li {
 		list-style-type: none;
 	}
+
+	ul p {
+  margin: 0;
+  line-height: 1.4;
+}
+
+ul img {
+  height: 1em;
+  vertical-align: text-bottom;
+  margin-left: 3px;
+}
 
 	.title {
 		font-size: 2em;
