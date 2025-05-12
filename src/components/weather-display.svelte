@@ -252,25 +252,15 @@
       width: 200%;
       height: 50%;
       background: rgba(255, 255, 255, 0.2); 
+      background-image: url(./small-cloud-3.png);
       animation: fog-move 20s linear infinite;
       z-index: 1;
-      clip-path: polygon(84% 23%, 80% 8%, 63% 6%, 53% 16%, 
-                       46% 10%, 38% 17%, 33% 6%, 6% 12%, 
-                       4% 30%, 12% 34%, 17% 46%, 10% 50%, 
-                       10% 61%, 26% 64%, 34% 77%, 53% 82%, 
-                       72% 71%, 70% 56%, 80% 48%, 93% 48%, 
-                       95% 38%, 90% 22%);
+
     }
   
     .fog-layer-2 {
       animation-delay: 10s;
-      background: rgba(255, 255, 255, 0.3);
-      clip-path: polygon(84% 23%, 80% 8%, 63% 6%, 53% 16%, 
-                       46% 10%, 38% 17%, 33% 6%, 6% 12%, 
-                       4% 30%, 12% 34%, 17% 46%, 10% 50%, 
-                       10% 61%, 26% 64%, 34% 77%, 53% 82%, 
-                       72% 71%, 70% 56%, 80% 48%, 93% 48%, 
-                       95% 38%, 90% 22%);
+      background-image: url(./small-cloud-3.png);
     }
   
     @keyframes fog-move {
