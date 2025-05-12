@@ -1,5 +1,6 @@
 <script>
     import { onMount } from 'svelte';
+    import { PUBLIC_WEATHER_API_KEY } from '$env/static/public';
   
     let weather = null;
     let loading = true;
@@ -8,7 +9,6 @@
     let weatherClass = 'default';
   
     const API_URL = 'https://api.weatherapi.com/v1/current.json';
-    const API_KEY = '35d06ad897c84f6e8c7112446251504';
     const CITY = 'Amsterdam';  
   
     function getWeatherClass(condition) {
@@ -24,7 +24,7 @@
   
   onMount(async () => {
     try {
-      const res = await fetch(`${API_URL}?key=${API_KEY}&q=${CITY}&aqi=yes`);
+      const res = await fetch(`${API_URL}?key=${PUBLIC_WEATHER_API_KEY}&q=${CITY}&aqi=yes`);
       const data = await res.json();
       weather = data;
       cloud = data.current.cloud; 
