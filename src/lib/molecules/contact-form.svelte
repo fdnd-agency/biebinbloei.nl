@@ -54,6 +54,7 @@ function handleSubmit(event) {
             on:input={saveToLocalStorage}
             on:invalid={() => event.target.setCustomValidity('Vul hier uw voornaam in')}
             on:input={() => event.target.setCustomValidity('')} />
+
         </div>
         
         <div>
