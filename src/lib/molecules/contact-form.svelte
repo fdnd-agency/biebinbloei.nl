@@ -1,3 +1,5 @@
+<!-- @migration-task Error while migrating Svelte code: Event attribute must be a JavaScript expression, not a string
+https://svelte.dev/e/attribute_invalid_event_handler -->
 <script>
 
 import { onMount } from 'svelte';
@@ -50,31 +52,31 @@ function handleSubmit(event) {
             <label for="name">Voornaam:<span aria-hidden="true">*</span></label>
             <input type="text" id="name" name="name" placeholder="Voer je voornaam in" required bind:value={name} 
             on:input={saveToLocalStorage}
-            oninvalid="this.setCustomValidity('Vul hier uw voornaam in')"
-            oninput="this.setCustomValidity('')" />
+            on:invalid={() => event.target.setCustomValidity('Vul hier uw voornaam in')}
+            on:input={() => event.target.setCustomValidity('')} />
         </div>
         
         <div>
             <label for="lastname">Achternaam:<span aria-hidden="true">*</span></label>
             <input type="text" id="lastname" name="lastname" placeholder="Voer je achternaam in" required bind:value={lastname} 
             on:input={saveToLocalStorage}
-            oninvalid="this.setCustomValidity('Vul hier uw achternaam in')"
-            oninput="this.setCustomValidity('')" />
+            on:invalid={() => event.target.setCustomValidity('Vul hier uw achternaam in')}
+            on:input={() => event.target.setCustomValidity('')} />
         </div>
         
         <div>
             <label for="email">E-mail:<span aria-hidden="true">*</span></label>
             <input type="email" id="email" name="email" placeholder="Voer je e-mailadres in" required bind:value={email} 
             on:input={saveToLocalStorage}
-            oninvalid="this.setCustomValidity('Vul hier uw e-mail in')"
-            oninput="this.setCustomValidity('')" />
+            on:invalid={() => event.target.setCustomValidity('Vul hier uw e-mail in')}
+            on:input={() => event.target.setCustomValidity('')} />
         </div>
         
         <label for="message">Stel je vraag of vertel voor welke workshop je je wilt aanmelden!<span aria-hidden="true">*</span></label>
         <textarea id="message" name="message" cols="30" rows="10" placeholder="Typ hier je bericht" required bind:value={message} 
             on:input={saveToLocalStorage} 
-            oninvalid="this.setCustomValidity('Vul hier uw vraag of bericht in')"
-            oninput="this.setCustomValidity('')" ></textarea>
+            on:invalid={() => event.target.setCustomValidity('Vul hier uw vraag of bericht in')}
+            on:input={() => event.target.setCustomValidity('')} ></textarea>
     </div>
 
     <button type="submit" value="Verzenden">Verzenden</button>

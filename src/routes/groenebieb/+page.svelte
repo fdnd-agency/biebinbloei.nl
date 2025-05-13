@@ -1,6 +1,6 @@
 <script>
-	export let data;
 	import { HeroHeaders, IntroHeaders } from '$lib/index.js';
+	let { data } = $props();
 </script>
 
 <HeroHeaders heroInfo={data.heroHeaders[7]} />

@@ -1,5 +1,10 @@
 <script>
-	export let href, buttonText, buttonClass, svgFill;
+	let {
+		href,
+		buttonText,
+		buttonClass,
+		svgFill
+	} = $props();
 </script>
 
 <div class="button-wrapper">
@@ -64,7 +69,7 @@
 
 	/* Animatie bij focus via Tab */
 	@media (prefers-reduced-motion: no-preference) {
-		.button-wrapper:has(a:focus-visible) img {
+		.button-wrapper:has(:global(a:focus-visible)) img {
 			opacity: 1;
 			transform: translateX(-50%) translateY(-30%);
 		}

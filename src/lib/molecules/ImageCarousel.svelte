@@ -1,9 +1,9 @@
 <script>
 	import { onMount } from 'svelte';
-	export let heroInfo;
+	let { heroInfo } = $props();
 	let images = heroInfo.carouselImage[0].images;
 
-	let carouselContainer;
+	let carouselContainer = $state();
 
 	function scrollPrev() {
 		// Check if smooth scroll is supported
@@ -34,7 +34,7 @@
 <section class="carousel-container">
 	<article class="caroussel-buttons hidden">
 		<div class="button-container">
-			<button type="button" on:click={scrollPrev}
+			<button type="button" onclick={scrollPrev}
 				><img
 					class="arrow"
 					src="./assets/arrow-prev.svg"
@@ -47,7 +47,7 @@
 		</div>
 
 		<div class="button-container">
-			<button type="button" on:click={scrollNext}
+			<button type="button" onclick={scrollNext}
 				><img
 					class="arrow"
 					src="./assets/arrow-next.svg"

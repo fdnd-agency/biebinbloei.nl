@@ -1,6 +1,6 @@
 <script>
-	export let data;
 	import { LeafRight, LeafLeft } from '$lib/index.js';
+	let { data } = $props();
 </script>
 
 <footer>

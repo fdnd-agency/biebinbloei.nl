@@ -1,6 +1,6 @@
 <script>
-    export let data;
 	import { HeroHeaders, ContactForm } from '$lib/index.js';
+    let { data } = $props();
 
 </script>
 

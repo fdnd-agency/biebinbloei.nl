@@ -1,7 +1,13 @@
 <script>
-    export let mood = "twerk"; 
     
-    import Harry from '$lib/atoms/harry.svelte'; 
+    import Harry from '$lib/atoms/harry.svelte';
+  /**
+   * @typedef {Object} Props
+   * @property {string} [mood]
+   */
+
+  /** @type {Props} */
+  let { mood = "twerk" } = $props(); 
   </script>
   
   <main>

@@ -1,6 +1,6 @@
 <script>
-	export let data;
 	import { HarryWeather, Features } from '$lib/index.js';
+	let { data } = $props();
 
 	let mood;
 	let environment;

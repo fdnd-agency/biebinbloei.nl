@@ -1,8 +1,7 @@
 <script>
     import { HarryWeather, Dropdown } from '$lib/index.js';
     
-    export let data;
-    export let type; // 'stekjes' of 'zaden'
+    let { data, type } = $props();
 </script>
 
 <section>

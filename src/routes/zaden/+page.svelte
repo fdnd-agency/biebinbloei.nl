@@ -1,6 +1,6 @@
 <script>
-	export let data;
 	import { HeroHeaders, OverViewPages, IntroHeaders, ImageCarousel } from '$lib/index.js';
+	let { data } = $props();
 </script>
 
 <HeroHeaders heroInfo={data.heroHeaders[1]} />

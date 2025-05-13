@@ -1,6 +1,5 @@
 <script>
-    export let data;
-    export let type;
+    let { data, type } = $props();
 </script>
 
 {#if data[type]?.landvanherkomst}

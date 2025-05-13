@@ -1,7 +1,7 @@
 <script>
-	export let data;
 	import { onDestroy, onMount } from 'svelte';
 	import { HarryWeather } from '$lib/index.js';
+	let { data } = $props();
 
 	let intervalId;
 
