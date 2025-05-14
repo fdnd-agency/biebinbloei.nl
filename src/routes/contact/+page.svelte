@@ -5,7 +5,7 @@
 </script>
 
 <HeroHeaders 
-    heroInfo="{data.heroHeaders[5]}"
+    heroInfo={data.heroHeaders[5]}
 />
 
 <main>

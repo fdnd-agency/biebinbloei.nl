@@ -12,7 +12,7 @@
   <img src="{data.zaden.fotos[0].url}" alt="" width={data.zaden.fotos[0]?.width || 'auto'} height={data.zaden.fotos[0]?.height || 'auto'}  class="header" loading="lazy">
 </header>
 
-<HarryWeather textTemp={data.zaden.absoluteTemperatuur}, name={data.zaden.naam} />
+<HarryWeather textTemp={data.zaden.absoluteTemperatuur} name={data.zaden.naam} />
 
 <section class="container">
   <div class="stekje-container">
