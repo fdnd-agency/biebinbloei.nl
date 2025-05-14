@@ -8,7 +8,7 @@
     let cloud = 65; 
     let weatherClass = 'default';
   
-    const API_KEY = '35d06ad897c84f6e8c7112446251504';
+    const API_KEY = import.meta.env.VITE_WEATHER_API_KEY;
     const API_URL = 'https://api.weatherapi.com/v1/current.json';
     const CITY = 'Amsterdam';  
   
