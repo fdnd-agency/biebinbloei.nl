@@ -175,34 +175,6 @@
 			width: 2em;
 			margin-left: -1em;
 		}
-
-		/* SCROLL-DRIVEN-ANIMATIONS STYLING */
-		@supports (animation-timeline: view()) {
-			.card {
-				animation-timeline: view(inline);
-				animation-name: animate-in-and-out;
-			}
-
-			@keyframes animate-in-and-out {
-				entry 0% {
-					opacity: 0;
-					transform: translate(100%);
-				}
-				entry 100% {
-					opacity: 1;
-					transform: translateX(0);
-				}
-
-				exit 0% {
-					opacity: 1;
-					transform: translateX(0);
-				}
-				exit 100% {
-					opacity: 0;
-					transform: translate(-10%);
-				}
-			}
-		}
 	}
 
 	/* BIG SCREENS (DESKTOP) */
