@@ -1,9 +1,9 @@
 <script>
 	import { AgendaButton } from '$lib/index.js';
 	import { onMount } from 'svelte';
-	export let data;
+	let { data } = $props();
 
-	let agendaContainer;
+	let agendaContainer = $state();
 
 	function scrollPrev() {
 		// Check if smooth scroll is supported
@@ -33,7 +33,7 @@
 
 <!-- AGENDA-CAROUSEL - PREV-NEXT BUTTON CODE -->
 <article class="caroussel-buttons hidden">
-	<button type="button" aria-label="previousbutton" on:click={scrollPrev}
+	<button type="button" aria-label="previousbutton" onclick={scrollPrev}
 		><img
 			class="arrow"
 			src="./assets/arrow-prev.svg"
@@ -43,7 +43,7 @@
 		/></button
 	>
 
-	<button type="button" aria-label="nextbutton" on:click={scrollNext}
+	<button type="button" aria-label="nextbutton" onclick={scrollNext}
 		><img
 			class="arrow"
 			src="./assets/arrow-next.svg"
@@ -174,34 +174,6 @@
 		.arrow {
 			width: 2em;
 			margin-left: -1em;
-		}
-
-		/* SCROLL-DRIVEN-ANIMATIONS STYLING */
-		@supports (animation-timeline: view()) {
-			.card {
-				animation-timeline: view(inline);
-				animation-name: animate-in-and-out;
-			}
-
-			@keyframes animate-in-and-out {
-				entry 0% {
-					opacity: 0;
-					transform: translate(100%);
-				}
-				entry 100% {
-					opacity: 1;
-					transform: translateX(0);
-				}
-
-				exit 0% {
-					opacity: 1;
-					transform: translateX(0);
-				}
-				exit 100% {
-					opacity: 0;
-					transform: translate(-10%);
-				}
-			}
 		}
 	}
 

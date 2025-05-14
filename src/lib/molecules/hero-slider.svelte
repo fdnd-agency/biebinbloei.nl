@@ -1,7 +1,7 @@
 <script>
-	export let data;
 	import { onDestroy, onMount } from 'svelte';
 	import { HarryWeather } from '$lib/index.js';
+	let { data } = $props();
 
 	let intervalId;
 
@@ -68,7 +68,6 @@
 		background-color: var(--main-color-green);
 		width: 100%;
 		height: 85vh;
-		
 	}
 	.overlay {
 		position: absolute;
@@ -77,7 +76,6 @@
 		width: 100%;
 		height: 85vh;
 		background: var(--image-gradient);
-		
 	}
 	header {
 		position: absolute;
@@ -139,6 +137,7 @@
 			max-width: 9em;
 			font-size: clamp(5em, 12vw, 6em);
 		}
+
 		h1 {
 			width: 100%;
 			text-align: center;

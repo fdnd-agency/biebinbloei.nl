@@ -1,6 +1,12 @@
 <script>
-    export let mood = "neutraal"; // default mood
-    export let environment = "zonnig"
+    /**
+     * @typedef {Object} Props
+     * @property {string} [mood] - default mood
+     * @property {string} [environment]
+     */
+
+    /** @type {Props} */
+    let { mood = "neutraal", environment = "zonnig" } = $props();
 </script>
 
 

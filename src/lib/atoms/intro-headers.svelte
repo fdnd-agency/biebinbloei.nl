@@ -1,5 +1,5 @@
 <script>
-	export let heroInfo;
+	let { heroInfo } = $props();
 </script>
 
 <section>

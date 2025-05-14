@@ -1,8 +1,8 @@
 <script>
-	export let data;
 	import { Menu, Footer } from '$lib/index.js';
 
 	import { onNavigate } from '$app/navigation';
+	let { data, children } = $props();
 
 	onNavigate((navigation) => {
 		if (!document.startViewTransition) return;
@@ -18,7 +18,7 @@
 
 
 <Menu/>
-<slot />
+{@render children?.()}
 <Footer {data} />
 
 <style>

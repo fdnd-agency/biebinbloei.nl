@@ -1,6 +1,6 @@
 <script>
-	export let data;
 	import { Button, Dot, CardslidesContent, CardslidesLeaf } from '$lib/index.js';
+	let { data } = $props();
 </script>
 
 <section class="card-container">

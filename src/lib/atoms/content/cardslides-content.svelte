@@ -1,5 +1,11 @@
 <script>
-	export let titleColor, paragraphColor, titleCard, paragraphCard, paragraphCard2;
+	let {
+		titleColor,
+		paragraphColor,
+		titleCard,
+		paragraphCard,
+		paragraphCard2
+	} = $props();
 </script>
 
 <div>

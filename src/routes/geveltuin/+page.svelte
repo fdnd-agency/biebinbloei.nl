@@ -1,7 +1,7 @@
 <script>
-	export let data;
 	import { GeveltuinButton } from '$lib/index.js';
 	import { HeroHeaders, IntroHeaders, ImageCarousel } from '$lib/index.js';
+	let { data } = $props();
 
 	const bulletPoints1 = data.facadeGardenActions[0].bulletText1.split('.');
 </script>

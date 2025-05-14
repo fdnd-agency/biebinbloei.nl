@@ -1,5 +1,10 @@
 <script>
-	export let href, buttonText, buttonClass, svgFill;
+	let {
+		href,
+		buttonText,
+		buttonClass,
+		svgFill
+	} = $props();
 </script>
 
 <a {href} class={buttonClass}>

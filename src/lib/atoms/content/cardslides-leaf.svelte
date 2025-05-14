@@ -1,5 +1,5 @@
 <script>
-	export let svgFill;
+	let { svgFill } = $props();
 </script>
 
 <!-- This file is a color custom property file for the leaf icons on the cards. I have assigned a class
