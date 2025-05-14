@@ -120,7 +120,8 @@
 	}
 
 	ul {
-		width: 20%;
+		width: 25%;
+		margin: 1em;
 	}
 
 	li {
