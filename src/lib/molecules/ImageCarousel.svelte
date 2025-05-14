@@ -195,36 +195,6 @@
 			display: block;
 			margin-top: 0.5rem;
 		}
-
-		/* SCROLL-DRIVEN-ANIMATIONS STYLING */
-		@supports (animation-timeline: view()) {
-			.content {
-				animation-timeline: view(inline);
-				animation-name: animate-in-and-out;
-			}
-
-			@keyframes animate-in-and-out {
-				entry 0% {
-					opacity: 0;
-					transform: translateX(0);
-				}
-
-				entry 100% {
-					opacity: 1;
-					transform: translateX(0);
-				}
-
-				exit 0% {
-					opacity: 1;
-					transform: translateX(0);
-				}
-
-				exit 100% {
-					opacity: 0;
-					transform: translate(-10%);
-				}
-			}
-		}
 	}
 
 	@container carousel (min-width: 100rem) {
