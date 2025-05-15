@@ -9,7 +9,7 @@
 
 	const API_KEY = import.meta.env.VITE_WEATHER_API_KEY;
 	const API_URL = 'https://api.weatherapi.com/v1/current.json';
-	const CITY = 'Richlands';
+	const CITY = 'Sydney';
 
 	function getWeatherClass(condition) {
 		const text = condition.toLowerCase();
@@ -77,19 +77,19 @@
 
 		{#if weatherClass === 'thunderstorm'}
 			<section class="stormcloud-wrapper">
-        <div class="cloud-layer fast">
+				<div class="cloud-layer">
           <div class="cloud stormcloud-1"></div>
-          <div class="cloud stormcloud-2"></div>
-          <div class="lightning flashit"></div>
-        </div>
-        			<div class="rain">
-				{#each Array(100) as _, i}
-					<div
-						class="raindrop"
-						style="left: {Math.random() * 100}vw; animation-delay: {Math.random() * 2}s;"
-					></div>
-				{/each}
-			</div>
+					<div class="cloud stormcloud-2"></div>
+					<div class="lightning flashit"></div>
+				</div>
+				<div class="rain">
+					{#each Array(100) as _, i}
+						<div
+							class="raindrop"
+							style="left: {Math.random() * 100}vw; animation-delay: {Math.random() * 2}s;"
+						></div>
+					{/each}
+				</div>
 			</section>
 		{/if}
 
@@ -149,13 +149,6 @@
 		position: relative;
 		overflow: hidden;
 	}
-
-.weather-container {
-	position: relative;
-	width: 100%;
-	height: 100%;
-	overflow: hidden;
-}
 
 	/* ☀️ Clear Weather */
 	.clear {
@@ -249,106 +242,101 @@
 		animation: storm-flash 1s step-start infinite;
 	}
 
-  .cloud-layer {
-	position: absolute;
-	top: 0;
-	left: 0;
-	width: 200%; /* Wider than viewport for scrolling effect */
-	height: 100%;
-	display: flex;
-	animation: move-clouds 60s linear infinite;
-}
-
-.cloud-layer.fast {
-	animation: move-clouds 90s linear infinite;
-	z-index: 0;
-	opacity: 0.75;
-}
-
-@keyframes move-clouds {
-	from {
-		transform: translateX(0);
+	.cloud-layer {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 200%; /* Wider than viewport for scrolling effect */
+		height: 100%;
+		display: flex;
+		animation: move-clouds 60s linear infinite;
 	}
-	to {
-		transform: translateX(-50%);
+
+	.cloud-layer {
+		animation: move-clouds 90s linear infinite;
+		z-index: 0;
+		opacity: 0.75;
 	}
-}
+
+	@keyframes move-clouds {
+		from {
+			transform: translateX(0);
+		}
+		to {
+			transform: translateX(-50%);
+		}
+	}
 
 	.stormcloud-wrapper {
-		position: fixed;
+		position: absolute;
 		top: 0;
 		left: 0;
 		width: 100%;
 		height: 100vh;
-		z-index: 1;
-    overflow: hidden;
+		z-index: 10;
+		overflow: hidden;
 	}
 
 	.stormcloud-1 {
-		background-image: url(./stormcloud-6.png);
-		width: 100%;
-		height: 100%;
-		background-position: center center;
-		background-origin: content-box;
-		background-size: cover;
-		background-attachment: fixed;
-		z-index: -2;
+		top: -200px;
+		left: -100px;
+		animation-delay: 0s;
+		background-image: url(./stormcloud-2.png);
+		background-position: top center;
+		background-size: 100% 100%;
+		opacity: 0.85;
 	}
 
-  .stormcloud-2 {
-	background-image: url(./stormcloud-7.png);
-	background-size: cover;
-	background-repeat: no-repeat;
-	width: 100vw;
-	height: 100%;
-}
+	.stormcloud-2 {
+		top: 200px;
+		left: -100px;
+		animation-delay: 0s;
+		background-image: url(./stormcloud-3.png);
+		background-position: top center;
+		background-size: 100% 100%;
+		opacity: 0.85;
+	}
 
 	/* ⚡ Lightning Flash */
-.lightning {
-	top: 0;
-	left: 0;
-	width: 100%;
-	height: 100%;
-	background: white;
-	filter: brightness(2) blur(1px);
-	mix-blend-mode: screen;
-	opacity: 0;
-	z-index: -1;
-}
-
-.stormcloud-1,
-.lightning {
-	width: 100vw;  /* Each takes one screen width */
-	background-position: center center;
-	background-size: cover;
-	background-attachment: fixed; /* Important: do NOT fix it */
-}
+	.lightning {
+		position: fixed;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		background: white;
+		filter: brightness(3) blur(2px);
+		mix-blend-mode: screen;
+		opacity: 0;
+		z-index: -1;
+	}
 
 	.flashit {
-		animation: flash ease-out 7s infinite;
+		animation: flash 6s ease-out infinite;
 		animation-delay: 2s;
 	}
 
-@keyframes flash {
-	0%, 90% {
-		opacity: 0;
+	@keyframes flash {
+		0%,
+		90% {
+			opacity: 0;
+		}
+		91% {
+			opacity: 0.2;
+		}
+		92% {
+			opacity: 0;
+		}
+		93% {
+			opacity: 0.15;
+		}
+		94% {
+			opacity: 0;
+		}
+		100% {
+			opacity: 0;
+		}
 	}
-	91% {
-		opacity: 0.2;
-	}
-	92% {
-		opacity: 0;
-	}
-	93% {
-		opacity: 0.15;
-	}
-	94% {
-		opacity: 0;
-	}
-	100% {
-		opacity: 0;
-	}
-}
 
 	/* 🌫️ Fog Effect */
 	.fog-layer {
