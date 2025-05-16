@@ -1,157 +1,84 @@
 <script>
-	import { HeroHeaders, Button } from '$lib/index.js';
+	import { HeroHeaders, IntroHeaders, Button } from '$lib/index.js';
 	let { data } = $props();
 </script>
 
 <HeroHeaders heroInfo={data.heroHeaders[3]} />
 
-<section>
-	<h2 class="Aankondiging-texts">Binnenkort vind je hier de actuele activiteiten (workshops).</h2>
+<section class="intro">
+	<IntroHeaders heroInfo={data.heroHeaders[3]} />
+</section>
+
+<section class="workshops">
+	<h2>ONZE WORKSHOPS</h2>
 	<ul>
-		<!-- laad de meest recente event in -->
-		<li class="recent-card">
+		{#each data.agendas.slice(0, 8) as agenda}
+		<li>
 			<picture>
-				<img src={data.agendas[0].cardImage.url} alt="" />
+				<img src={agenda.cardImage.url} alt="" />
 			</picture>
-			<h2>{data.agendas[0].event}</h2>
-			<div>
-				<address>{data.agendas[0].address}</address>
-				<span>{data.agendas[0].price}</span>
-				<time>{data.agendas[0].time}</time>
-				<time>{data.agendas[0].date}</time>
-				<Button href="/agenda" buttonText="Aanmelden" buttonClass="btn-green" svgFill="svg-beige" />
-			</div>
+			<h3>{agenda.event}</h3>
+			<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. At animi maxime quis voluptatibus esse, odit error minima. Nam delectus debitis, veritatis porro architecto culpa, a sint eos, minima deleniti cum.</p>
+			<time>{agenda.date}</time>
+			<time>{agenda.time}</time>
+			<address>{agenda.address}</address>
+			<Button href="/agenda" buttonText="Aanmelden" buttonClass="btn-green" svgFill="svg-beige" />
 		</li>
-
-		<li class="no-styling">
-			<p>{data.agendaTexts[0].agendaParagraph1}</p>
-			<details id="details">
-				<summary><span class="closed">Lees meer</span><span class="open">Lees minder</span></summary
-				>
-				<p>{data.agendaTexts[0].agendaParagraph2}</p>
-				<p>{data.agendaTexts[0].agendaParagraph3}</p>
-			</details>
-		</li>
-
-		<div class="rest-cards">
-			{#each data.agendas.slice(1, 5) as agenda}
-				<!-- laad de 4 meest recente events na de eerste in -->
-				<li>
-					<picture>
-						<img src={agenda.cardImage.url} alt="" />
-					</picture>
-					<h2>{agenda.event}</h2>
-					<div class="rest-card-text">
-						<address>{agenda.address}</address>
-						<span>{agenda.price}</span>
-						<time>{agenda.time}</time>
-						<time>{agenda.date}</time>
-						<Button
-							href="/contact"
-							buttonText="Aanmelden"
-							buttonClass="btn-brown"
-							svgFill="svg-beige"
-						/>
-					</div>
-				</li>
-			{/each}
-		</div>
+		{/each}
 	</ul>
 </section>
 
 <style>
-	section {
-		padding: 2rem;
+	/* nieuw ontwerp */
+	.workshops {
+		margin: 1.25em 1em 1em 1em;
 	}
 
-	.Aankondiging-texts {
-		font-family: var(--header-font);
-		font-size: clamp(1em, 10vw, 2em);
-		margin-top: 1em;
-		padding: 0em 2em 1em 1em;
+	h2 {
+		margin-bottom: 0.25em;
+		color: var(--main-color-brown);
 	}
 
 	ul {
 		display: flex;
 		flex-direction: column;
-		align-items: center;
 		gap: 1rem;
+		list-style: none;
+		color: var(--main-color-brown);
 	}
 
 	li {
-		border-radius: 1rem;
-		width: 90vw;
-		display: flex;
-		flex-direction: column;
-		position: relative;
-		align-content: flex-start;
-		overflow-x: hidden;
+		width: 18em;
+		height: 28em;
+		background-color: var(--main-color-beige);
+		border-radius: 1em;
+		padding: 1em;
 	}
 
-	li picture,
-	li img {
-		height: 100%;
+	img {
 		width: 100%;
-	}
-
-	li img {
+		max-height: 124px;
+		border-radius: 1em;
 		object-fit: cover;
-		border-radius: 1rem;
 	}
 
-	.recent-card {
-		height: 25rem;
-		color: var(--text-color-white);
-		justify-content: space-between;
-		position: relative;
+	h3 {
+		/* margin-top: 1em; */
+	}
+
+	p {
+		display: -webkit-box;
+		-webkit-line-clamp: 3;
+		-webkit-box-orient: vertical;
 		overflow: hidden;
+		margin-bottom: 2em;
 	}
 
-	.recent-card::after {
-		content: '';
-		position: absolute;
-		top: 0;
-		left: 0;
-		height: 100%;
-		width: 100%;
-		background: rgba(0, 0, 0, 0.45);
-		z-index: 1;
-		border-radius: 1rem;
+	time {
+		display: block;
 	}
 
-	.recent-card picture {
-		border-radius: 1rem;
-		position: absolute;
-	}
-
-	.recent-card img {
-		z-index: 1;
-		position: relative;
-	}
-
-	.recent-card h2 {
-		position: relative;
-		z-index: 2;
-		padding: 1rem 0 0 1rem;
-		font-size: 3rem;
-	}
-
-	.recent-card div {
-		position: relative;
-		z-index: 2;
-		display: flex;
-		flex-direction: column;
-		padding: 1rem;
-	}
-
-	div {
-		font-weight: 600;
-	}
-
-	.recent-card time {
-		padding-bottom: 1rem;
-	}
-
+	/* oud ontwerp 
 	.rest-cards {
 		grid-area: rest;
 		display: flex;
@@ -189,38 +116,7 @@
 		margin-bottom: 1rem;
 	}
 
-	.no-styling {
-		background-color: var(--main-color-beige);
-		border-radius: 1rem;
-		padding: 1rem;
-		width: 90vw;
-		overflow: hidden;
-		position: relative;
-	}
-
-	.no-styling p {
-		margin: 0 0 1rem 0;
-	}
-
-	details[open] summary .closed,
-	details:not([open]) summary .open {
-		display: none;
-	}
-
-	details[open] summary .open,
-	details:not([open]) summary .closed {
-		display: inline;
-	}
-
-	details {
-		margin: 0;
-		padding: 0;
-	}
-
-	summary {
-		color: var(--main-color-orange);
-		cursor: pointer;
-	}
+	
 
 	/* MEDIA QUERY TABLET = 768px */
 	@media (min-width: 48rem) {

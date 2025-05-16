@@ -3,35 +3,33 @@
 </script>
 
 <section>
+	<h2>ONZE <br /> TITEL</h2>
 	<p>{heroInfo.description}</p>
 </section>
 
 <style>
 	section {
 		display: flex;
-		gap: 0.5em;
-		justify-content: center;
-		position: relative;
-		overflow: hidden;
-		margin: -2em auto;
-		padding: 1.5em;
-		line-height: var(--line-height-paragraph);
+		flex-direction: column;
+		gap: 1em;
+		margin: 5em auto 0 auto;
+		max-width: 600px;
+		padding: 1em;
 		background-color: var(--main-color-beige);
-		font-weight: 500;
+		color: var(--main-color-green);
 		font-size: 1em;
+	} 
+
+	h2 {
+		margin-top: -1em; /* tijdelijk, nog kijken naar andere opties? */
 	}
 
-	section::before {
-		content: url('/assets/Circle-Orange.svg');
-		display: inline-flex;
-	}
-
-	section::after {
+	/* section::after {
 		opacity: 0.5;
 		position: absolute;
 		transform: rotate(-45deg);
 		content: url(/assets/leaf-orange.svg);
-	}
+	} */
 
 	/* Tablet - vanaf 48rem */
 	@media (min-width: 48rem) {
@@ -90,3 +88,5 @@
 		}
 	}
 </style>
+
+
