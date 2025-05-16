@@ -1,4 +1,5 @@
 <script>
+	import Cloud3D from './cloud3d.svelte';
 	import { onMount } from 'svelte';
 
 	let weather = null;
@@ -9,7 +10,7 @@
 
 	const API_KEY = import.meta.env.VITE_WEATHER_API_KEY;
 	const API_URL = 'https://api.weatherapi.com/v1/current.json';
-	const CITY = 'Sydney';
+	const CITY = 'Elmira';
 
 	function getWeatherClass(condition) {
 		const text = condition.toLowerCase();
@@ -64,8 +65,9 @@
 		{#if weatherClass === 'partly-cloudy' || weatherClass === 'default'}
 			<!-- Cloud Divs -->
 			<div class="cloud-wrapper">
-				<div class="cloud cloud-1"></div>
-				<div class="cloud cloud-2"></div>
+				<Cloud3D />
+				<!-- <div class="cloud cloud-1"></div>
+				<div class="cloud cloud-2"></div> -->
 			</div>
 		{/if}
 
@@ -78,8 +80,8 @@
 		{#if weatherClass === 'thunderstorm'}
 			<section class="stormcloud-wrapper">
 				<div class="cloud-layer">
-          <div class="cloud stormcloud-1"></div>
-					<div class="cloud stormcloud-2"></div>
+					
+
 					<div class="lightning flashit"></div>
 				</div>
 				<div class="rain">
@@ -242,15 +244,19 @@
 		animation: storm-flash 1s step-start infinite;
 	}
 
-	.cloud-layer {
-		position: absolute;
-		top: 0;
-		left: 0;
-		width: 200%; /* Wider than viewport for scrolling effect */
-		height: 100%;
-		display: flex;
-		animation: move-clouds 60s linear infinite;
-	}
+.cloud-layer {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100vh;
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+	overflow: hidden;
+	z-index: 10;
+	pointer-events: none;
+}
 
 	.cloud-layer {
 		animation: move-clouds 90s linear infinite;
@@ -284,7 +290,7 @@
 		background-image: url(./stormcloud-2.png);
 		background-position: top center;
 		background-size: 100% 100%;
-		opacity: 0.85;
+		opacity: 1.85;
 	}
 
 	.stormcloud-2 {
@@ -294,7 +300,7 @@
 		background-image: url(./stormcloud-3.png);
 		background-position: top center;
 		background-size: 100% 100%;
-		opacity: 0.85;
+		opacity: 1.85;
 	}
 
 	/* ⚡ Lightning Flash */
@@ -444,7 +450,7 @@
 		height: 100%;
 		overflow: hidden;
 		pointer-events: none;
-		z-index: 1;
+		z-index: -5;
 	}
 
 	.raindrop {
@@ -558,4 +564,154 @@
 	.weather-info {
 		z-index: 2;
 	}
+
+	@media (max-width: 768px) {
+	.weather-container {
+		padding: 1rem;
+	}
+
+	.sun {
+		width: 150px;
+		height: 150px;
+		top: 20px;
+		left: 20px;
+	}
+
+	.rays {
+		width: 300px;
+		height: 300px;
+		margin-left: -150px;
+		margin-top: -150px;
+	}
+
+	.cloud-wrapper {
+		height: 50vh;
+	}
+
+	.cloud {
+		height: 40%;
+		background-size: 150% auto;
+	}
+
+	.fog-layer,
+	.fog-layer-2 {
+		height: 50%;
+		background-size: 150% auto;
+	}
+
+	.raindrop,
+	.snowflake,
+	.hailstone {
+		transform: scale(0.6);
+	}
+
+	.snowflake:nth-child(odd) {
+		width: 6px;
+		height: 6px;
+	}
+
+	.snowflake:nth-child(even) {
+		width: 8px;
+		height: 8px;
+	}
+
+	.hailstone:nth-child(odd) {
+		width: 10px;
+		height: 10px;
+	}
+
+	.hailstone:nth-child(even) {
+		width: 15px;
+		height: 15px;
+	}
+
+	.weather-header {
+		font-size: 1rem;
+		text-align: center;
+	}
+
+	.lightning {
+		display: none; /* Optional: turn off lightning for performance */
+	}
+}
+
+@media (max-width: 480px) {
+	.weather-container {
+		padding: 0.5rem;
+	}
+
+	.sun {
+		width: 100px;
+		height: 100px;
+		top: 10px;
+		left: 10px;
+	}
+
+	.rays {
+		width: 200px;
+		height: 200px;
+		margin-left: -100px;
+		margin-top: -100px;
+	}
+
+	.cloud-wrapper {
+		height: 40vh;
+	}
+
+	.cloud {
+		height: 35%;
+		background-size: 200% auto;
+	}
+
+	.fog-layer,
+	.fog-layer-2 {
+		height: 40%;
+		background-size: 200% auto;
+	}
+
+	.raindrop,
+	.snowflake,
+	.hailstone {
+		transform: scale(0.4);
+	}
+
+	.snowflake:nth-child(odd) {
+		width: 5px;
+		height: 5px;
+	}
+
+	.snowflake:nth-child(even) {
+		width: 6px;
+		height: 6px;
+	}
+
+	.hailstone:nth-child(odd) {
+		width: 8px;
+		height: 8px;
+	}
+
+	.hailstone:nth-child(even) {
+		width: 12px;
+		height: 12px;
+	}
+
+	.weather-header {
+		font-size: 0.9rem;
+		padding: 0.5rem;
+	}
+
+	.lightning {
+		display: none;
+	}
+
+	.weather-info {
+		font-size: 0.85rem;
+	}
+
+	/* Optional: slow down animations on smaller devices */
+	.cloud-layer,
+	.cloud-wrapper {
+		animation-duration: 120s;
+	}
+}
 </style>
