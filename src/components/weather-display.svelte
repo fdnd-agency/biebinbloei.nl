@@ -14,7 +14,7 @@
 
 	const API_KEY = import.meta.env.VITE_WEATHER_API_KEY;
 	const API_URL = 'https://api.weatherapi.com/v1/current.json';
-	const CITY = 'Sydney';
+	const CITY = 'Amsterdam';
 
 	function getWeatherClass(condition) {
 		const text = condition.toLowerCase();
@@ -66,11 +66,12 @@
 			</defs>
 		</svg>
 
-		{#if weatherClass === 'partly-cloudy' || weatherClass === 'default'}
-			<div class="cloud-wrapper">
-				<Cloud3D />
-			</div>
-		{/if}
+{#if weatherClass === 'partly-cloudy' || weatherClass === 'default'}
+	<div class="cloud-wrapper">
+		<Cloud3D puffCount={25} style="top: 20%;" class="cloud-line-1" />
+		<Cloud3D puffCount={20} style="top: 30%;" class="cloud-line-2" />
+	</div>
+{/if}
 
 		{#if weatherClass === 'sunny'}
 			<div class="sun">
@@ -82,8 +83,9 @@
 	<div class="stormcloud-wrapper">
 		<Lightning3D />
 		<div class="cloud-wrapper">
-			<Cloud3D storm={true} scale={2} />
-			<Cloud3D storm={true} scale={.5} />
+<Cloud3D style="top: 15%;" puffCount={20} />
+<Cloud3D style="top: 25%;" puffCount={25} />
+<Cloud3D style="top: 35%;" puffCount={30} storm={true} />
 		</div>
 		<div class="lightning flashit"></div>
 		<div class="rain">
@@ -258,6 +260,14 @@
 	overflow: hidden;
 	z-index: 10;
 	pointer-events: none;
+}
+
+.cloud-line-1 {
+	animation-delay: 0s;
+}
+
+.cloud-line-2 {
+	animation-delay: 6s; 
 }
 
 	.cloud-layer {

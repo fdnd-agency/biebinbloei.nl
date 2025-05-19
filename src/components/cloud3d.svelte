@@ -1,48 +1,69 @@
 <script>
 	export let storm = false;
-	export let scale = 1.5; // default size multiplier
+	export let cloudOpacity = 0.4;
+	export let puffCount = 30;
+
+	let puffs = Array.from({ length: puffCount }, () => ({
+		top: 30 + Math.random() * 20,     // tighter vertical band: 30%–50%
+		left: Math.random() * 60,         // narrower horizontal spread: 0%–80%
+		scale: 0.8 + Math.random() * 0.3, // closer sizes: 0.8–1.1
+		opacity: 0.35 + Math.random() * 0.25
+	}));
 </script>
 
 
-<div
-	class="cloud3d {storm ? 'storm' : ''}"
-	style="transform: scale({scale});"
->
-	{#each Array(20) as _, i}
-		<div class="puff" style="--i: {i};"></div>
+
+<div class="cloud3d {storm ? 'storm' : ''}">
+	{#each puffs as puff}
+		<div
+			class="puff"
+			style="
+				top: {puff.top}%;
+				left: {puff.left}%;
+				transform: scale({puff.scale});
+				opacity: {puff.opacity};
+			"
+		></div>
 	{/each}
 </div>
 
 <style>
 .cloud3d {
-	position: relative;
-	width: 800px;
-	height: 800px;
-	perspective: 3200px; /* 4x original 800px */
-	transform-style: preserve-3d;
-	animation: stormDrift 40s linear infinite;
+	position: absolute;
+	top: 20%;
+	left: 0;
+	width: 100vw;
+	height: 500px;
+	animation: driftLine 60s linear infinite;
+	pointer-events: none;
 }
 
 .puff {
 	position: absolute;
-	width: 400px;
-	height: 400px;
-	background: radial-gradient(ellipse at center, rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0));
+	width: 200px;
+	height: 120px;
 	border-radius: 50%;
-	transform: rotateY(calc(var(--i) * 18deg)) translateZ(240px) translateX(80px);
-	transform-style: preserve-3d;
+	background: radial-gradient(
+		ellipse at center,
+		rgba(255, 255, 255, var(--cloud-opacity, 0.9)),
+		rgba(255, 255, 255, 0)
+	);
 }
 
 .cloud3d.storm .puff {
-	background: radial-gradient(ellipse at center, rgba(120, 120, 120, 0.9), rgba(0, 0, 0, 0));
+	background: radial-gradient(
+		ellipse at center,
+		rgba(120, 120, 120, var(--cloud-opacity, 0.9)),
+		rgba(0, 0, 0, 0)
+	);
 }
 
-@keyframes stormDrift {
+@keyframes driftLine {
 	from {
-		transform: translateX(-100vw) translateY(0);
+		transform: translateX(-100vw);
 	}
 	to {
-		transform: translateX(100vw) translateY(20px);
+		transform: translateX(100vw);
 	}
 }
 </style>
