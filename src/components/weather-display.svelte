@@ -1,6 +1,9 @@
 <script>
+	import { fade } from 'svelte/transition';
+
 	import Cloud3D from './cloud3d.svelte';
 	import Lightning3D from './lightning3d.svelte';
+	import FogLayer from './foglayer.svelte';
 	import { onMount } from 'svelte';
 
 	let weather = null;
@@ -11,7 +14,7 @@
 
 	const API_KEY = import.meta.env.VITE_WEATHER_API_KEY;
 	const API_URL = 'https://api.weatherapi.com/v1/current.json';
-	const CITY = 'Amsterdam';
+	const CITY = 'Sydney';
 
 	function getWeatherClass(condition) {
 		const text = condition.toLowerCase();
@@ -44,7 +47,7 @@
 {:else if error}
 	<p>{error}</p>
 {:else}
-	<div class={`weather-container ${weatherClass}`} style="--cloud: {cloud}%;">
+	<div transition:fade|local={{ duration: 600 }} class={`weather-container ${weatherClass}`} style="--cloud: {cloud}%;">
 		<svg xmlns="http://www.w3.org/2000/svg" version="1.1" style="position: absolute; height: 0;">
 			<defs>
 				<filter id="blurFilter">
@@ -79,7 +82,8 @@
 	<div class="stormcloud-wrapper">
 		<Lightning3D />
 		<div class="cloud-wrapper">
-			<Cloud3D storm={true} cloudiness={cloud} />
+			<Cloud3D storm={true} scale={2} />
+			<Cloud3D storm={true} scale={.5} />
 		</div>
 		<div class="lightning flashit"></div>
 		<div class="rain">
@@ -94,8 +98,8 @@
 {/if}
 
 		{#if weatherClass === 'fog'}
-			<div class="fog-layer"></div>
-			<div class="fog-layer fog-layer-2"></div>
+	<FogLayer layer={1} />
+	<FogLayer layer={2} />
 		{/if}
 
 		{#if weatherClass === 'rain'}
