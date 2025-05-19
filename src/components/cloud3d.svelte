@@ -1,8 +1,10 @@
 <script>
 	export let storm = false;
+	export let cloudiness = 50; // 0–100
 </script>
 
-<div class="cloud3d {storm ? 'storm' : ''}">
+
+<div class="cloud3d {storm ? 'storm' : ''}" style="--cloudiness: {cloudiness}">
 	{#each Array(20) as _, i}
 		<div class="puff" style="--i: {i};"></div>
 	{/each}
@@ -10,6 +12,8 @@
 
 <style>
 .cloud3d {
+	--cloudiness: 50;
+	opacity: calc(var(--cloudiness) / 100);
 	position: relative;
 	width: 200px;
 	height: 120px;
@@ -39,5 +43,18 @@
 	to {
 		transform: translateX(100vw);
 	}
+}
+
+@keyframes stormDrift {
+	from {
+		transform: translateX(-100vw) translateY(0);
+	}
+	to {
+		transform: translateX(100vw) translateY(20px);
+	}
+}
+
+.cloud3d.storm {
+	animation: stormDrift 40s linear infinite;
 }
 </style>

@@ -1,5 +1,6 @@
 <script>
 	import Cloud3D from './cloud3d.svelte';
+	import Lightning3D from './lightning3d.svelte';
 	import { onMount } from 'svelte';
 
 	let weather = null;
@@ -10,7 +11,7 @@
 
 	const API_KEY = import.meta.env.VITE_WEATHER_API_KEY;
 	const API_URL = 'https://api.weatherapi.com/v1/current.json';
-	const CITY = 'Elmira';
+	const CITY = 'Amsterdam';
 
 	function getWeatherClass(condition) {
 		const text = condition.toLowerCase();
@@ -63,11 +64,8 @@
 		</svg>
 
 		{#if weatherClass === 'partly-cloudy' || weatherClass === 'default'}
-			<!-- Cloud Divs -->
 			<div class="cloud-wrapper">
 				<Cloud3D />
-				<!-- <div class="cloud cloud-1"></div>
-				<div class="cloud cloud-2"></div> -->
 			</div>
 		{/if}
 
@@ -77,23 +75,23 @@
 			</div>
 		{/if}
 
-		{#if weatherClass === 'thunderstorm'}
-			<section class="stormcloud-wrapper">
-				<div class="cloud-layer">
-					
-
-					<div class="lightning flashit"></div>
-				</div>
-				<div class="rain">
-					{#each Array(100) as _, i}
-						<div
-							class="raindrop"
-							style="left: {Math.random() * 100}vw; animation-delay: {Math.random() * 2}s;"
-						></div>
-					{/each}
-				</div>
-			</section>
-		{/if}
+{#if weatherClass === 'thunderstorm'}
+	<div class="stormcloud-wrapper">
+		<Lightning3D />
+		<div class="cloud-wrapper">
+			<Cloud3D storm={true} cloudiness={cloud} />
+		</div>
+		<div class="lightning flashit"></div>
+		<div class="rain">
+			{#each Array(100) as _, i}
+				<div
+					class="raindrop"
+					style="left: {Math.random() * 100}vw; animation-delay: {Math.random() * 2}s;"
+				></div>
+			{/each}
+		</div>
+	</div>
+{/if}
 
 		{#if weatherClass === 'fog'}
 			<div class="fog-layer"></div>
@@ -343,6 +341,8 @@
 			opacity: 0;
 		}
 	}
+
+	
 
 	/* 🌫️ Fog Effect */
 	.fog-layer {
