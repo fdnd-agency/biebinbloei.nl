@@ -1,6 +1,6 @@
 <script>
 	export let storm = false;
-	export let cloudOpacity = 0.4;
+	export const cloudOpacity = 0.4;
 	export let puffCount = 30;
 
 	let puffs = Array.from({ length: puffCount }, () => ({
