@@ -13,7 +13,6 @@
 		flex-direction: column;
 		gap: 1em;
 		margin: 5em auto 0 auto;
-		max-width: 600px;
 		padding: 1em;
 		background-color: var(--main-color-beige);
 		color: var(--main-color-green);
@@ -21,7 +20,31 @@
 	} 
 
 	h2 {
-		margin-top: -1em; /* tijdelijk, nog kijken naar andere opties? */
+		margin-top: -1.1em; /* ... */
+	}
+
+	/* Tablet */
+	@media (min-width: 48rem) {
+		section {
+			gap: 1.25em;
+			padding: 1.25em;
+		}
+
+		p {
+			max-width: 400px;
+		}
+	}
+
+	/* Desktop */
+	@media (min-width: 74rem) {
+		section {
+			gap: 1.5em;
+			padding: 1.5em;
+		}
+
+		p {
+			max-width: 500px;
+		}
 	}
 
 	/* section::after {
@@ -32,7 +55,7 @@
 	} */
 
 	/* Tablet - vanaf 48rem */
-	@media (min-width: 48rem) {
+	/* @media (min-width: 48rem) {
 		section {
 			align-items: center;
 			width: 81vw;
@@ -53,10 +76,10 @@
 		p {
 			max-width: 65ch;
 		}
-	}
+	} */
 
 	/* Desktop - vanaf 74rem */
-	@media (min-width: 74rem) {
+	/* @media (min-width: 74rem) {
 		section {
 			width: 70vw;
 			padding: 1.5em;
@@ -67,10 +90,10 @@
 			top: -1em;
 			right: -4rem;
 		}
-	}
+	} */
 
 	/* Groot scherm - vanaf 100rem */
-	@media (min-width: 100rem) {
+	/* @media (min-width: 100rem) {
 		section {
 			width: 71vw;
 			line-height: var(--line-height-paragraph-big-screen);
@@ -86,7 +109,7 @@
 			max-width: 65ch;
 			font-size: 1.5em;
 		}
-	}
+	} */
 </style>
 
 

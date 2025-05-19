@@ -12,7 +12,7 @@
 <section class="workshops">
 	<h2>ONZE WORKSHOPS</h2>
 	<ul>
-		{#each data.agendas.slice(0, 8) as agenda}
+		{#each data.agendas as agenda}
 		<li>
 			<picture>
 				<img src={agenda.cardImage.url} alt="" />
@@ -22,7 +22,7 @@
 			<time>{agenda.date}</time>
 			<time>{agenda.time}</time>
 			<address>{agenda.address}</address>
-			<Button href="/agenda" buttonText="Aanmelden" buttonClass="btn-green" svgFill="svg-beige" />
+			<Button href="/agenda" buttonText="Aanmelden" buttonClass="btn-brown" svgFill="svg-beige" />
 		</li>
 		{/each}
 	</ul>
@@ -31,7 +31,7 @@
 <style>
 	/* nieuw ontwerp */
 	.workshops {
-		margin: 1.25em 1em 1em 1em;
+		margin: 3em 1em 1em 1em;
 	}
 
 	h2 {
@@ -48,11 +48,22 @@
 	}
 
 	li {
-		width: 18em;
+		position: relative;
 		height: 28em;
 		background-color: var(--main-color-beige);
 		border-radius: 1em;
 		padding: 1em;
+	}
+
+	li:nth-child(2) {
+		background-color: var(--main-color-brown);
+		color: var(--main-color-beige);
+	}
+
+	li:nth-child(4),
+	li:nth-child(6) {
+	background-color: var(--main-color-green);
+	color: var(--main-color-beige);
 	}
 
 	img {
@@ -60,10 +71,6 @@
 		max-height: 124px;
 		border-radius: 1em;
 		object-fit: cover;
-	}
-
-	h3 {
-		/* margin-top: 1em; */
 	}
 
 	p {
@@ -78,113 +85,51 @@
 		display: block;
 	}
 
-	/* oud ontwerp 
-	.rest-cards {
-		grid-area: rest;
-		display: flex;
-		flex-direction: column;
-		gap: 2rem;
-	}
-
-	.rest-cards > li {
+	:global(li:nth-child(2) .button-wrapper a) {
 		background-color: var(--main-color-beige);
-		height: 15rem;
-		flex-direction: column;
-		flex-wrap: wrap;
-		justify-content: center;
-		padding-right: 2rem;
+		color: var(--main-color-brown);
 	}
 
-	.rest-cards > li picture {
-		width: 40%;
-		padding: 1rem;
+	:global(
+	li:nth-child(4) .button-wrapper a,
+	li:nth-child(6) .button-wrapper a) {
+		background-color: var(--main-color-beige);
+		color: var(--main-color-green);
 	}
 
-	.rest-cards > li div {
-		display: flex;
-		margin-bottom: 1rem;
-		flex-direction: column;
-		align-items: flex-start;
+	:global(
+	li:nth-child(2) .button-wrapper a svg,
+	li:nth-child(4) .button-wrapper a svg,
+	li:nth-child(6) .button-wrapper a svg) {
+		fill: currentColor;
 	}
 
-	.rest-cards > li h2 {
-		margin-top: 1rem;
-		font-size: 1.1rem;
-	}
-
-	.rest-cards > li div time {
-		margin-bottom: 1rem;
-	}
-
-	
-
-	/* MEDIA QUERY TABLET = 768px */
+	/* Tablet */
 	@media (min-width: 48rem) {
-		ul {
-			gap: 2rem;
-		}
-
-		li {
-			width: 90vw;
-		}
-	}
-
-	/* MEDIA QUERY TABLET = 1100px */
-	@media (min-width: 68.75rem) {
-		.Aankondiging-texts {
-			font-size: clamp(2em, 10vw, 3em);
-		}
-
-		li {
-			width: auto;
-			margin: 0;
-		}
+		/* .intro,
+		.workshops {
+			margin: 1.25em;
+		} */
 
 		ul {
+			/* display: flex;
+			flex-direction: row;
+			flex-wrap: wrap; */
 			display: grid;
-			grid-template-columns: 2fr 2fr;
-			grid-template-rows: repeat(5, 1fr);
-			grid-template-areas:
-				'recent rest'
-				'recent rest'
-				'recent rest'
-				'text rest'
-				'text rest';
-			gap: 2rem;
-			width: 100%;
-			height: 100%;
-		}
-
-		.recent-card {
-			grid-area: recent;
-			height: 100%;
-		}
-
-		.no-styling {
-			grid-area: text;
-			height: 100%;
-			padding: 2rem 5rem;
-			width: auto;
-		}
-
-		.no-styling p,
-		.no-styling details {
-			z-index: 1;
-		}
-
-		.no-styling::before {
-			content: url(assets/leaf-light-green.svg);
-			position: absolute;
-			height: 75%;
-			width: 75%;
-			rotate: -25deg;
-			transform: translateX(10rem);
+			grid-template-columns: repeat(auto-fit, minmax(18em, 1fr));
+			gap: 1.25em;
 		}
 	}
 
-	@media (min-width: 100rem){
-		p{
-			font-size: 1.1em;
+	/* Desktop */
+	@media (min-width: 74rem) {
+		/* .intro,
+		.workshops {
+			margin: 1.5em;
 		}
+
+		ul {
+			gap: 1.5em;
+		} */
 	}
 </style>

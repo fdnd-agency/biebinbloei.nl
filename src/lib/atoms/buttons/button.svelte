@@ -26,20 +26,19 @@
 <style>
 	/* button style */
 	a {
-		--color-accent: var(--accent, --main-color-green);
-		--color-text: var(--text, --main-color-beige);
-
-		background: var(--color-accent);
+		background-color: var(--color-accent);
+		--color-accent: var(--accent, --main-color-brown);
 		color: var(--color-text);
+		--color-text: var(--text, --main-color-beige);
 		display: flex;
 		justify-content: center;
 		align-items: center;
-		border-radius: 2em;
-		padding: 0.4em 1em;
+		padding: 1em;
+		height: 3em;
+		border-radius: 0 1em 1em 1em;
+		font-size: 1.125em;
 		text-decoration: none;
-		font-size: 1em;
 		transition: ease-in 0.1s;
-		margin-top: 1em;
 		z-index: 2;
 	}
 
@@ -51,13 +50,16 @@
 	.button-wrapper {
 		display: flex;
 		flex-direction: column;
-		position: relative;
+		/* position: relative; */
 		align-items: center;
+		position: absolute;
+		right: 1em;
+		bottom: 1em;
 	}
 
 	img {
 		position: absolute;
-		top: -18px;
+		top: -35px;
 		left: 50%;
 		width: 3rem;
 		height: 3rem;
@@ -95,7 +97,7 @@
 	}
 
 	/* button hover */
-	a:hover {
+	/* a:hover {
 		cursor: pointer;
 		transform: scale(1.05);
 		--color-accent: var(--text-color-white);
@@ -104,6 +106,12 @@
 	a:hover .svg-beige,
 	a:hover .svg-green {
 		--svg-fill: var(--main-color-orange);
+	} */
+
+	a:hover {
+		cursor: pointer;
+		transform: scale(0.9);
+		background-color: #270e01;
 	}
 	/* svg style */
 	span {
