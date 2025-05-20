@@ -7,7 +7,7 @@
 	export let speed = 60;
 
 	let puffs = Array.from({ length: puffCount }, () => ({
-		top: -30 + Math.random() * 20, // 30%–50% vertical
+		top: -5 + Math.random() * 20, // 30%–50% vertical
 		left: storm ? 10 + Math.random() * 80 : Math.random() * 80, // more centered in storm
 		scale: 0.8 + Math.random() * 0.3,
 		width: 410 + Math.random() * 120,    // 220–340px
@@ -100,4 +100,5 @@
 		transform: translateX(100vw);
 	}
 }
+
 </style>

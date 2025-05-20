@@ -13,7 +13,7 @@
 
 	const API_KEY = import.meta.env.VITE_WEATHER_API_KEY;
 	const API_URL = 'https://api.weatherapi.com/v1/current.json';
-	const CITY = 'Clarksville, US';	
+	const CITY = 'Amsterdam';
 
 	function getWeatherClass(condition) {
 		const text = condition.toLowerCase();
@@ -39,6 +39,8 @@
 			loading = false;
 		}
 	});
+
+	
 </script>
 
 {#if loading}
@@ -46,36 +48,23 @@
 {:else if error}
 	<p>{error}</p>
 {:else}
-	<div transition:fade|local={{ duration: 600 }} class={`weather-container ${weatherClass}`} style="--cloud: {cloud}%;">
-		<svg xmlns="http://www.w3.org/2000/svg" version="1.1" style="position: absolute; height: 0;">
-			<defs>
-				<filter id="blurFilter">
-					<feGaussianBlur in="SourceGraphic" stdDeviation="5" result="blur" />
-					<feColorMatrix
-						in="blur"
-						mode="matrix"
-						values="1 0 0 0 0
-                      0 1 0 0 0
-                      0 0 1 0 0
-                      0 0 0 19 -9"
-						result="goo"
-					/>
-					<feComposite in="SourceGraphic" in2="goo" operator="atop" />
-				</filter>
-			</defs>
-		</svg>
+	<div
+		transition:fade|local={{ duration: 600 }}
+		class={`weather-container ${weatherClass}`}
+		style="--cloud: {cloud}%;"
+	>
+ 
 
-{#if weatherClass === 'partly-cloudy' || weatherClass === 'default'}
-	<div class="cloud-wrapper">
-		<Cloud3D puffCount={20} noAnimation={false} speed={90} style="top: 5%; opacity: 0.5;" />
-		<Cloud3D puffCount={30} noAnimation={false} speed={50} style="top: 10%; opacity: 0.6;" />
-		<Cloud3D puffCount={40} noAnimation={false} speed={40} style="top: 20%; opacity: 0.7;" />
-		<Cloud3D puffCount={20} noAnimation={false} speed={30} style="top: 35%; opacity: 0.5;" />
-		<Cloud3D puffCount={30} noAnimation={false} speed={20} style="top: 45%; opacity: 0.7;" />
-		<Cloud3D puffCount={40} noAnimation={false} speed={10} style="top: 55%; opacity: 0.9;" />
-	</div>
-	
-{/if}
+		{#if weatherClass === 'partly-cloudy' || weatherClass === 'default'}
+			<div class="cloud-wrapper">
+				<Cloud3D puffCount={20} noAnimation={false} speed={90} style="top: 5%; opacity: 0.5;" />
+				<Cloud3D puffCount={30} noAnimation={false} speed={50} style="top: 10%; opacity: 0.6;" />
+				<Cloud3D puffCount={40} noAnimation={false} speed={40} style="top: 20%; opacity: 0.7;" />
+				<Cloud3D puffCount={20} noAnimation={false} speed={30} style="top: 35%; opacity: 0.5;" />
+				<Cloud3D puffCount={30} noAnimation={false} speed={20} style="top: 45%; opacity: 0.7;" />
+				<Cloud3D puffCount={40} noAnimation={false} speed={10} style="top: 55%; opacity: 0.9;" />
+			</div>
+		{/if}
 
 		{#if weatherClass === 'sunny'}
 			<div class="sun">
@@ -88,11 +77,14 @@
 				<Cloud3D puffCount={45} storm={true} noAnimation={false} top="0" />
 				<Cloud3D puffCount={55} storm={true} noAnimation={false} top="0" />
 				<Cloud3D puffCount={65} storm={true} noAnimation={false} top="0" />
-				
+
 				<div class="lightning flashit"></div>
 				<div class="rain">
 					{#each Array(100) as _, i}
-						<div class="raindrop" style="left: {Math.random() * 100}vw; animation-delay: {Math.random() * 2}s;"></div>
+						<div
+							class="raindrop"
+							style="left: {Math.random() * 100}vw; animation-delay: {Math.random() * 2}s;"
+						></div>
 					{/each}
 				</div>
 			</div>
@@ -247,34 +239,6 @@
 		animation: storm-flash 1s step-start infinite;
 	}
 
-.cloud-layer {
-	position: absolute;
-	top: 0;
-	left: 0;
-	width: 100%;
-	height: 100vh;
-	display: flex;
-	justify-content: space-around;
-	align-items: center;
-	overflow: hidden;
-	z-index: -15;
-	pointer-events: none;
-}
-
-.cloud-line-1 {
-	animation-delay: 0s;
-}
-
-.cloud-line-2 {
-	animation-delay: 6s; 
-}
-
-	.cloud-layer {
-		animation: move-clouds 90s linear infinite;
-		z-index: 0;
-		opacity: 0.75;
-	}
-
 	@keyframes move-clouds {
 		from {
 			transform: translateX(0);
@@ -284,34 +248,14 @@
 		}
 	}
 
-.stormcloud-wrapper {
-	position: absolute;
-	top: 0;
-	left: 0;
-	width: 100vw;
-	height: 100vh;
-	z-index: 10;
-	overflow: hidden;
-}
-
-	.stormcloud-1 {
-		top: -200px;
-		left: -100px;
-		animation-delay: 0s;
-		background-image: url(./stormcloud-2.png);
-		background-position: top center;
-		background-size: 100% 100%;
-		opacity: 1.85;
-	}
-
-	.stormcloud-2 {
-		top: 200px;
-		left: -100px;
-		animation-delay: 0s;
-		background-image: url(./stormcloud-3.png);
-		background-position: top center;
-		background-size: 100% 100%;
-		opacity: 1.85;
+	.stormcloud-wrapper {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100vw;
+		height: 100vh;
+		z-index: 10;
+		overflow: hidden;
 	}
 
 	/* ⚡ Lightning Flash */
@@ -355,8 +299,6 @@
 		}
 	}
 
-	
-
 	/* 🌫️ Fog Effect */
 	.fog-layer {
 		position: absolute;
@@ -393,7 +335,6 @@
 		}
 	}
 
-
 	/* Partly Cloudy Animation */
 	.partly-cloudy {
 		animation: cloud-drift 10s ease-in-out infinite alternate;
@@ -416,35 +357,6 @@
 		height: 100vh;
 		animation: moveCloud 60s linear infinite;
 		z-index: 10;
-	}
-
-	.cloud {
-		background-repeat: no-repeat;
-		background-size: 100% auto;
-		background-position: top;
-		object-fit: cover;
-		width: 100%;
-		height: 50%;
-	}
-
-	.cloud-1 {
-		top: 0;
-		left: -100px;
-		animation-delay: 0s;
-		background-image: url(./small-cloud-1.png);
-		background-position: top center;
-		background-size: 100% 100%;
-		opacity: 0.85;
-	}
-
-	.cloud-2 {
-		top: -100px;
-		left: -150px;
-		animation-delay: 10s;
-		background-image: url(./small-cloud-2.png);
-		background-position: top center;
-		background-size: 100% 100%;
-		opacity: 0.75;
 	}
 
 	@keyframes moveCloud {
@@ -578,153 +490,169 @@
 		z-index: 2;
 	}
 
+	@media (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
+	.sun {
+		width: 15vw;
+		height: 15vw;
+		top: 0vh;
+		left: 1vh;
+	}
+
+	.rays {
+		width: 50vw;
+		height: 50vw;
+		margin-left: -25vw;
+		margin-top: -25vw;
+	}
+}
+
 	@media (max-width: 768px) {
-	.weather-container {
-		padding: 1rem;
+		.weather-container {
+			padding: 1rem;
+		}
+
+		.sun {
+			width: 150px;
+			height: 150px;
+			top: 20px;
+			left: 20px;
+		}
+
+		.rays {
+			width: 300px;
+			height: 300px;
+			margin-left: -150px;
+			margin-top: -150px;
+		}
+
+		.cloud-wrapper {
+			height: 50vh;
+		}
+
+		.cloud {
+			height: 40%;
+			background-size: 150% auto;
+		}
+
+		.fog-layer,
+		.fog-layer-2 {
+			height: 50%;
+			background-size: 150% auto;
+		}
+
+		.raindrop,
+		.snowflake,
+		.hailstone {
+			transform: scale(0.6);
+		}
+
+		.snowflake:nth-child(odd) {
+			width: 6px;
+			height: 6px;
+		}
+
+		.snowflake:nth-child(even) {
+			width: 8px;
+			height: 8px;
+		}
+
+		.hailstone:nth-child(odd) {
+			width: 10px;
+			height: 10px;
+		}
+
+		.hailstone:nth-child(even) {
+			width: 15px;
+			height: 15px;
+		}
+
+		.weather-header {
+			font-size: 1rem;
+			text-align: center;
+		}
+
+		.lightning {
+			display: none; /* Optional: turn off lightning for performance */
+		}
 	}
 
-	.sun {
-		width: 150px;
-		height: 150px;
-		top: 20px;
-		left: 20px;
-	}
+	@media (max-width: 480px) {
+		.weather-container {
+			padding: 0.5rem;
+		}
 
-	.rays {
-		width: 300px;
-		height: 300px;
-		margin-left: -150px;
-		margin-top: -150px;
-	}
+		.sun {
+			width: 100px;
+			height: 100px;
+			top: 10px;
+			left: 10px;
+		}
 
-	.cloud-wrapper {
-		height: 50vh;
-	}
+		.rays {
+			width: 200px;
+			height: 200px;
+			margin-left: -100px;
+			margin-top: -100px;
+		}
 
-	.cloud {
-		height: 40%;
-		background-size: 150% auto;
-	}
+		.cloud-wrapper {
+			height: 10vh;
+		}
 
-	.fog-layer,
-	.fog-layer-2 {
-		height: 50%;
-		background-size: 150% auto;
-	}
+		.cloud {
+			height: 35%;
+			background-size: 200% auto;
+		}
 
-	.raindrop,
-	.snowflake,
-	.hailstone {
-		transform: scale(0.6);
-	}
+		.fog-layer,
+		.fog-layer-2 {
+			height: 40%;
+			background-size: 200% auto;
+		}
 
-	.snowflake:nth-child(odd) {
-		width: 6px;
-		height: 6px;
-	}
+		.raindrop,
+		.snowflake,
+		.hailstone {
+			transform: scale(0.4);
+		}
 
-	.snowflake:nth-child(even) {
-		width: 8px;
-		height: 8px;
-	}
+		.snowflake:nth-child(odd) {
+			width: 5px;
+			height: 5px;
+		}
 
-	.hailstone:nth-child(odd) {
-		width: 10px;
-		height: 10px;
-	}
+		.snowflake:nth-child(even) {
+			width: 6px;
+			height: 6px;
+		}
 
-	.hailstone:nth-child(even) {
-		width: 15px;
-		height: 15px;
-	}
+		.hailstone:nth-child(odd) {
+			width: 8px;
+			height: 8px;
+		}
 
-	.weather-header {
-		font-size: 1rem;
-		text-align: center;
-	}
+		.hailstone:nth-child(even) {
+			width: 12px;
+			height: 12px;
+		}
 
-	.lightning {
-		display: none; /* Optional: turn off lightning for performance */
-	}
-}
+		.weather-header {
+			font-size: 0.9rem;
+			padding: 0.5rem;
+		}
 
-@media (max-width: 480px) {
-	.weather-container {
-		padding: 0.5rem;
-	}
+		.lightning {
+			display: none;
+		}
 
-	.sun {
-		width: 100px;
-		height: 100px;
-		top: 10px;
-		left: 10px;
-	}
+		.weather-info {
+			font-size: 0.85rem;
+		}
 
-	.rays {
-		width: 200px;
-		height: 200px;
-		margin-left: -100px;
-		margin-top: -100px;
+		/* Optional: slow down animations on smaller devices */
+		.cloud-layer,
+		.cloud-wrapper {
+			animation-duration: 120s;
+		}
 	}
-
-	.cloud-wrapper {
-		height: 40vh;
-	}
-
-	.cloud {
-		height: 35%;
-		background-size: 200% auto;
-	}
-
-	.fog-layer,
-	.fog-layer-2 {
-		height: 40%;
-		background-size: 200% auto;
-	}
-
-	.raindrop,
-	.snowflake,
-	.hailstone {
-		transform: scale(0.4);
-	}
-
-	.snowflake:nth-child(odd) {
-		width: 5px;
-		height: 5px;
-	}
-
-	.snowflake:nth-child(even) {
-		width: 6px;
-		height: 6px;
-	}
-
-	.hailstone:nth-child(odd) {
-		width: 8px;
-		height: 8px;
-	}
-
-	.hailstone:nth-child(even) {
-		width: 12px;
-		height: 12px;
-	}
-
-	.weather-header {
-		font-size: 0.9rem;
-		padding: 0.5rem;
-	}
-
-	.lightning {
-		display: none;
-	}
-
-	.weather-info {
-		font-size: 0.85rem;
-	}
-
-	/* Optional: slow down animations on smaller devices */
-	.cloud-layer,
-	.cloud-wrapper {
-		animation-duration: 120s;
-	}
-}
 </style>
