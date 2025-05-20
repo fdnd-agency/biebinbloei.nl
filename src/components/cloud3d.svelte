@@ -7,11 +7,11 @@
 	export let speed = 60;
 
 	let puffs = Array.from({ length: puffCount }, () => ({
-		top: 0 + Math.random() * 20, // 30%–50% vertical
+		top: -30 + Math.random() * 20, // 30%–50% vertical
 		left: storm ? 10 + Math.random() * 80 : Math.random() * 80, // more centered in storm
 		scale: 0.8 + Math.random() * 0.3,
-		width: 220 + Math.random() * 120,    // 220–340px
-		height: 280 + Math.random() * 150,   // 280–430px
+		width: 410 + Math.random() * 120,    // 220–340px
+		height: 470 + Math.random() * 150,   // 280–430px
 		rotation: Math.random() * 30 - 15,
 		opacity: 0.05 + Math.random() * 0.25,
 		blur: 3 + Math.random() * 2
@@ -19,7 +19,7 @@
 </script>
 
 <div
-	class="cloud3d {storm ? 'storm' : ''} {noAnimation ? 'no-animation' : ''}"
+	class="cloud3d {storm ? 'storm' : ''} {noAnimation ? 'drift' : ''}"
 	style="--speed: {speed}s; top: {top};"
 >
 	{#each puffs as puff}
@@ -44,16 +44,16 @@
 	top: 0;
 	left: 0;
 	width: 100vw;
-	height: 100%;
-	animation: driftLine 60s linear infinite;
+	height: 100vh;
 	pointer-events: none;
-	
+	animation: driftLine 60s linear infinite;
+	z-index: 5;
 }
 
 .cloud3d.storm {
-	animation: none; /* disable movement for storm clouds */
+	animation: driftLine 60s linear infinite;
 	display: flex;
-	flex-wrap: wrap;
+	flex-wrap: nowrap;
 	justify-content: center;
 	align-items: center;
 	width: 100vw;
@@ -64,8 +64,14 @@
 	pointer-events: none;
 }
 
+.cloud3d.drift {
+	animation: driftLine 60s linear infinite;
+}
+
 .puff {
 	position: absolute;
+	width: 400px; 
+	height: 500px;
 	border-radius: 50%;
 	background: radial-gradient(
 		ellipse at center,

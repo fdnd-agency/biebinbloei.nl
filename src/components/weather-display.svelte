@@ -13,7 +13,7 @@
 
 	const API_KEY = import.meta.env.VITE_WEATHER_API_KEY;
 	const API_URL = 'https://api.weatherapi.com/v1/current.json';
-	const CITY = 'Amsterdam';	
+	const CITY = 'Clarksville, US';	
 
 	function getWeatherClass(condition) {
 		const text = condition.toLowerCase();
@@ -85,10 +85,10 @@
 
 		{#if weatherClass === 'thunderstorm'}
 			<div class="stormcloud-wrapper">
-				<Cloud3D top="0%" storm={true} speed={50} />
-				<Cloud3D top="10%" storm={true} speed={60} />
-				<Cloud3D top="20%" storm={true} speed={70} />
-				<Lightning3D />
+				<Cloud3D puffCount={45} storm={true} noAnimation={false} top="0" />
+				<Cloud3D puffCount={55} storm={true} noAnimation={false} top="0" />
+				<Cloud3D puffCount={65} storm={true} noAnimation={false} top="0" />
+				
 				<div class="lightning flashit"></div>
 				<div class="rain">
 					{#each Array(100) as _, i}
@@ -284,15 +284,15 @@
 		}
 	}
 
-	.stormcloud-wrapper {
-		position: absolute;
-		top: 0;
-		left: 0;
-		width: 100%;
-		height: 100vh;
-		z-index: 10;
-		overflow: hidden;
-	}
+.stormcloud-wrapper {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100vw;
+	height: 100vh;
+	z-index: 10;
+	overflow: hidden;
+}
 
 	.stormcloud-1 {
 		top: -200px;
@@ -458,13 +458,12 @@
 
 	.rain {
 		position: absolute;
-		top: 0;
 		left: 0;
 		width: 100%;
 		height: 100%;
 		overflow: hidden;
 		pointer-events: none;
-		z-index: -5;
+		z-index: -55;
 	}
 
 	.raindrop {
