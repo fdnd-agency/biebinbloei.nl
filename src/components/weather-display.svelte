@@ -3,7 +3,6 @@
 
 	import Cloud3D from './cloud3d.svelte';
 	import Lightning3D from './lightning3d.svelte';
-	import FogLayer from './foglayer.svelte';
 	import { onMount } from 'svelte';
 
 	let weather = null;
@@ -14,16 +13,16 @@
 
 	const API_KEY = import.meta.env.VITE_WEATHER_API_KEY;
 	const API_URL = 'https://api.weatherapi.com/v1/current.json';
-	const CITY = 'Belgrade';
+	const CITY = 'Amsterdam';	
 
 	function getWeatherClass(condition) {
 		const text = condition.toLowerCase();
-		if (text.includes('rain')) return 'thunderstorm';
+		if (text.includes('thunder')) return 'thunderstorm';
 		if (text.includes('partly') || text.includes('cloudy')) return 'partly-cloudy';
 		if (text.includes('sunny')) return 'sunny';
 		if (text.includes('clear')) return 'sunny';
 		if (text.includes('fog') || text.includes('mist') || text.includes('overcast')) return 'fog';
-		// if (text.includes('rain')) return 'rain';
+		if (text.includes('rain')) return 'rain';
 		return 'default';
 	}
 
@@ -68,9 +67,14 @@
 
 {#if weatherClass === 'partly-cloudy' || weatherClass === 'default'}
 	<div class="cloud-wrapper">
-		<Cloud3D puffCount={25} style="top: 20%;" class="cloud-line-1" />
-		<Cloud3D puffCount={20} style="top: 30%;" class="cloud-line-2" />
+		<Cloud3D puffCount={20} noAnimation={false} speed={90} style="top: 5%; opacity: 0.5;" />
+		<Cloud3D puffCount={30} noAnimation={false} speed={50} style="top: 10%; opacity: 0.6;" />
+		<Cloud3D puffCount={40} noAnimation={false} speed={40} style="top: 20%; opacity: 0.7;" />
+		<Cloud3D puffCount={20} noAnimation={false} speed={30} style="top: 35%; opacity: 0.5;" />
+		<Cloud3D puffCount={30} noAnimation={false} speed={20} style="top: 45%; opacity: 0.7;" />
+		<Cloud3D puffCount={40} noAnimation={false} speed={10} style="top: 55%; opacity: 0.9;" />
 	</div>
+	
 {/if}
 
 		{#if weatherClass === 'sunny'}
@@ -79,29 +83,24 @@
 			</div>
 		{/if}
 
-{#if weatherClass === 'thunderstorm'}
-	<div class="stormcloud-wrapper">
-		<Lightning3D />
-		<div class="cloud-wrapper">
-<Cloud3D style="top: -15%;" puffCount={20} />
-<Cloud3D style="top: -25%;" puffCount={25} />
-<Cloud3D style="top: -35%;" puffCount={30} storm={true} />
-		</div>
-		<div class="lightning flashit"></div>
-		<div class="rain">
-			{#each Array(100) as _, i}
-				<div
-					class="raindrop"
-					style="left: {Math.random() * 100}vw; animation-delay: {Math.random() * 2}s;"
-				></div>
-			{/each}
-		</div>
-	</div>
-{/if}
+		{#if weatherClass === 'thunderstorm'}
+			<div class="stormcloud-wrapper">
+				<Cloud3D top="0%" storm={true} speed={50} />
+				<Cloud3D top="10%" storm={true} speed={60} />
+				<Cloud3D top="20%" storm={true} speed={70} />
+				<Lightning3D />
+				<div class="lightning flashit"></div>
+				<div class="rain">
+					{#each Array(100) as _, i}
+						<div class="raindrop" style="left: {Math.random() * 100}vw; animation-delay: {Math.random() * 2}s;"></div>
+					{/each}
+				</div>
+			</div>
+		{/if}
 
 		{#if weatherClass === 'fog'}
-	<FogLayer layer={1} />
-	<FogLayer layer={2} />
+			<div class="fog-layer"></div>
+			<div class="fog-layer fog-layer-2"></div>
 		{/if}
 
 		{#if weatherClass === 'rain'}
@@ -258,7 +257,7 @@
 	justify-content: space-around;
 	align-items: center;
 	overflow: hidden;
-	z-index: 10;
+	z-index: -15;
 	pointer-events: none;
 }
 
@@ -393,6 +392,7 @@
 			left: 100%;
 		}
 	}
+
 
 	/* Partly Cloudy Animation */
 	.partly-cloudy {
