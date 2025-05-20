@@ -6,6 +6,7 @@ export async function load() {
 		query MyQuery {
 			heroHeaders {
 				heading1
+				title
 				description
 				image {
 					url

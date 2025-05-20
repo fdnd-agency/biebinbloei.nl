@@ -111,8 +111,9 @@
 	a:hover {
 		cursor: pointer;
 		transform: scale(0.9);
-		background-color: #270e01;
+		/* background-color: #270e01; */
 	}
+	
 	/* svg style */
 	span {
 		display: flex;

@@ -6,6 +6,7 @@ export async function load() {
 		query MyQuery {
 			heroHeaders {
 				heading1
+				title
 				description
 				image {
 					url
@@ -16,6 +17,7 @@ export async function load() {
 					url
 				}
 				date
+				description
 				event
 				time
 				price
@@ -33,6 +35,5 @@ export async function load() {
 			}
 		}
 	`;
-
 	return await hygraph.request(query);
 }

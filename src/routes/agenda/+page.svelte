@@ -15,21 +15,22 @@
 		{#each data.agendas as agenda}
 		<li>
 			<picture>
-				<img src={agenda.cardImage.url} alt="" />
+				<img src={agenda.cardImage.url} alt="" width="100" loading="lazy" />
 			</picture>
 			<h3>{agenda.event}</h3>
-			<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. At animi maxime quis voluptatibus esse, odit error minima. Nam delectus debitis, veritatis porro architecto culpa, a sint eos, minima deleniti cum.</p>
+			<p>{agenda.description}</p>
 			<time>{agenda.date}</time>
 			<time>{agenda.time}</time>
+			<time>{agenda.startTime}</time>
+			<time>{agenda.endTime}</time>
 			<address>{agenda.address}</address>
-			<Button href="/agenda" buttonText="Aanmelden" buttonClass="btn-brown" svgFill="svg-beige" />
+			<Button href="/contact" buttonText="Aanmelden" buttonClass="btn-brown" svgFill="svg-beige" />
 		</li>
 		{/each}
 	</ul>
 </section>
 
 <style>
-	/* nieuw ontwerp */
 	.workshops {
 		margin: 3em 1em 1em 1em;
 	}
@@ -49,7 +50,7 @@
 
 	li {
 		position: relative;
-		height: 28em;
+		height: 30em;
 		background-color: var(--main-color-beige);
 		border-radius: 1em;
 		padding: 1em;
@@ -71,6 +72,13 @@
 		max-height: 124px;
 		border-radius: 1em;
 		object-fit: cover;
+	}
+
+	h3 {
+		display: -webkit-box;
+		-webkit-line-clamp: 2;
+		-webkit-box-orient: vertical;
+		overflow: hidden;
 	}
 
 	p {
@@ -106,15 +114,11 @@
 
 	/* Tablet */
 	@media (min-width: 48rem) {
-		/* .intro,
 		.workshops {
 			margin: 1.25em;
-		} */
+		}
 
 		ul {
-			/* display: flex;
-			flex-direction: row;
-			flex-wrap: wrap; */
 			display: grid;
 			grid-template-columns: repeat(auto-fit, minmax(18em, 1fr));
 			gap: 1.25em;
@@ -123,13 +127,12 @@
 
 	/* Desktop */
 	@media (min-width: 74rem) {
-		/* .intro,
 		.workshops {
 			margin: 1.5em;
 		}
 
 		ul {
 			gap: 1.5em;
-		} */
+		}
 	}
 </style>
