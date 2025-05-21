@@ -26,7 +26,6 @@
 	"type": "module",
 	"dependencies": {
 		"gsap": "^3.12.5",
-		"js": "^0.1.0",
-		"three": "^0.176.0"
+		"js": "^0.1.0"
 	}
 }
