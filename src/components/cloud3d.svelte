@@ -48,7 +48,7 @@
 	pointer-events: none;
 	animation: driftLine 60s linear infinite;
 	z-index: 5;
-	opacity: 0.35;
+	opacity: 0.65;
 }
 
 .cloud3d.storm {

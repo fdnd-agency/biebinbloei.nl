@@ -39,8 +39,6 @@
 			loading = false;
 		}
 	});
-
-	
 </script>
 
 {#if loading}
@@ -53,8 +51,6 @@
 		class={`weather-container ${weatherClass}`}
 		style="--cloud: {cloud}%;"
 	>
- 
-
 		{#if weatherClass === 'partly-cloudy' || weatherClass === 'default'}
 			<div class="cloud-wrapper">
 				<Cloud3D puffCount={20} noAnimation={false} speed={90} style="top: 5%; opacity: 0.5;" />
@@ -91,8 +87,11 @@
 		{/if}
 
 		{#if weatherClass === 'fog'}
-			<div class="fog-layer"></div>
-			<div class="fog-layer fog-layer-2"></div>
+			<div class="fogcloud-wrapper">
+				<Cloud3D puffCount={25} speed={20} style="bottom: 0; opacity: 0.3;" />
+				<Cloud3D puffCount={35} speed={15} style="bottom: 10%; opacity: 0.4;" />
+				<Cloud3D puffCount={40} speed={10} style="bottom: 20%; opacity: 0.5;" />
+			</div>
 		{/if}
 
 		{#if weatherClass === 'rain'}
@@ -300,30 +299,17 @@
 	}
 
 	/* 🌫️ Fog Effect */
-	.fog-layer {
+	.fogcloud-wrapper {
 		position: absolute;
 		bottom: 0;
-		left: -100%;
-		width: 200%;
-		height: 70%;
-		background-image: url(./small-cloud-3.png);
-		animation: fog-move 20s linear infinite;
-		background-repeat: no-repeat;
-		background-size: 100% auto;
-		background-position: top;
-		object-fit: cover;
-		z-index: 1;
-		opacity: 0.45;
-	}
-
-	.fog-layer-2 {
-		animation-delay: 10s;
-		background-image: url(./small-cloud-1.png);
-		background-repeat: no-repeat;
-		background-size: 100% auto;
-		background-position: top;
-		object-fit: cover;
-		opacity: 0.35;
+		left: 0;
+		width: 100%;
+		height: 50vh;
+		display: flex;
+		flex-direction: column;
+		justify-content: flex-end;
+		pointer-events: none;
+		z-index: 5;
 	}
 
 	@keyframes fog-move {
@@ -492,44 +478,43 @@
 
 	/* Reduced motion */
 	@media (prefers-reduced-motion: reduce) {
-	*,
-	*::before,
-	*::after {
-		animation-duration: 0.001s !important;
-		animation-iteration-count: 1 !important;
-		transition-duration: 0.001s !important;
-		scroll-behavior: auto !important;
-	}
+		*,
+		*::before,
+		*::after {
+			animation-duration: 0.001s !important;
+			animation-iteration-count: 1 !important;
+			transition-duration: 0.001s !important;
+			scroll-behavior: auto !important;
+		}
 
-	.rays,
-	.sun,
-	.cloud-wrapper,
-	.fog-layer,
-	.fog-layer-2,
-	.raindrop,
-	.snowflake,
-	.hailstone,
-	.lightning {
-		animation: none !important;
+		.rays,
+		.sun,
+		.cloud-wrapper,
+		.fog-layer,
+		.fog-layer-2,
+		.raindrop,
+		.snowflake,
+		.hailstone,
+		.lightning {
+			animation: none !important;
+		}
 	}
-}
-
 
 	@media (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
-	.sun {
-		width: 15vw;
-		height: 15vw;
-		top: 0vh;
-		left: 1vh;
-	}
+		.sun {
+			width: 15vw;
+			height: 15vw;
+			top: 0vh;
+			left: 1vh;
+		}
 
-	.rays {
-		width: 50vw;
-		height: 50vw;
-		margin-left: -25vw;
-		margin-top: -25vw;
+		.rays {
+			width: 50vw;
+			height: 50vw;
+			margin-left: -25vw;
+			margin-top: -25vw;
+		}
 	}
-}
 
 	@media (max-width: 768px) {
 		.weather-container {
