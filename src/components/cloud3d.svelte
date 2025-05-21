@@ -7,7 +7,7 @@
 	export let speed = 60;
 
 	let puffs = Array.from({ length: puffCount }, () => ({
-		top: -5 + Math.random() * 20, // 30%–50% vertical
+		top: -25 + Math.random() * 20, // 30%–50% vertical
 		left: storm ? 10 + Math.random() * 80 : Math.random() * 80, // more centered in storm
 		scale: 0.8 + Math.random() * 0.3,
 		width: 410 + Math.random() * 120,    // 220–340px
@@ -48,6 +48,7 @@
 	pointer-events: none;
 	animation: driftLine 60s linear infinite;
 	z-index: 5;
+	opacity: 0.35;
 }
 
 .cloud3d.storm {
@@ -62,6 +63,8 @@
 	top: 0;
 	left: 0;
 	pointer-events: none;
+	opacity: 1;
+	z-index: 5;
 }
 
 .cloud3d.drift {
@@ -98,6 +101,18 @@
 	}
 	to {
 		transform: translateX(100vw);
+	}
+}
+
+@media (max-width: 768px) {
+	.cloud3d.storm, .cloud3d {
+		opacity: 0.45;
+	}
+}
+
+@media (max-width: 480px) {
+	.cloud3d.storm, .cloud3d {
+		opacity: 0.45;
 	}
 }
 

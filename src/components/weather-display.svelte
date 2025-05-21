@@ -375,7 +375,7 @@
 		height: 100%;
 		overflow: hidden;
 		pointer-events: none;
-		z-index: -55;
+		z-index: 5;
 	}
 
 	.raindrop {
@@ -489,6 +489,31 @@
 	.weather-info {
 		z-index: 2;
 	}
+
+	/* Reduced motion */
+	@media (prefers-reduced-motion: reduce) {
+	*,
+	*::before,
+	*::after {
+		animation-duration: 0.001s !important;
+		animation-iteration-count: 1 !important;
+		transition-duration: 0.001s !important;
+		scroll-behavior: auto !important;
+	}
+
+	.rays,
+	.sun,
+	.cloud-wrapper,
+	.fog-layer,
+	.fog-layer-2,
+	.raindrop,
+	.snowflake,
+	.hailstone,
+	.lightning {
+		animation: none !important;
+	}
+}
+
 
 	@media (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
 	.sun {
