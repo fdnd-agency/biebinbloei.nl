@@ -46,13 +46,13 @@
 	width: 100vw;
 	height: 100vh;
 	pointer-events: none;
-	animation: driftLine 60s linear infinite;
+	animation: driftLine 50s linear infinite;
 	z-index: 5;
 	opacity: 0.65;
 }
 
 .cloud3d.storm {
-	animation: driftLine 60s linear infinite;
+	animation: driftLine 50s linear infinite;
 	display: flex;
 	flex-wrap: nowrap;
 	justify-content: center;
