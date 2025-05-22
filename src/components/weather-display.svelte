@@ -1,8 +1,6 @@
 <script>
 	import { fade } from 'svelte/transition';
-
 	import Cloud3D from './cloud3d.svelte';
-	import Lightning3D from './lightning3d.svelte';
 	import { onMount } from 'svelte';
 
 	let weather = null;
@@ -10,10 +8,11 @@
 	let error = null;
 	let cloud = 65;
 	let weatherClass = 'default';
+	let dayNightClass = 'day';
 
 	const API_KEY = import.meta.env.VITE_WEATHER_API_KEY;
 	const API_URL = 'https://api.weatherapi.com/v1/current.json';
-	const CITY = 'Amsterdam';
+	const FALLBACK_CITY = 'Amsterdam';
 
 	function getWeatherClass(condition) {
 		const text = condition.toLowerCase();
@@ -26,17 +25,32 @@
 		return 'default';
 	}
 
-	onMount(async () => {
+	async function fetchWeather(query) {
 		try {
-			const res = await fetch(`${API_URL}?key=${API_KEY}&q=${CITY}&aqi=yes`);
+			const res = await fetch(`${API_URL}?key=${API_KEY}&q=${query}&aqi=yes`);
 			const data = await res.json();
 			weather = data;
 			cloud = data.current.cloud;
 			weatherClass = getWeatherClass(weather.current.condition.text);
+			dayNightClass = weather.current.is_day ? 'day' : 'night';
 		} catch (err) {
 			error = 'Failed to fetch weather data';
 		} finally {
 			loading = false;
+		}
+	}
+
+	onMount(() => {
+		if (navigator.geolocation) {
+			navigator.geolocation.getCurrentPosition(
+				(pos) => {
+					const coords = `${pos.coords.latitude},${pos.coords.longitude}`;
+					fetchWeather(coords);
+				},
+				() => fetchWeather(FALLBACK_CITY) // fallback if permission denied
+			);
+		} else {
+			fetchWeather(FALLBACK_CITY); // fallback if geolocation unsupported
 		}
 	});
 </script>
@@ -48,7 +62,7 @@
 {:else}
 	<div
 		transition:fade|local={{ duration: 600 }}
-		class={`weather-container ${weatherClass}`}
+		class={`weather-container ${weatherClass} ${dayNightClass}`}
 		style="--cloud: {cloud}%;"
 	>
 		{#if weatherClass === 'partly-cloudy' || weatherClass === 'default'}
@@ -134,6 +148,7 @@
 		background-size: cover;
 		background-position: center;
 		background-repeat: no-repeat;
+		backdrop-filter: blur(4px);
 		height: 100%;
 		width: 100%;
 		transition: background-image 0.8s ease;
@@ -144,6 +159,15 @@
 		color: white;
 		position: relative;
 		overflow: hidden;
+	}
+
+	.day {
+		background: linear-gradient(to top, rgba(255, 255, 224, 0.15), rgba(255, 255, 255, 0));
+	}
+
+	.night {
+		background: linear-gradient(to top, rgba(10, 10, 30, 0.3), rgba(0, 0, 0, 0));
+		color: #ddd;
 	}
 
 	/* ☀️ Clear Weather */
