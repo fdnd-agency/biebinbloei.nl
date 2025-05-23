@@ -39,7 +39,7 @@
 
 <style>
 	.workshops {
-		margin: 1em 1em 1em 1em;
+		margin: 1em;
 	}
 
 	h2 {
@@ -133,7 +133,7 @@
 	/* Tablet */
 	@media (min-width: 48rem) {
 		.workshops {
-			margin: 1.25em 1.25em 1.25em 1.25em;
+			margin: 1.25em;
 		}
 
 		ul {
@@ -146,7 +146,7 @@
 	/* Desktop */
 	@media (min-width: 74rem) {
 		.workshops {
-			margin: 1.5em 1.5em 1.5em 1.5em;
+			margin: 1.5em;
 		}
 
 		ul {
