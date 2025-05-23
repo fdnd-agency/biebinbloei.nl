@@ -10,34 +10,47 @@
 </section>
 
 <section class="workshops">
-	<h2>ONZE WORKSHOPS</h2>
+	<h2>
+		<span class="outline">{data.sectionInfos[1].title.split(' ')[0]}</span><br />
+		{data.sectionInfos[1].title.split(' ')[1]}
+	</h2>
+	{#if data.agendas && data.agendas.length > 0}
 	<ul>
 		{#each data.agendas as agenda}
 		<li>
 			<picture>
-				<img src={agenda.cardImage.url} alt="" width="100" loading="lazy" />
+				<source srcset="{agenda.cardImage.url}?format=avif" type="image/avif" />
+  				<source srcset="{agenda.cardImage.url}?format=webp" type="image/webp" />
+				<img src={agenda.cardImage.url} alt="" width="230" height="124" loading="lazy" />
 			</picture>
 			<h3>{agenda.event}</h3>
 			<p>{agenda.description}</p>
 			<time>{agenda.date}</time>
 			<time>{agenda.time}</time>
-			<time>{agenda.startTime}</time>
-			<time>{agenda.endTime}</time>
 			<address>{agenda.address}</address>
 			<Button href="/contact" buttonText="Aanmelden" buttonClass="btn-brown" svgFill="svg-beige" />
 		</li>
 		{/each}
 	</ul>
+	{:else}
+	<p>Er zijn momenteel geen workshops beschikbaar.</p>
+	{/if}
 </section>
 
 <style>
 	.workshops {
-		margin: 3em 1em 1em 1em;
+		margin: 1em 1em 1em 1em;
 	}
 
 	h2 {
 		margin-bottom: 0.25em;
+		text-transform: uppercase;
 		color: var(--main-color-brown);
+	}
+
+	.outline {
+		color: transparent;
+		-webkit-text-stroke: 1.5px var(--main-color-brown);
 	}
 
 	ul {
@@ -93,6 +106,11 @@
 		display: block;
 	}
 
+	time,
+	address {
+		font-weight: bold;
+	}
+
 	:global(li:nth-child(2) .button-wrapper a) {
 		background-color: var(--main-color-beige);
 		color: var(--main-color-brown);
@@ -115,7 +133,7 @@
 	/* Tablet */
 	@media (min-width: 48rem) {
 		.workshops {
-			margin: 1.25em;
+			margin: 1.25em 1.25em 1.25em 1.25em;
 		}
 
 		ul {
@@ -128,7 +146,7 @@
 	/* Desktop */
 	@media (min-width: 74rem) {
 		.workshops {
-			margin: 1.5em;
+			margin: 1.5em 1.5em 1.5em 1.5em;
 		}
 
 		ul {

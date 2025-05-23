@@ -5,7 +5,7 @@
 <header>
 	<div class="overlay"></div>
 	<h1>{heroInfo.heading1}</h1>
-	<img src={heroInfo.image.url} alt="stekjes" />
+	<img src={heroInfo.image.url} alt="" width="1280" height="840"/>
 </header>
 
 <style>

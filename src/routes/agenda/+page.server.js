@@ -33,6 +33,9 @@ export async function load() {
 				agendaParagraph2
 				agendaParagraph3
 			}
+			sectionInfos {
+				title
+			}
 		}
 	`;
 	return await hygraph.request(query);

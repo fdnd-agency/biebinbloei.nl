@@ -13,11 +13,14 @@
 	<a {href} class={buttonClass}>
 		{buttonText}
 		<span>
-			<svg class={svgFill} xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 44 47">
+			<!-- <svg class={svgFill} xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 44 47">
 				<path
 					d="M40.492 18.788 8.942 1.034C4.944-1.218 0 1.673 0 6.262v34.704c0 4.537 4.842 7.433 8.84 5.285l31.549-16.948c4.167-2.239 4.225-8.195.103-10.515Z"
 					fill={svgFill}
 				/>
+			</svg> -->
+			<svg width="25" height="25" viewBox="0 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+				<path d="M17.154 11.4385L11.554 5.83848L12.979 4.43848L20.979 12.4385L12.979 20.4385L11.554 19.0385L17.154 13.4385L4.979 13.4385L4.979 11.4385L17.154 11.4385Z" fill="currentColor"/>
 			</svg>
 		</span>
 	</a>
@@ -42,7 +45,7 @@
 		z-index: 2;
 	}
 
-	a:focus-visible {
+	.button-wrapper a:focus-visible {
 		background: var(--main-color-orange);
 		color: var(--text-color-black);
 	}
@@ -115,18 +118,20 @@
 	}
 	
 	/* svg style */
+	
 	span {
 		display: flex;
 		align-items: center;
 		justify-content: center;
-		padding: 0 0 0.05em 0.7em;
+		padding: 0 0 0 0.5em;
 	}
 	svg {
 		--svg-fill: var(--main-color-beige);
 		fill: var(--svg-fill);
-		width: 16px;
-		height: 18px;
+		width: 24px;
+		height: 24px;
 	}
+
 	.svg-beige {
 		--svg-fill: var(--main-color-beige);
 	}
