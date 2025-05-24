@@ -86,6 +86,11 @@
 		--color-text: var(--card-color-green);
 	}
 
+	.btn-beige-brown {
+		--color-accent: var(--main-color-beige); 
+		--color-text: var(--main-color-brown);
+		}
+
 	.btn-beige-agenda {
 		--color-accent: var(--main-color-beige);
 		--color-text: var(--card-color-green);
