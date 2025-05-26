@@ -4,8 +4,6 @@
 	let { viewPageData } = $props();
 </script>
 
-<h2>{viewPageData.titel}</h2>
-
 <section>
 	{#each viewPageData.product as item}
 		<article>
@@ -58,13 +56,6 @@
 		border: 8px solid var(--card-color-orange);
 	}
 
-	h2 {
-		font-family: var(--header-font);
-		font-size: clamp(2em, 10vw, 3em);
-		line-height: 1.25;
-		padding: 2em 1em 0 1em;
-	}
-
 	img {
 		position: absolute;
 		left: 0;
@@ -72,7 +63,7 @@
 		width: 100%;
 		height: 100%;
 		object-fit: cover;
-		transition: ease-out .35s;
+		transition: ease-out 0.35s;
 	}
 
 	h3 {

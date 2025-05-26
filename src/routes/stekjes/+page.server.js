@@ -19,10 +19,17 @@ export async function load() {
 					}
 				}
 			}
+			
+			sectionInfos {
+				createdAt
+				id
+				title
+				description
+			}
 
 			overviewPages {
 				titel
-				product {
+				product(first: 100) {
 					... on Stekje {
 						id
 						aanmelddatum
@@ -44,6 +51,7 @@ export async function load() {
 						onderhoud
 						landvanherkomst
 						naam
+						activeStekje
 						fotos {
 							url
 							width
