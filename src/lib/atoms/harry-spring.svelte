@@ -1,4 +1,17 @@
-<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 536.97 763.29">
+<script>
+    /**
+     * @typedef {Object} Props
+     * @property {string} [mood] - default mood
+     * @property {string} [environment]
+     */
+
+    /** @type {Props} */
+    let { mood = "neutraal", environment = "zonnig" } = $props();
+</script>
+
+<div class={`harry harry--${mood} harry--${environment}`}>
+  <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 536.97 763.29">
+ 
   <defs>
     <style>
       .cls-1 {
@@ -136,4 +149,5 @@
   <g id="Laag_10" data-name="Laag 10">
     <path class="cls-4" d="M276.42,313.89l16.22.66,4.64-114.39c1.92-2.32,4.88-5.64,8.9-9.16,15.65-13.72,31.77-16.91,31.24-18.91-.39-1.49-9.59-.65-17.51,1.07-12.39,2.68-21.87,7.52-28.03,11.29-3.56-3.12-9.24-7.32-17.09-10.22-14.93-5.52-29.6-3.35-29.65-2.46-.03.52,5,.38,10.54,2.17,7.51,2.43,16.91,8.71,25.37,25.57l-4.64,114.39Z"/>
   </g>
-</svg>
+  </svg>
+</div>
