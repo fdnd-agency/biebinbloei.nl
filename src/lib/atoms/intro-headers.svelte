@@ -3,90 +3,67 @@
 </script>
 
 <section>
+	<h2>
+		<span class="outline">{heroInfo.title.split(' ')[0]}</span><br />
+		{heroInfo.title.split(' ')[1]}
+	</h2>
+	
 	<p>{heroInfo.description}</p>
 </section>
 
 <style>
 	section {
 		display: flex;
-		gap: 0.5em;
-		justify-content: center;
-		position: relative;
-		overflow: hidden;
-		margin: -2em auto;
-		padding: 1.5em;
-		line-height: var(--line-height-paragraph);
+		flex-direction: column;
+		gap: 1em;
+		margin: 5em 0 3em 0;
+		padding: 1em;
 		background-color: var(--main-color-beige);
-		font-weight: 500;
+		color: var(--main-color-green);
 		font-size: 1em;
+	} 
+
+	h2 {
+		margin-top: -1em;
+		text-transform: uppercase;
 	}
 
-	section::before {
-		content: url('/assets/Circle-Orange.svg');
-		display: inline-flex;
+	.outline {
+		color: transparent;
+		-webkit-text-stroke: 1.5px var(--main-color-green);
 	}
 
-	section::after {
-		opacity: 0.5;
-		position: absolute;
-		transform: rotate(-45deg);
-		content: url(/assets/leaf-orange.svg);
-	}
-
-	/* Tablet - vanaf 48rem */
+	/* Tablet */
 	@media (min-width: 48rem) {
 		section {
-			align-items: center;
-			width: 81vw;
-			padding: 2em 2em;
-			border-radius: var(--border-card); 
+			margin: 5.25em 0 3.25em 0;
+			gap: 1.25em;
+			padding: 1.25em;
 		}
 
-		section::after {
-			width: 9rem;
-			top: 2.5em;
-			right: -4rem;
-		}
-
-		section::before {
-			display: none;
+		h2 {
+			margin-top: -1.125em;
 		}
 
 		p {
-			max-width: 65ch;
+			max-width: 25em;
 		}
 	}
 
-	/* Desktop - vanaf 74rem */
+	/* Desktop */
 	@media (min-width: 74rem) {
 		section {
-			width: 70vw;
+			margin: 5.5em 0 3.5em 0;
+			gap: 1.5em;
 			padding: 1.5em;
 		}
 
-		section::after {
-			width: 12rem;
-			top: -1em;
-			right: -4rem;
-		}
-	}
-
-	/* Groot scherm - vanaf 100rem */
-	@media (min-width: 100rem) {
-		section {
-			width: 71vw;
-			line-height: var(--line-height-paragraph-big-screen);
-		}
-
-		section::after {
-			width: 15rem;
-			top: -3em;
-
+		h2 {
+			margin-top: -1.25em;
 		}
 
 		p {
-			max-width: 65ch;
-			font-size: 1.5em;
+			max-width: 31.25em;
 		}
 	}
 </style>

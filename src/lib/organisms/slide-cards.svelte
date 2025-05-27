@@ -65,6 +65,10 @@
 		border-radius: var(--border-bigCard);
 	}
 
+	.btn-container {
+		margin-top: 3em;
+	}
+
 	picture {
 		width: 100%;
 		height: 100%;
