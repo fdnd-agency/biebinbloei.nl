@@ -56,91 +56,93 @@
 </script>
 
 {#if loading}
-	<p>Loading...</p>
+	<progress>Loading...</progress>
 {:else if error}
-	<p>{error}</p>
+	<aside role="alert">
+		<p>{error}</p>
+	</aside>
 {:else}
-	<div
+	<main
 		transition:fade|local={{ duration: 600 }}
 		class={`weather-container ${weatherClass} ${dayNightClass}`}
 		style="--cloud: {cloud}%;"
 	>
 		{#if weatherClass === 'partly-cloudy' || weatherClass === 'default'}
-			<div class="cloud-wrapper">
+			<section class="cloud-wrapper" aria-label="Clouds animation">
 				<Cloud3D puffCount={20} noAnimation={false} speed={90} style="top: 5%; opacity: 0.5;" />
 				<Cloud3D puffCount={30} noAnimation={false} speed={50} style="top: 10%; opacity: 0.6;" />
 				<Cloud3D puffCount={40} noAnimation={false} speed={40} style="top: 20%; opacity: 0.7;" />
 				<Cloud3D puffCount={20} noAnimation={false} speed={30} style="top: 35%; opacity: 0.5;" />
 				<Cloud3D puffCount={30} noAnimation={false} speed={20} style="top: 45%; opacity: 0.7;" />
 				<Cloud3D puffCount={40} noAnimation={false} speed={10} style="top: 55%; opacity: 0.9;" />
-			</div>
+			</section>
 		{/if}
 
 		{#if weatherClass === 'sunny'}
-			<div class="sun">
+			<figure class="sun" aria-label="Sunny weather">
 				<div class="rays"></div>
-			</div>
+			</figure>
 		{/if}
 
 		{#if weatherClass === 'thunderstorm'}
-			<div class="stormcloud-wrapper">
+			<section class="stormcloud-wrapper" aria-label="Thunderstorm visuals">
 				<Cloud3D puffCount={45} storm={true} noAnimation={false} top="0" />
 				<Cloud3D puffCount={55} storm={true} noAnimation={false} top="0" />
 				<Cloud3D puffCount={65} storm={true} noAnimation={false} top="0" />
 
 				<div class="lightning flashit"></div>
-				<div class="rain">
+				<section class="rain">
 					{#each Array(100) as _, i}
 						<div
 							class="raindrop"
 							style="left: {Math.random() * 100}vw; animation-delay: {Math.random() * 2}s;"
 						></div>
 					{/each}
-				</div>
-			</div>
+				</section>
+			</section>
 		{/if}
 
 		{#if weatherClass === 'fog'}
-			<div class="fogcloud-wrapper">
+			<section class="fogcloud-wrapper" aria-label="Low visibility weather">
 				<Cloud3D puffCount={25} speed={20} style="bottom: 0; opacity: 0.3;" />
 				<Cloud3D puffCount={35} speed={15} style="bottom: 10%; opacity: 0.4;" />
 				<Cloud3D puffCount={40} speed={10} style="bottom: 20%; opacity: 0.5;" />
-			</div>
+			</section>
 		{/if}
 
 		{#if weatherClass === 'rain'}
-			<div class="rain">
+			<section class="rain" aria-label="Rainy weather">
 				{#each Array(100) as _, i}
 					<div
 						class="raindrop"
 						style="left: {Math.random() * 100}vw; animation-delay: {Math.random() * 2}s;"
 					></div>
 				{/each}
-			</div>
+			</section>
 		{/if}
 
 		{#if weatherClass === 'hail'}
-			<div class="hail">
+			<section class="hail" aria-label="Hailing weather">
 				{#each Array(50) as _, i}
 					<div
 						class="hailstone"
 						style="left: {Math.random() * 100}vw; animation-delay: {Math.random() * 2}s;"
 					></div>
 				{/each}
-			</div>
+			</section>
 		{/if}
 
 		{#if weatherClass === 'snow'}
-			<div class="snow">
+			<section class="snow" aria-label="Snowy weather">
 				{#each Array(100) as _, i}
 					<div
 						class="snowflake"
 						style="left: {Math.random() * 100}vw; animation-delay: {Math.random() * 10}s;"
 					></div>
 				{/each}
-			</div>
+			</section>
 		{/if}
-	</div>
+		</main>
 {/if}
 
 <style>
