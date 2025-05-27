@@ -46,7 +46,7 @@
 		}
 
 		p {
-			max-width: 400px;
+			max-width: 25em;
 		}
 	}
 
@@ -63,7 +63,7 @@
 		}
 
 		p {
-			max-width: 500px;
+			max-width: 31.25em;
 		}
 	}
 </style>
