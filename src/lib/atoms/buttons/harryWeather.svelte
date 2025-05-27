@@ -106,11 +106,11 @@
                 break;
         }
 
-        // Mascot logic
+        
         if (weatherMain.includes('storm')) {
             mascotType = 'storm';
         } else if (season === 'summer' && weather.main?.humidity < 30) {
-            mascotType = 'drySummer'; // Replace with actual dry days logic if needed
+            mascotType = 'drySummer'; 
         } else if (season === 'spring') {
             mascotType = 'spring';
         } else if (season === 'autumn') {
@@ -159,19 +159,19 @@
         <blockquote>
             “{sentence}<span class="home_page"> {detail}</span>”
         </blockquote>
-        <button on:click={() => isVisible = false}>❌</button>
+        <button onclick={() => isVisible = false}>❌</button>
     </div>
 
     {#if mascotType === 'spring'}
-        <HarrySpring />
+        <img src="./assets/lineus-klokje-harry.svg" alt="" class="cartoon" />
     {:else if mascotType === 'autumn'}
-        <HarryAutumn />
+        <img src="./assets/Harry-met-een-hark.svg" alt="" class="cartoon" />
     {:else if mascotType === 'winter'}
-        <HarryWinter />
+        <img src="./assets/Harry-met-een-trui.svg" alt="" class="cartoon" />
     {:else if mascotType === 'drySummer'}
-        <HarryDrySummer />
+        <img src="./assets/Harry-met-een-gieter.svg" alt="" class="cartoon" />
     {:else if mascotType === 'storm'}
-        <HarryStorm />
+        <img src="./assets/bliksem-harry.svg" alt="" class="cartoon" />
     {:else}
         <Harry {mood} {environment} {textTemp} />
     {/if}
