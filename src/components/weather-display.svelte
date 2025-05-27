@@ -172,7 +172,7 @@
 		color: #ddd;
 	}
 
-	/* ☀️ Clear Weather */
+	/* ☀️ Clear Weather animation */
 	.clear {
 		animation: clouds-clear 5s ease-in forwards;
 	}
@@ -258,7 +258,7 @@
 		}
 	}
 
-	/* ⛈️ Thunderstorm */
+	/* ⛈️ Thunderstorm animation */
 	.thunderstorm {
 		--cloud: 80%;
 		animation: storm-flash 1s step-start infinite;
@@ -283,7 +283,7 @@
 		overflow: hidden;
 	}
 
-	/* ⚡ Lightning Flash */
+	/* ⚡ Lightning Flash animation */
 	.lightning {
 		position: fixed;
 		top: 0;
@@ -493,7 +493,6 @@
 		animation-duration: 6s;
 	}
 
-	/* Default fallback */
 	.default {
 		--cloud: 50%;
 	}
@@ -502,7 +501,6 @@
 		z-index: 2;
 	}
 
-	/* Reduced motion */
 	@media (prefers-reduced-motion: reduce) {
 		*,
 		*::before,
@@ -526,7 +524,7 @@
 		}
 	}
 
-	@media (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
+	@media (min-width: 48rem) and (max-width: 64rem) and (orientation: landscape) {
 		.sun {
 			width: 15vw;
 			height: 15vw;
@@ -542,7 +540,7 @@
 		}
 	}
 
-	@media (max-width: 768px) {
+	@media (max-width: 48rem) {
 		.weather-container {
 			padding: 1rem;
 		}
@@ -608,7 +606,7 @@
 		}
 
 		.lightning {
-			display: none; /* Optional: turn off lightning for performance */
+			display: none; 
 		}
 	}
 
@@ -685,7 +683,6 @@
 			font-size: 0.85rem;
 		}
 
-		/* Optional: slow down animations on smaller devices */
 		.cloud-layer,
 		.cloud-wrapper {
 			animation-duration: 120s;
