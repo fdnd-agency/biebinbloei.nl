@@ -163,15 +163,15 @@
     </div>
 
     {#if mascotType === 'spring'}
-        <img src="./assets/lineus-klokje-harry.svg" alt="" class="cartoon" />
+        <img src="./assets/lineus-klokje-harry.svg" alt="Harry Spring" class="cartoon" />
     {:else if mascotType === 'autumn'}
-        <img src="./assets/Harry-met-een-hark.svg" alt="" class="cartoon" />
+        <img src="./assets/Harry-met-een-hark.svg" alt=" Harry" class="cartoon" />
     {:else if mascotType === 'winter'}
-        <img src="./assets/Harry-met-een-trui.svg" alt="" class="cartoon" />
+        <img src="./assets/Harry-met-een-trui.svg" alt="Harry Winter" class="cartoon" />
     {:else if mascotType === 'drySummer'}
-        <img src="./assets/Harry-met-een-gieter.svg" alt="" class="cartoon" />
+        <img src="./assets/Harry-met-een-gieter.svg" alt="Harry Summer" class="cartoon" />
     {:else if mascotType === 'storm'}
-        <img src="./assets/bliksem-harry.svg" alt="" class="cartoon" />
+        <img src="./assets/bliksem-harry.svg" alt="Harry Storm" class="cartoon" />
     {:else}
         <Harry {mood} {environment} {textTemp} />
     {/if}
