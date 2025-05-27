@@ -3,19 +3,19 @@
 	let { data } = $props();
 
 	data.agendas = data.agendas.map((agenda, index) => {
-		const mod = index % 4;
+		const variantIndex = index % 4;
 		let cardVariant, buttonClass;
 
-		if (mod === 0) {
+		if (variantIndex === 0) {
 			cardVariant = 'beige-brown'; 
 			buttonClass = 'btn-brown'; 
-		} else if (mod === 1) {
+		} else if (variantIndex === 1) {
 			cardVariant = 'brown-beige';   
 			buttonClass = 'btn-beige-brown';
-		} else if (mod === 2) {
+		} else if (variantIndex === 2) {
 			cardVariant = 'beige-green'; 
 			buttonClass = 'btn-green';
-		} else if (mod === 3) {
+		} else if (variantIndex === 3) {
 			cardVariant = 'green-beige';
 			buttonClass = 'btn-beige';
 		}
@@ -38,7 +38,7 @@
 	{#if data.agendas && data.agendas.length > 0}
 	<ul>
 		{#each data.agendas as agenda}
-		<li class={`card card--${agenda.cardVariant}`}>
+		<li class={`card--${agenda.cardVariant}`}>
 			<picture>
 				<source srcset="{agenda.cardImage.url}?format=avif" type="image/avif" />
   				<source srcset="{agenda.cardImage.url}?format=webp" type="image/webp" />
