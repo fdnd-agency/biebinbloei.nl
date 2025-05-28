@@ -14,9 +14,23 @@
 </script>
 
 <section>
-	<button onclick={allStekjes} class:active={active === 'alle'}>Alle stekjes</button>
+	<button onclick={allStekjes} class:active={active === 'alle'} class="no-js-disabled"
+		>Alle stekjes</button
+	>
 	<button onclick={currentStekjes} class:active={active === 'actueel'}>Actuele stekjes</button>
 </section>
+
+<noscript>
+	<style>
+		.no-js-disabled {
+			background: #ccc !important;
+			color: #666 !important;
+			cursor: not-allowed !important;
+			pointer-events: none !important;
+			font-weight: normal !important;
+		}
+	</style>
+</noscript>
 
 <style>
 	section {
