@@ -14,17 +14,19 @@
 </script>
 
 <section>
-	<button onclick={allStekjes} class:active={active === 'alle'} class="no-js-disabled"
+	<button onclick={allStekjes} class="no-js-disabled" class:active={active === 'alle'}
 		>Alle stekjes</button
 	>
 	<button onclick={currentStekjes} class:active={active === 'actueel'}>Actuele stekjes</button>
 </section>
 
+<!-- -- js-disabled styling -- -->
+ 
 <noscript>
 	<style>
 		.no-js-disabled {
-			background: #ccc !important;
 			color: #666 !important;
+			background: #ccc !important;
 			cursor: not-allowed !important;
 			pointer-events: none !important;
 			font-weight: normal !important;
@@ -39,27 +41,40 @@
 		margin: 1.25rem 0;
 	}
 
+	/* -- Button styling -- */
+
 	button {
-		background: var(--main-color-beige);
-		color: var(--main-color-brown);
-		font-family: var(--paragraph-font);
-		font-size: 1em;
 		border: none;
+		font-size: 1em;
+		cursor: pointer;
 		margin-top: 1rem;
 		padding: 0.5em 1em;
 		border-radius: 0.5em;
-		cursor: pointer;
+		color: var(--main-color-brown);
+		font-family: var(--paragraph-font);
+		background: var(--main-color-beige);
+		transition:
+			transform 0.3s cubic-bezier(0.22, 1, 0.36, 1),
+			background-color 0.25s ease,
+			box-shadow 0.3s ease;
 	}
 
 	button:hover {
 		color: var(--main-color-beige);
 		background: var(--main-color-brown);
 		font-family: var(--sub-header-font);
+		transform: scale(1.07) rotate(-0.5deg);
 	}
 
 	button.active {
-		background: var(--main-color-brown);
-		color: var(--main-color-beige);
 		font-weight: bold;
+		transform: scale(0.98);
+		color: var(--main-color-beige);
+		background: var(--main-color-brown);
+	}
+
+	button:focus-visible {
+		outline-offset: 2px;
+		outline: 3px solid var(--main-color-brown);
 	}
 </style>
