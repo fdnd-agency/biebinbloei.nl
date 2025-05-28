@@ -176,13 +176,9 @@
 			font-size: clamp(5em, 12vw, 7em);
 		}
 
-
 	}
 
 	@media (min-width: 100rem) {
-
-
-	}
 
 
 	}
