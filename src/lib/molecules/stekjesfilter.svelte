@@ -48,8 +48,8 @@
 		font-size: 1em;
 		cursor: pointer;
 		margin-top: 1rem;
-		padding: 0.5em 1em;
-		border-radius: 0.5em;
+		padding: 0.5rem 1rem;
+		border-radius: 0.5rem;
 		color: var(--main-color-brown);
 		font-family: var(--paragraph-font);
 		background: var(--main-color-beige);
@@ -57,6 +57,11 @@
 			transform 0.3s cubic-bezier(0.22, 1, 0.36, 1),
 			background-color 0.25s ease,
 			box-shadow 0.3s ease;
+	}
+
+	button:first-child {
+		margin-left: 1rem;
+		margin-right: 0.4rem;
 	}
 
 	button:hover {

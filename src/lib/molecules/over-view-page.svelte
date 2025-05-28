@@ -25,6 +25,7 @@
 	section {
 		padding: 2em;
 		display: grid;
+		margin-top: -3rem;
 		grid-template-columns: repeat(auto-fit, minmax(16em, 1fr));
 		gap: 1rem;
 	}
@@ -41,19 +42,14 @@
 
 	article a {
 		text-decoration: none;
-
 		display: flex;
 		width: 100%;
 		height: 100%;
 	}
 
-	article a:hover img {
-		scale: 1.1;
-	}
-
 	article a:focus img,
 	article a:focus h3 {
-		border: 8px solid var(--card-color-orange);
+		border: 5px solid var(--card-color-orange);
 	}
 
 	img {
@@ -63,7 +59,6 @@
 		width: 100%;
 		height: 100%;
 		object-fit: cover;
-		transition: ease-out 0.35s;
 	}
 
 	h3 {
@@ -78,12 +73,7 @@
 		min-height: 25%;
 		background: var(--main-color-brown);
 		display: flex;
-		transition: opacity 0.4s ease;
 		align-items: center;
-	}
-
-	article a:hover h3 {
-		opacity: 0;
 	}
 
 	@media (min-width: 64em) {
