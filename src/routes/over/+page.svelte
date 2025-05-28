@@ -21,6 +21,19 @@
 		<p>{data.abouts[0].description3}</p>
 		<p>{data.abouts[0].description4}</p>
 	</section>
+
+	<section class="video-wrapper" aria-label="Event highlight video">
+		<iframe
+  			loading="lazy"
+  			width="100%"
+  			height="480"
+  			src="https://www.youtube.com/embed/qEykT9dSNfg"
+  			title="Openingsfeest Bieb in Bloei"
+  			frameborder="0"
+  			allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+  			allowfullscreen>
+		</iframe>
+	</section>
 </main>
 
 <style>
@@ -64,6 +77,10 @@
 		font-style: oblique;
 		font-weight: bolder;
 	}
+
+	.video-wrapper iframe {
+		border-radius: var(--border-card);
+  	}
 
 	/* MEDIA QUERY STYLING */
 	/* DESKTOP */
@@ -110,6 +127,20 @@
 		p {
 			margin-top: 1.5em;
 		}
+
+		.video-wrapper {
+    		position: relative;
+    		padding-bottom: 56.25%; 
+    		height: 0;
+    		overflow: hidden;
+			width: 47vw;
+			display: flex;
+			margin: 0 auto;
+  		}
+
+  		.video-wrapper iframe {
+			border-radius: var(--border-card);
+  		}
 	}
 
 	/* TABLET */
@@ -134,6 +165,10 @@
 		h2 {
 			font-size: 3em;
 		}
+
+		.video-wrapper iframe {
+			border-radius: var(--border-card);
+  		}
 	}
 
 	/* BIG DESKTOP SCREEN */
@@ -160,5 +195,19 @@
 			line-height: 1.5em;
 			margin-top: 1.5em;
 		}
+
+		.video-wrapper {
+    		position: relative;
+    		padding-bottom: 56.25%; 
+    		height: 0;
+    		overflow: hidden;
+			max-width: 44vw;
+			display: flex;
+			margin: 0 auto;
+  		}
+
+  		.video-wrapper iframe {
+			border-radius: var(--border-card);
+  		}
 	}
 </style>
