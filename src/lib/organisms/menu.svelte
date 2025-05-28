@@ -105,7 +105,7 @@
 						<li role="menuitem"><a href="/groenebieb">Groenebieb</a></li>
 					</ul>
 				</li>
-				<li role="menuitem"><a href="/agenda">Agenda</a></li>
+				<li role="menuitem"><a href="/workshops">Workshops</a></li>
 				<li role="menuitem"><a href="/partners">Partners</a></li>
 				<li role="menuitem"><a href="/over">Over</a></li>
 				<li role="menuitem"><a href="/contact">Contact</a></li>

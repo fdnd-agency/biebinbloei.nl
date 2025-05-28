@@ -1,6 +1,6 @@
 <script>
-	export let data;
 	import { Button, Dot, CardslidesContent, CardslidesLeaf } from '$lib/index.js';
+	let { data } = $props();
 </script>
 
 <section class="card-container">
@@ -63,6 +63,10 @@
 		align-items: center;
 		flex-direction: column-reverse;
 		border-radius: var(--border-bigCard);
+	}
+
+	.btn-container {
+		margin-top: 3em;
 	}
 
 	picture {

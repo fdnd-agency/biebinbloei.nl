@@ -1,8 +1,11 @@
 <script>
-	export let data;
 	import { onDestroy, onMount } from 'svelte';
 	import { HarryWeather } from '$lib/index.js';
+
 	import WeatherDisplay from '../../components/weather-display.svelte';
+
+
+	let { data } = $props();
 
 
 
@@ -77,7 +80,6 @@
 		background-color: var(--main-color-green);
 		width: 100%;
 		height: 85vh;
-		
 	}
 	.overlay {
 		position: absolute;
@@ -86,7 +88,6 @@
 		width: 100%;
 		height: 85vh;
 		background: var(--image-gradient);
-		
 	}
 	header {
 		position: absolute;
@@ -107,6 +108,9 @@
 		line-height: 1.1em;
 		width: 60%;
 	}
+
+
+
 
 
 	.hero-img-list img {
@@ -149,12 +153,20 @@
 			max-width: 9em;
 			font-size: clamp(5em, 12vw, 6em);
 		}
+
 		h1
 		 {
 			width: 100%;
 			text-align: center;
 		}
 
+
+
+
+		h1 {
+			width: 100%;
+			text-align: center;
+		}
 
 	}
 
@@ -164,9 +176,13 @@
 			font-size: clamp(5em, 12vw, 7em);
 		}
 
+
 	}
 
 	@media (min-width: 100rem) {
+
+
+	}
 
 
 	}

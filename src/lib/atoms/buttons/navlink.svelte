@@ -1,8 +1,8 @@
 <script>
-	export let handleNav, href, title;
+    let { handleNav, href, title } = $props();
 </script>
 
-<a on:click={handleNav} {href}>{title}</a>
+<a onclick={handleNav} {href}>{title}</a>
 
 <style>
     a{

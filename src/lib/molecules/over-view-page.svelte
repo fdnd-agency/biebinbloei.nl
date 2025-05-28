@@ -1,7 +1,7 @@
 <script>
 	let data;
 	import { Button } from '$lib/index.js';
-	export let viewPageData;
+	let { viewPageData } = $props();
 </script>
 
 <h2>{viewPageData.titel}</h2>

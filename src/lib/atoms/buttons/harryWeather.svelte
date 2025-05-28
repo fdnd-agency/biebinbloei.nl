@@ -1,21 +1,22 @@
 <script>
+    import { run } from 'svelte/legacy';
+
     import { onMount } from 'svelte'; 
     import Harry from '$lib/atoms/harry.svelte';
     import { page } from '$app/stores';
     import { get } from 'svelte/store';
 
-    export let textTemp;
-    export let name;
+    let { textTemp, name } = $props();
 
     let city = 'Amsterdam';
-    let weather;
+    let weather = $state();
 
-    let mood = 'happy';
-    let environment = 'neutral';
-    let sentence = 'Ik ben even in de war';
-    let detail = '';
+    let mood = $state('happy');
+    let environment = $state('neutral');
+    let sentence = $state('Ik ben even in de war');
+    let detail = $state('');
     let isDesktop = false;
-    let isVisible = true;
+    let isVisible = $state(true);
 
     const numericTextTemp = parseFloat(textTemp) || 25;
 
@@ -86,9 +87,9 @@
         }
     }
 
-    let animationClass;
+    let animationClass = $state();
 
-    $: {
+    run(() => {
         const currentPage = get(page).url.pathname;
 
         switch (true) {
@@ -101,7 +102,7 @@
             default:
                 animationClass = 'default';
         }
-    }
+    });
 
     onMount(() => {
         getWeather();
@@ -125,7 +126,7 @@
         <blockquote>
             “{sentence}<span class="home_page"> {detail}</span>”
         </blockquote>
-        <button on:click={() => isVisible = false}>❌</button>
+        <button onclick={() => isVisible = false}>❌</button>
     </div>
     <Harry {mood} {environment} {textTemp}/>
 </div>

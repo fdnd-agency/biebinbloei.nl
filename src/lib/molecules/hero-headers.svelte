@@ -1,11 +1,11 @@
 <script>
-	export let heroInfo;
+	let { heroInfo } = $props();
 </script>
 
 <header>
 	<div class="overlay"></div>
 	<h1>{heroInfo.heading1}</h1>
-	<img src={heroInfo.image.url} alt="stekjes" />
+	<img src={heroInfo.image.url} alt="" width="320" height="140"/>
 </header>
 
 <style>

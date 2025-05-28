@@ -1,7 +1,7 @@
 <script>
 	import { AgendaCarousel } from '$lib/index.js';
 	import AgendaInfoButton from '$lib/molecules/agenda-info-button.svelte';
-	export let data;
+	let { data } = $props();
 </script>
 
 <section>

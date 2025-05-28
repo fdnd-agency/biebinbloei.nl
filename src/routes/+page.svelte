@@ -1,6 +1,6 @@
 <script>
-	export let data;
 	import { HeroSlider, SlideCards, Agenda, HomeCampus, HomePartners } from '$lib/index.js';
+	let { data } = $props();
 </script>
 
 <HeroSlider {data} />

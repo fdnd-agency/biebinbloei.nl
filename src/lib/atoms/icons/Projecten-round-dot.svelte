@@ -1,5 +1,5 @@
 <script>
-	export let svgFill;
+	let { svgFill } = $props();
 </script>
 
 <svg
