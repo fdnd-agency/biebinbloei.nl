@@ -22,8 +22,9 @@
 		<p>{data.abouts[0].description4}</p>
 	</section>
 
-	<section class="video-wrapper">
+	<section class="video-wrapper" aria-label="Event highlight video">
 		<iframe
+  			loading="lazy"
   			width="100%"
   			height="480"
   			src="https://www.youtube.com/embed/qEykT9dSNfg"
@@ -32,7 +33,6 @@
   			allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
   			allowfullscreen>
 		</iframe>
-
 	</section>
 </main>
 
@@ -201,7 +201,7 @@
     		padding-bottom: 56.25%; 
     		height: 0;
     		overflow: hidden;
-			max-width: 42vw;
+			max-width: 44vw;
 			display: flex;
 			margin: 0 auto;
   		}
