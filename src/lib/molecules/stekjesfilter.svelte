@@ -24,7 +24,7 @@
 
 	<p>
 		{mainText}
-		<span class="block bold">-- {afterDash}</span>
+		<span class="block-bold">-- {afterDash}</span>
 	</p>
 
 	<button onclick={allStekjes} class="no-js-disabled" class:active={active === 'alle'}
@@ -66,11 +66,6 @@
 		-webkit-text-stroke: 1.8px var(--main-color-brown);
 	}
 
-	.block {
-		display: block;
-		line-height: 2rem;
-	}
-
 	p {
 		font-size: 1rem;
 		margin-top: 1rem;
@@ -79,9 +74,14 @@
 		font-family: var(--link-font);
 	}
 
-	.block {
-		display: block;
+	.block-bold {
 		font-family: var(--sub-header-font);
+	}
+
+	.block,
+	.block-bold {
+		display: block;
+		line-height: 2rem;
 	}
 
 	/* -- Button styling -- */
