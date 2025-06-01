@@ -81,7 +81,7 @@
 	.block,
 	.block-bold {
 		display: block;
-		line-height: 2rem;
+		line-height: 2.7rem;
 	}
 
 	/* -- Button styling -- */
@@ -131,11 +131,6 @@
 	/* -- Tablet styling -- */
 
 	@media (min-width: 48rem) {
-		section {
-			margin: 5.25rem 0 3.25rem 0;
-			padding: 1.25rem;
-		}
-
 		p {
 			max-width: 25em;
 		}
@@ -145,8 +140,8 @@
 
 	@media (min-width: 74rem) {
 		section {
-			margin: 3rem 0 2rem 1.5rem;
-			padding: 1.5rem 1rem 1.5rem 1.5rem;
+			margin: 1rem 0 3.5rem 0;
+			padding: 1.5rem;
 		}
 
 		h2 {

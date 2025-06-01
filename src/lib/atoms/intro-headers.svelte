@@ -1,13 +1,19 @@
 <script>
 	let { heroInfo } = $props();
+
+	const words = heroInfo.title.split(' ');
+	let splitTitle = {
+		firstLine: words.length > 2 ? words.slice(0, -2).join(' ') : words[0],
+		secondLine: words.length > 2 ? words.slice(-2).join(' ') : words.slice(1).join(' ')
+	};
 </script>
 
 <section>
 	<h2>
-		<span class="outline">{heroInfo.title.split(' ')[0]}</span><br />
-		{heroInfo.title.split(' ')[1]}
+		<span class="outline">{splitTitle.firstLine}</span>
+		<span class="solid">{splitTitle.secondLine}</span>
 	</h2>
-	
+
 	<p>{heroInfo.description}</p>
 </section>
 
@@ -21,16 +27,24 @@
 		background-color: var(--main-color-beige);
 		color: var(--main-color-green);
 		font-size: 1em;
-	} 
+	}
 
 	h2 {
 		margin-top: -1em;
 		text-transform: uppercase;
 	}
 
+	h2 span {
+		display: block;
+	}
+
 	.outline {
 		color: transparent;
 		-webkit-text-stroke: 1.5px var(--main-color-green);
+	}
+
+	.solid {
+		color: var(--main-color-green);
 	}
 
 	/* Tablet */

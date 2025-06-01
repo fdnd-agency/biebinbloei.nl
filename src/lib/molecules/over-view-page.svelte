@@ -19,7 +19,7 @@
 
 				<Button
 					href="/{item.projectnaam}/{item.slug}"
-					buttonText="Aanmelden"
+					buttonText="Verzorging tips"
 					buttonClass="btn-beige"
 					svgFill="svg-brown"
 				></Button>
@@ -32,6 +32,7 @@
 	.card-container {
 		container-type: inline-size;
 		container-name: cards;
+		margin-left: -0.5rem;
 		padding: 2rem;
 	}
 
@@ -43,8 +44,11 @@
 	}
 
 	article {
-		width: 100%;
+		display: flex;
 		overflow: hidden;
+		flex-direction: column;
+		gap: 1rem;
+		padding-top: 25vh;
 		margin-top: 1rem;
 		min-height: 50vh;
 		position: relative;
@@ -64,14 +68,13 @@
 		bottom: 0;
 		z-index: 5;
 		width: 100%;
+		height: 25vh;
 		padding: 1rem;
 		display: flex;
 		color: white;
-		min-height: 25%;
+		align-items: flex-start;
 		position: absolute;
-		line-height: 1.5em;
-		align-items: center;
-		font-size: clamp(1em, 3.5vh, 2em);
+		font-size: clamp(1em, 3.3vh, 2em);
 		background: var(--main-color-brown);
 	}
 
@@ -85,7 +88,13 @@
 	@container cards (min-width: 64rem) {
 		.card-wrapper {
 			display: grid;
+			margin-top: -6rem;
 			grid-template-columns: repeat(3, 1fr);
+		}
+
+		h3 {
+			height: 19vh;
+			align-items: self-start;
 		}
 	}
 </style>

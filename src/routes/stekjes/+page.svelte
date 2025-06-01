@@ -27,7 +27,7 @@
 
 <HeroHeaders heroInfo={data.heroHeaders[0]} />
 
-<!-- <IntroHeaders heroInfo={data.heroHeaders[8]} /> -->
+<IntroHeaders heroInfo={data.heroHeaders[8]} />
 
 <Stekjesfilter on:showAll={showAll} on:showCurrent={showCurrent} active={activeFilter} {data} />
 
