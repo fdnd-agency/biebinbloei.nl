@@ -31,4 +31,4 @@
 
 <Stekjesfilter on:showAll={showAll} on:showCurrent={showCurrent} active={activeFilter} {data} />
 
-<!-- <OverViewPages viewPageData={{ ...data.overviewPages[0], product: filteredStekjes }} /> -->
+<OverViewPages viewPageData={{ ...data.overviewPages[0], product: filteredStekjes }} />

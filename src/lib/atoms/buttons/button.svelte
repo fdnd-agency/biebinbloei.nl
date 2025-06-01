@@ -40,7 +40,7 @@
 		font-size: 1em;
 		transition: ease-in 0.1s;
 		margin-top: 1em;
-		z-index: 2;
+		z-index: 100;
 	}
 
 	a:focus-visible {
