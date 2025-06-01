@@ -8,6 +8,7 @@ export async function load() {
 				id
 				createdAt
 				heading1
+				title
 				description
 				image {
 					url
