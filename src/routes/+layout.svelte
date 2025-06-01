@@ -17,7 +17,6 @@
 	});
 </script>
 
-
-<Menu/>
+<Menu />
 {@render children?.()}
 <Footer {data} />

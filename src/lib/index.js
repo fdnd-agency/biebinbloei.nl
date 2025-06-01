@@ -41,6 +41,7 @@ export { default as HomeCampus } from '$lib/molecules/home-campus.svelte';
 export { default as HomePartners } from '$lib/molecules/home-partners.svelte';
 export { default as ContactForm } from '$lib/molecules/contact-form.svelte';
 export { default as Features } from '$lib/molecules/features.svelte';
+export { default as Stekjesfilter } from '$lib/molecules/stekjesfilter.svelte';
 
 // =========== ORGANISMS ===========
 

@@ -4,12 +4,10 @@
 	let { viewPageData } = $props();
 </script>
 
-<h2>{viewPageData.titel}</h2>
-
-<section>
-	{#each viewPageData.product as item}
-		<article>
-			<a href="/{item.projectnaam}/{item.slug}">
+<div class="card-container">
+	<section class="card-wrapper">
+		{#each viewPageData.product as item}
+			<article>
 				<h3>{item.naam}</h3>
 				<img
 					src={item.fotos[0].url}
@@ -18,87 +16,76 @@
 					width={item.fotos[0]?.width || 'auto'}
 					height={item.fotos[0]?.height || 'auto'}
 				/>
-			</a>
-		</article>
-	{/each}
-</section>
+
+				<Button
+					href="/{item.projectnaam}/{item.slug}"
+					buttonText="Aanmelden"
+					buttonClass="btn-beige"
+					svgFill="svg-brown"
+				></Button>
+			</article>
+		{/each}
+	</section>
+</div>
 
 <style>
-	section {
-		padding: 2em;
+	.card-container {
+		container-type: inline-size;
+		container-name: cards;
+		padding: 2rem;
+	}
+
+	.card-wrapper {
 		display: grid;
-		grid-template-columns: repeat(auto-fit, minmax(16em, 1fr));
+		margin-top: -3rem;
+		grid-template-columns: 1fr;
 		gap: 1rem;
 	}
 
 	article {
-		position: relative;
-		min-height: 50vh;
 		width: 100%;
-		max-width: 30rem;
-		border-radius: var(--border-card);
 		overflow: hidden;
 		margin-top: 1rem;
-	}
-
-	article a {
-		text-decoration: none;
-
-		display: flex;
-		width: 100%;
-		height: 100%;
-	}
-
-	article a:hover img {
-		scale: 1.1;
-	}
-
-	article a:focus img,
-	article a:focus h3 {
-		border: 8px solid var(--card-color-orange);
-	}
-
-	h2 {
-		font-family: var(--header-font);
-		font-size: clamp(2em, 10vw, 3em);
-		line-height: 1.25;
-		padding: 2em 1em 0 1em;
+		min-height: 50vh;
+		position: relative;
+		border-radius: var(--border-card);
 	}
 
 	img {
-		position: absolute;
-		left: 0;
 		top: 0;
+		left: 0;
 		width: 100%;
 		height: 100%;
+		position: absolute;
 		object-fit: cover;
-		transition: ease-out .35s;
 	}
 
 	h3 {
-		position: absolute;
 		bottom: 0;
-		color: white;
-		font-size: clamp(1em, 3.5vh, 2em);
-		line-height: 1.5em;
 		z-index: 5;
-		padding: 1rem;
 		width: 100%;
-		min-height: 25%;
-		background: var(--main-color-brown);
+		padding: 1rem;
 		display: flex;
-		transition: opacity 0.4s ease;
+		color: white;
+		min-height: 25%;
+		position: absolute;
+		line-height: 1.5em;
 		align-items: center;
+		font-size: clamp(1em, 3.5vh, 2em);
+		background: var(--main-color-brown);
 	}
 
-	article a:hover h3 {
-		opacity: 0;
+	@container cards (min-width: 40rem) {
+		.card-wrapper {
+			display: grid;
+			grid-template-columns: repeat(2, 1fr);
+		}
 	}
 
-	@media (min-width: 64em) {
-		/* 1024px / 16 = 64em */
-		article {
-			min-height: 60vh;
+	@container cards (min-width: 64rem) {
+		.card-wrapper {
+			display: grid;
+			grid-template-columns: repeat(3, 1fr);
 		}
 	}
 </style>

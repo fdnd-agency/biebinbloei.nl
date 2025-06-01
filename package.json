@@ -11,20 +11,20 @@
   },
   "devDependencies": {
     "@sveltejs/adapter-auto": "^3.2.5",
-    "@sveltejs/kit": "^2.5.27",
     "@sveltejs/vite-plugin-svelte": "^4.0.4",
     "@types/dom-view-transitions": "^1.0.4",
     "graphql": "^16.8.1",
     "graphql-request": "^7.0.1",
     "prettier": "^3.1.1",
     "prettier-plugin-svelte": "^3.2.6",
-    "svelte": "^5.0.0",
     "svelte-check": "^4.0.0",
     "sveltekit-view-transition": "^0.5.3",
     "vite": "^5.4.4"
   },
   "dependencies": {
-    "gsap": "^3.12.5"
+    "@sveltejs/kit": "^2.21.1",
+    "gsap": "^3.12.5",
+    "svelte": "^5.31.0"
   },
   "type": "module"
 }
