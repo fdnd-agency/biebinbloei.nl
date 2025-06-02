@@ -6,6 +6,7 @@
 <HeroHeaders heroInfo={data.heroHeaders[6]} />
 
 <main>
+
 	<section>
 		<div>
 			<Projectenrounddot svgFill="var(--main-color-orange)" />
@@ -14,13 +15,6 @@
 				<strong>{data.abouts[0].title.slice(4)}</strong>
 			</h2>
 		</div>
-
-		<Logoround />
-		<p>{data.abouts[0].description}</p>
-		<p>{data.abouts[0].description2}</p>
-		<p>{data.abouts[0].description3}</p>
-		<p>{data.abouts[0].description4}</p>
-	</section>
 
 	<section class="video-wrapper" aria-label="Event highlight video">
 		<iframe
@@ -33,6 +27,13 @@
   			allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
   			allowfullscreen>
 		</iframe>
+	</section>
+
+		<Logoround />
+		<p>{data.abouts[0].description}</p>
+		<p>{data.abouts[0].description2}</p>
+		<p>{data.abouts[0].description3}</p>
+		<p>{data.abouts[0].description4}</p>
 	</section>
 </main>
 
@@ -130,7 +131,7 @@
 
 		.video-wrapper {
     		position: relative;
-    		padding-bottom: 56.25%; 
+    		padding-bottom: 28.25%; 
     		height: 0;
     		overflow: hidden;
 			width: 47vw;
@@ -198,7 +199,7 @@
 
 		.video-wrapper {
     		position: relative;
-    		padding-bottom: 56.25%; 
+    		padding-bottom: 36.25%; 
     		height: 0;
     		overflow: hidden;
 			max-width: 44vw;
