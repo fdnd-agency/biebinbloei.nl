@@ -6,11 +6,6 @@
 
     // Mascot components
     import Harry from '$lib/atoms/harry.svelte';
-    import HarrySpring from '$lib/atoms/harry-spring.svelte';
-    import HarryAutumn from '$lib/atoms/harry-rake.svelte';
-    import HarryDrySummer from '$lib/atoms/harry-watering-can.svelte';
-    import HarryStorm from '$lib/atoms/harry-lightning.svelte';
-    import HarryWinter from '$lib/atoms/harry-sweater.svelte';
 
     let { textTemp, name } = $props();
 
