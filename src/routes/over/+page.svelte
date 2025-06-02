@@ -131,7 +131,7 @@
 
 		.video-wrapper {
     		position: relative;
-    		padding-bottom: 28.25%; 
+    		padding-bottom: 35em; 
     		height: 0;
     		overflow: hidden;
 			width: 47vw;
@@ -199,7 +199,7 @@
 
 		.video-wrapper {
     		position: relative;
-    		padding-bottom: 36.25%; 
+    		padding-bottom: 35em; 
     		height: 0;
     		overflow: hidden;
 			max-width: 44vw;
