@@ -4,7 +4,7 @@
     import { page } from '$app/stores';
     import { get } from 'svelte/store';
 
-    // Mascot components
+  
     import Harry from '$lib/atoms/harry.svelte';
 
     let { textTemp, name } = $props();
@@ -22,7 +22,7 @@
 
     const numericTextTemp = parseFloat(textTemp) || 25;
 
-    // Optional: compute season based on month/date
+    
     function getSeason(month, date) {
         if (month === 11 || month <= 1) return 'winter';
         if ((month === 2 && date >= 21) || (month > 2 && month < 5) || (month === 5 && date <= 21)) return 'spring';
