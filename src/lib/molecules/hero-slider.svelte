@@ -1,9 +1,13 @@
 <script>
 	import { onDestroy, onMount } from 'svelte';
 	import { HarryWeather } from '$lib/index.js';
+
+	import WeatherDisplay from '../../components/weather-display.svelte';
+
+
 	let { data } = $props();
 
-	let intervalId;
+
 
 	onMount(() => {
 		const carrouselContainer = document.querySelector('.hero-slider');
@@ -30,20 +34,28 @@
 		}, interval);
 	});
 
-	onDestroy(() => {
-		if (intervalId) {
-			clearInterval(intervalId);
-		}
-	});
-</script>
+	// onDestroy(() => {
+	// 	if (intervalId) {
+	// 		clearInterval(intervalId);
+	// 	}
+	// });
 
+</script>
+<WeatherDisplay />
 <section>
+	
 	<section class="hero-slider">
-		<div class="overlay"></div>
+		<div class="overlay">
+			<div class="header-wrapper">
+				
+
+
+		</div>
 
 		<header>
 			<h1>{data.headerTexts[0].heading1}</h1>
 			<HarryWeather />
+			
 		</header>
 
 		<ul class="hero-img-list">
@@ -97,6 +109,10 @@
 		width: 60%;
 	}
 
+
+
+
+
 	.hero-img-list img {
 		width: 100%;
 		height: 100vh;
@@ -138,10 +154,20 @@
 			font-size: clamp(5em, 12vw, 6em);
 		}
 
+		h1
+		 {
+			width: 100%;
+			text-align: center;
+		}
+
+
+
+
 		h1 {
 			width: 100%;
 			text-align: center;
 		}
+
 	}
 
 	/* MEDIA QUERY DESKTOP = 1700px */
@@ -149,5 +175,12 @@
 		h1 {
 			font-size: clamp(5em, 12vw, 7em);
 		}
+
 	}
+
+	@media (min-width: 100rem) {
+
+
+	}
+
 </style>

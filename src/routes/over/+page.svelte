@@ -6,6 +6,7 @@
 <HeroHeaders heroInfo={data.heroHeaders[6]} />
 
 <main>
+
 	<section>
 		<div>
 			<Projectenrounddot svgFill="var(--main-color-orange)" />
@@ -14,6 +15,19 @@
 				<strong>{data.abouts[0].title.slice(4)}</strong>
 			</h2>
 		</div>
+
+	<section class="video-wrapper" aria-label="Event highlight video">
+		<iframe
+  			loading="lazy"
+  			width="100%"
+  			height="480"
+  			src="https://www.youtube.com/embed/qEykT9dSNfg"
+  			title="Openingsfeest Bieb in Bloei"
+  			frameborder="0"
+  			allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+  			allowfullscreen>
+		</iframe>
+	</section>
 
 		<Logoround />
 		<p>{data.abouts[0].description}</p>
@@ -65,6 +79,10 @@
 		font-weight: bolder;
 	}
 
+	.video-wrapper iframe {
+		border-radius: var(--border-card);
+  	}
+
 	/* MEDIA QUERY STYLING */
 	/* DESKTOP */
 	@media (min-width: 64em) {
@@ -110,6 +128,20 @@
 		p {
 			margin-top: 1.5em;
 		}
+
+		.video-wrapper {
+    		position: relative;
+    		padding-bottom: 35em; 
+    		height: 0;
+    		overflow: hidden;
+			width: 47vw;
+			display: flex;
+			margin: 0 auto;
+  		}
+
+  		.video-wrapper iframe {
+			border-radius: var(--border-card);
+  		}
 	}
 
 	/* TABLET */
@@ -134,6 +166,10 @@
 		h2 {
 			font-size: 3em;
 		}
+
+		.video-wrapper iframe {
+			border-radius: var(--border-card);
+  		}
 	}
 
 	/* BIG DESKTOP SCREEN */
@@ -160,5 +196,19 @@
 			line-height: 1.5em;
 			margin-top: 1.5em;
 		}
+
+		.video-wrapper {
+    		position: relative;
+    		padding-bottom: 35em; 
+    		height: 0;
+    		overflow: hidden;
+			max-width: 44vw;
+			display: flex;
+			margin: 0 auto;
+  		}
+
+  		.video-wrapper iframe {
+			border-radius: var(--border-card);
+  		}
 	}
 </style>
