@@ -1,7 +1,7 @@
 <script>
     import { HeroHeaders, OverViewPages, IntroHeaders, ImageCarousel} from '$lib/index.js';
   let { data } = $props();
-
+  
 </script>
 
 <HeroHeaders 

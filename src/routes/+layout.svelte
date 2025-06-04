@@ -1,8 +1,9 @@
 <script>
 	import '../styles/global.css';
 	import { Menu, Footer } from '$lib/index.js';
-
 	import { onNavigate } from '$app/navigation';
+	import '../styles/global.css';
+	
 	let { data, children } = $props();
 
 	onNavigate((navigation) => {
