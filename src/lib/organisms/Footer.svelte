@@ -48,9 +48,9 @@
       is licensed under
       <a href="https://creativecommons.org/licenses/by-nc/4.0/?ref=chooser-v1" target="_blank" rel="license noopener noreferrer">
         CC BY-NC 4.0
-        <img src="https://mirrors.creativecommons.org/presskit/icons/cc.svg?ref=chooser-v1" alt="CC" />
-        <img src="https://mirrors.creativecommons.org/presskit/icons/by.svg?ref=chooser-v1" alt="BY" />
-        <img src="https://mirrors.creativecommons.org/presskit/icons/nc.svg?ref=chooser-v1" alt="NC" />
+        <img src="https://mirrors.creativecommons.org/presskit/icons/cc.svg?ref=chooser-v1" width="50" height="50" alt="CC" />
+        <img src="https://mirrors.creativecommons.org/presskit/icons/by.svg?ref=chooser-v1" width="50" height="50" alt="BY" />
+        <img src="https://mirrors.creativecommons.org/presskit/icons/nc.svg?ref=chooser-v1" width="50" height="50" alt="NC" />
       </a>
     </p>
   </li>
