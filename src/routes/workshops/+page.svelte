@@ -49,7 +49,7 @@
 			<time>{agenda.date}</time>
 			<time>{agenda.time}</time>
 			<address>{agenda.address}</address>
-			<Button href="/contact" buttonText="Aanmelden" buttonClass={agenda.buttonClass} svgFill="svg-beige" />
+			<Button href= {`/workshops/${agenda.slug}`} buttonText="Aanmelden" buttonClass={agenda.buttonClass} svgFill="svg-beige" />
 		</li>
 		{/each}
 	</ul>

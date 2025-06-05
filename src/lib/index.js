@@ -48,3 +48,4 @@ export { default as Menu } from '$lib/organisms/menu.svelte';
 export { default as SlideCards } from '$lib/organisms/slide-cards.svelte';
 export { default as Footer } from '$lib/organisms/footer.svelte';
 export { default as Agenda } from '$lib/organisms/agenda.svelte';
+export { default as WorkshopForm } from '$lib/organisms/workshop-form.svelte';

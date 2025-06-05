@@ -13,6 +13,7 @@ export async function load() {
 				}
 			}
 			agendas(orderBy: createdAt_DESC) {
+				slug
 				cardImage {
 					url
 				}
