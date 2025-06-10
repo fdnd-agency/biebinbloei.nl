@@ -1,46 +1,56 @@
 <script>
-	let data;
 	import { Button } from '$lib/index.js';
 	let { viewPageData } = $props();
 </script>
 
-<div class="card-container">
-	<section class="card-wrapper">
+<section class="card-container">
+	<ul class="card-wrapper">
 		{#each viewPageData.product as item}
-			<article>
-				<h3>{item.naam}</h3>
-				<img
-					src={item.fotos[0].url}
-					alt=""
-					loading="lazy"
-					width={item.fotos[0]?.width || 'auto'}
-					height={item.fotos[0]?.height || 'auto'}
-				/>
-
-				<Button
-					href="/{item.projectnaam}/{item.slug}"
-					buttonText="Verzorging tips"
-					buttonClass="btn-beige"
-					svgFill="svg-brown"
-				></Button>
-			</article>
+			<li>
+				<article>
+					<h3>{item.naam}</h3>
+					<img
+						src={item.fotos[0].url}
+						alt={`Foto van ${item.naam}`}
+						loading="lazy"
+						width={item.fotos[0]?.width || 'auto'}
+						height={item.fotos[0]?.height || 'auto'}
+					/>
+					<Button
+						href="/{item.projectnaam}/{item.slug}"
+						buttonText="Verzorging tips"
+						buttonClass="btn-beige"
+						svgFill="svg-brown"
+					/>
+				</article>
+			</li>
 		{/each}
-	</section>
-</div>
+	</ul>
+</section>
 
 <style>
 	.card-container {
 		container-type: inline-size;
 		container-name: cards;
-		margin-left: -0.5rem;
-		padding: 2rem;
+		padding: 1.5rem;
 	}
 
 	.card-wrapper {
 		display: grid;
-		margin-top: -3rem;
 		grid-template-columns: 1fr;
 		gap: 1rem;
+
+		@container cards (min-width: 40rem) {
+			grid-template-columns: repeat(2, 1fr);
+		}
+
+		@container cards (min-width: 64rem) {
+			grid-template-columns: repeat(3, 1fr);
+		}
+	}
+
+	ul {
+		list-style: none;
 	}
 
 	article {
@@ -48,20 +58,9 @@
 		overflow: hidden;
 		flex-direction: column;
 		gap: 1rem;
-		padding-top: 25vh;
-		margin-top: 1rem;
 		min-height: 50vh;
 		position: relative;
 		border-radius: var(--border-card);
-	}
-
-	img {
-		top: 0;
-		left: 0;
-		width: 100%;
-		height: 100%;
-		position: absolute;
-		object-fit: cover;
 	}
 
 	h3 {
@@ -76,25 +75,19 @@
 		position: absolute;
 		font-size: clamp(1em, 3.3vh, 2em);
 		background: var(--main-color-brown);
-	}
 
-	@container cards (min-width: 40rem) {
-		.card-wrapper {
-			display: grid;
-			grid-template-columns: repeat(2, 1fr);
-		}
-	}
-
-	@container cards (min-width: 64rem) {
-		.card-wrapper {
-			display: grid;
-			margin-top: -6rem;
-			grid-template-columns: repeat(3, 1fr);
-		}
-
-		h3 {
+		@container cards (min-width: 64rem) {
 			height: 19vh;
 			align-items: self-start;
 		}
+	}
+
+	img {
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		position: absolute;
+		object-fit: cover;
 	}
 </style>

@@ -1,8 +1,17 @@
 <script>
-	import { createEventDispatcher } from 'svelte';
-	let { data, active } = $props();
+	import { onMount, createEventDispatcher } from 'svelte';
 
+	let { data, active } = $props();
 	const dispatch = createEventDispatcher();
+
+	const fullText = data.sectionInfos[0].description;
+	const [mainText, afterDash] = fullText.split('-- ');
+
+	let jsEnabled = $state(false);
+
+	onMount(() => {
+		jsEnabled = true;
+	});
 
 	function allStekjes() {
 		dispatch('showAll');
@@ -11,9 +20,6 @@
 	function currentStekjes() {
 		dispatch('showCurrent');
 	}
-
-	const fullText = data.sectionInfos[0].description;
-	const [mainText, afterDash] = fullText.split('-- ');
 </script>
 
 <section>
@@ -27,31 +33,17 @@
 		<span class="block-bold">-- {afterDash}</span>
 	</p>
 
-	<button onclick={allStekjes} class="no-js-disabled" class:active={active === 'alle'}
-		>Alle stekjes</button
+	<button
+		onclick={allStekjes}
+		class:active={active === 'alle'}
+		disabled={!jsEnabled ? true : undefined}>Alle stekjes</button
 	>
 	<button onclick={currentStekjes} class:active={active === 'actueel'}>Actuele stekjes</button>
 </section>
 
-<!-- -- js-disabled styling -- -->
-
-<noscript>
-	<style>
-		.no-js-disabled {
-			color: #666 !important;
-			background: #ccc !important;
-			cursor: not-allowed !important;
-			pointer-events: none !important;
-			font-weight: normal !important;
-		}
-	</style>
-</noscript>
-
 <style>
 	section {
-		padding: 1rem;
-		margin-top: 2rem;
-		margin: 1.25rem 0;
+		padding: 1.5rem;
 	}
 
 	h2 {
@@ -59,11 +51,10 @@
 		text-transform: uppercase;
 		font-family: var(--header-font);
 		color: var(--main-color-brown);
-	}
 
-	.outline {
-		color: transparent;
-		-webkit-text-stroke: 1.8px var(--main-color-brown);
+		@media (min-width: 74rem) {
+			font-size: 2.25rem;
+		}
 	}
 
 	p {
@@ -72,6 +63,19 @@
 		line-height: 1.6rem;
 		color: var(--main-color-brown);
 		font-family: var(--link-font);
+
+		@media (min-width: 48rem) {
+			max-width: 25em;
+		}
+
+		@media (min-width: 74rem) {
+			max-width: 31rem;
+		}
+	}
+
+	.outline {
+		color: transparent;
+		-webkit-text-stroke: 1.8px var(--main-color-brown);
 	}
 
 	.block-bold {
@@ -93,7 +97,6 @@
 		margin-top: 1rem;
 		padding: 0.5rem 1rem;
 		border-radius: 0.5rem;
-		color: var(--main-color-brown);
 		font-family: var(--paragraph-font);
 		background: var(--main-color-beige);
 		transition:
@@ -102,14 +105,7 @@
 			box-shadow 0.3s ease;
 	}
 
-	button:first-child {
-		margin-left: 1rem;
-		margin-right: 0.4rem;
-	}
-
 	button:hover {
-		color: var(--main-color-beige);
-		background: var(--main-color-brown);
 		font-family: var(--sub-header-font);
 		transform: scale(1.07) rotate(-0.5deg);
 	}
@@ -117,6 +113,10 @@
 	button.active {
 		font-weight: bold;
 		transform: scale(0.98);
+	}
+
+	button:hover,
+	button.active {
 		color: var(--main-color-beige);
 		background: var(--main-color-brown);
 	}
@@ -126,30 +126,13 @@
 		outline: 3px solid var(--main-color-brown);
 	}
 
-	/* -- Media query styling -- */
+	/* -- js-disabled styling --  */
 
-	/* -- Tablet styling -- */
-
-	@media (min-width: 48rem) {
-		p {
-			max-width: 25em;
-		}
-	}
-
-	/* -- Desktop styling -- */
-
-	@media (min-width: 74rem) {
-		section {
-			margin: 1rem 0 3.5rem 0;
-			padding: 1.5rem;
-		}
-
-		h2 {
-			font-size: 2.25rem;
-		}
-
-		p {
-			max-width: 31.25rem;
-		}
+	button[disabled] {
+		color: #666;
+		background: #ccc;
+		cursor: not-allowed;
+		font-weight: normal;
+		pointer-events: none;
 	}
 </style>
