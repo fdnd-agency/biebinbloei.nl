@@ -1,13 +1,18 @@
 <script>
 	let { heroInfo } = $props();
+	const words = heroInfo.title.split(' ');
+	const half = Math.ceil(words.length / 2);
+	const firstHalf = words.slice(0, half).join(' ');
+	const secondHalf = words.slice(half).join(' ');
 </script>
 
 <section>
 	<h2>
-		<span class="outline">{heroInfo.title.split(' ')[0]}</span><br />
-		{heroInfo.title.split(' ')[1]}
+		<span class="outline">{firstHalf}</span>
+		{#if secondHalf}
+		<br />{secondHalf}
+		{/if}
 	</h2>
-	
 	<p>{heroInfo.description}</p>
 </section>
 
