@@ -64,6 +64,10 @@
 			padding: 1.25em;
 		}
 
+		h2 {
+			margin-top: -1.125em;
+		}
+
 		p {
 			max-width: 25em;
 		}
@@ -75,6 +79,10 @@
 			margin: 5.5em 0 3.5em 0;
 			gap: 1.5em;
 			padding: 1.5em;
+		}
+
+		h2 {
+			margin-top: -1.25em;
 		}
 
 		p {
