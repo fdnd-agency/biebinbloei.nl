@@ -105,6 +105,12 @@
 			box-shadow 0.3s ease;
 	}
 
+	@media (prefers-reduced-motion: reduce) {
+		button {
+			transition: none;
+		}
+	}
+
 	button:hover {
 		font-family: var(--sub-header-font);
 		transform: scale(1.07) rotate(-0.5deg);
