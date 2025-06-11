@@ -213,4 +213,20 @@ ul img {
 			display: none;
 		}
 	}
+
+	/* MEDIA QUERY TABLET = 700px to 1000px */
+@media (max-width: 62.49em) and (min-width: 43.76em) {
+	.information {
+		flex-wrap: wrap;
+		justify-content: space-between;
+		width: 90%;
+		gap: 1.5em;
+	}
+
+	ul {
+		flex: 1 1 45%; /* 2 columns */
+		min-width: 250px;
+		margin: 1em 0;
+	}
+}
 </style>
