@@ -13,8 +13,8 @@
 						src={item.fotos[0].url}
 						alt={`Foto van ${item.naam}`}
 						loading="lazy"
-						width={item.fotos[0]?.width || 'auto'}
-						height={item.fotos[0]?.height || 'auto'}
+						width={item.fotos[0]?.width}
+						height={item.fotos[0]?.height}
 					/>
 					<Button
 						href="/{item.projectnaam}/{item.slug}"
