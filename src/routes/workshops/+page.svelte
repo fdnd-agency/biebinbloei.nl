@@ -43,6 +43,7 @@
 			<time>{agenda.date}</time>
 			<time>{agenda.time}</time>
 			<address>{agenda.address}</address>
+			<p>{agenda.price}</p>
 			<Button href="/contact" buttonText="Aanmelden" buttonClass={agenda.buttonClass} svgFill="svg-beige" />
 		</li>
 		{/each}
@@ -99,6 +100,10 @@
 	time,
 	address {
 		font-weight: bold;
+	}
+
+	address {
+		margin-bottom: 1em;
 	}
 
 	/* workshop cards varianten */
