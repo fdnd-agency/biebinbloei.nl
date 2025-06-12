@@ -65,7 +65,7 @@
 
 	li {
 		position: relative;
-		height: 33em;
+		height: 30em;
 		background-color: var(--main-color-beige);
 		border-radius: 1em;
 		padding: 1em;
