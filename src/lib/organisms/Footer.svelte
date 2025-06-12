@@ -40,25 +40,48 @@
 		</ul>
 
 		<ul>
-  <li class="title">Licentie</li>
-  <li>
-    <p xmlns:cc="http://creativecommons.org/ns#" xmlns:dct="http://purl.org/dc/terms/">
-      <a property="dct:title" rel="cc:attributionURL" href="http://www.biebinbloei.nl/">Bieb in Bloei</a> by
-      <a rel="cc:attributionURL dct:creator" property="cc:attributionName" href="https://www.buurtcampus.amsterdam/oost">Buurtcampus Oost</a>
-      is licensed under
-      <a href="https://creativecommons.org/licenses/by-nc/4.0/?ref=chooser-v1" target="_blank" rel="license noopener noreferrer">
-        CC BY-NC 4.0
-        <img src="https://mirrors.creativecommons.org/presskit/icons/cc.svg?ref=chooser-v1" width="50" height="50" alt="CC" />
-        <img src="https://mirrors.creativecommons.org/presskit/icons/by.svg?ref=chooser-v1" width="50" height="50" alt="BY" />
-        <img src="https://mirrors.creativecommons.org/presskit/icons/nc.svg?ref=chooser-v1" width="50" height="50" alt="NC" />
-      </a>
-    </p>
-  </li>
-</ul>
+			<li class="title">Licentie</li>
+			<li>
+				<p xmlns:cc="http://creativecommons.org/ns#" xmlns:dct="http://purl.org/dc/terms/">
+					<a property="dct:title" rel="cc:attributionURL" href="http://www.biebinbloei.nl/"
+						>Bieb in Bloei</a
+					>
+					by
+					<a
+						rel="cc:attributionURL dct:creator"
+						property="cc:attributionName"
+						href="https://www.buurtcampus.amsterdam/oost">Buurtcampus Oost</a
+					>
+					is licensed under
+					<a
+						href="https://creativecommons.org/licenses/by-nc/4.0/?ref=chooser-v1"
+						target="_blank"
+						rel="license noopener noreferrer"
+					>
+						CC BY-NC 4.0
+						<img
+							src="https://mirrors.creativecommons.org/presskit/icons/cc.svg?ref=chooser-v1"
+							width="50"
+							height="50"
+							alt="CC"
+						/>
+						<img
+							src="https://mirrors.creativecommons.org/presskit/icons/by.svg?ref=chooser-v1"
+							width="50"
+							height="50"
+							alt="BY"
+						/>
+						<img
+							src="https://mirrors.creativecommons.org/presskit/icons/nc.svg?ref=chooser-v1"
+							width="50"
+							height="50"
+							alt="NC"
+						/>
+					</a>
+				</p>
+			</li>
+		</ul>
 	</section>
-
-		
-
 </footer>
 
 <style>
@@ -112,15 +135,17 @@
 
 	.information {
 		display: flex;
-		align-items: top;
+		align-items: flex-start;
 		width: 90%;
-		justify-content: space-evenly;
+		justify-content: space-between;
+		flex-wrap: wrap;
 		color: var(--main-color-green);
+		gap: 2rem;
 		z-index: 1;
 	}
 
 	ul {
-		width: 25%;
+		width: 15%;
 		margin: 1em;
 	}
 
@@ -129,15 +154,15 @@
 	}
 
 	ul p {
-  margin: 0;
-  line-height: 1.4;
-}
+		margin: 0;
+		line-height: 1.4;
+	}
 
-ul img {
-  height: 1em;
-  vertical-align: text-bottom;
-  margin-left: 3px;
-}
+	ul img {
+		height: 1em;
+		vertical-align: text-bottom;
+		margin-left: 3px;
+	}
 
 	.title {
 		font-size: 2em;
@@ -215,18 +240,18 @@ ul img {
 	}
 
 	/* MEDIA QUERY TABLET = 700px to 1000px */
-@media (max-width: 62.49em) and (min-width: 43.76em) {
-	.information {
-		flex-wrap: wrap;
-		justify-content: space-between;
-		width: 90%;
-		gap: 1.5em;
-	}
+	@media (max-width: 62.49em) and (min-width: 43.76em) {
+		.information {
+			flex-wrap: wrap;
+			justify-content: space-between;
+			width: 90%;
+			gap: 1.5em;
+		}
 
-	ul {
-		flex: 1 1 45%; /* 2 columns */
-		min-width: 250px;
-		margin: 1em 0;
+		ul {
+			flex: 1 1 45%; 
+			min-width: 250px;
+			margin: 1em 0;
+		}
 	}
-}
 </style>
