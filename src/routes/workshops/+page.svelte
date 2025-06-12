@@ -26,15 +26,9 @@
 
 <HeroHeaders heroInfo={data.heroHeaders[3]} />
 
-<section class="intro">
-	<IntroHeaders heroInfo={data.heroHeaders[3]} />
-</section>
+<IntroHeaders heroInfo={data.heroHeaders[3]} />
 
-<section class="workshops">
-	<h2>
-		<span class="outline">{data.sectionInfos[1].title.split(' ')[0]}</span><br />
-		{data.sectionInfos[1].title.split(' ')[1]}
-	</h2>
+<main>
 	{#if data.agendas && data.agendas.length > 0}
 	<ul>
 		{#each data.agendas as agenda}
@@ -56,28 +50,14 @@
 	{:else}
 	<p>Er zijn momenteel geen workshops beschikbaar.</p>
 	{/if}
-</section>
+</main>
 
 <style>
-	.workshops {
-		margin: 1em;
-	}
-
-	h2 {
-		margin-bottom: 0.25em;
-		text-transform: uppercase;
-		color: var(--main-color-brown);
-	}
-
-	.outline {
-		color: transparent;
-		-webkit-text-stroke: 1.5px var(--main-color-brown);
-	}
-
 	ul {
 		display: flex;
 		flex-direction: column;
 		gap: 1rem;
+		margin: 1em;
 		list-style: none;
 		color: var(--main-color-brown);
 	}
