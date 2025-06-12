@@ -30,7 +30,7 @@
 
 	.outline {
 		color: transparent;
-		-webkit-text-stroke: 1.8px var(--main-color-green);
+		-webkit-text-stroke: 1.5px var(--main-color-green);
 	}
 
 	/* Tablet */
