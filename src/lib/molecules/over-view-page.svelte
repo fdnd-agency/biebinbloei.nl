@@ -1,104 +1,93 @@
 <script>
-	let data;
 	import { Button } from '$lib/index.js';
 	let { viewPageData } = $props();
 </script>
 
-<h2>{viewPageData.titel}</h2>
-
-<section>
-	{#each viewPageData.product as item}
-		<article>
-			<a href="/{item.projectnaam}/{item.slug}">
-				<h3>{item.naam}</h3>
-				<img
-					src={item.fotos[0].url}
-					alt=""
-					loading="lazy"
-					width={item.fotos[0]?.width || 'auto'}
-					height={item.fotos[0]?.height || 'auto'}
-				/>
-			</a>
-		</article>
-	{/each}
+<section class="card-container">
+	<ul class="card-wrapper">
+		{#each viewPageData.product as item}
+			<li>
+				<article>
+					<h3>{item.naam}</h3>
+					<img
+						src={item.fotos[0].url}
+						alt={`Foto van ${item.naam}`}
+						loading="lazy"
+						width={item.fotos[0]?.width}
+						height={item.fotos[0]?.height}
+					/>
+					<Button
+						href="/{item.projectnaam}/{item.slug}"
+						buttonText="Verzorging tips"
+						buttonClass="btn-beige"
+						svgFill="svg-brown"
+					/>
+				</article>
+			</li>
+		{/each}
+	</ul>
 </section>
 
 <style>
-	section {
-		padding: 2em;
+	.card-container {
+		container-type: inline-size;
+		container-name: cards;
+		padding: 1.5rem;
+	}
+
+	.card-wrapper {
 		display: grid;
-		grid-template-columns: repeat(auto-fit, minmax(16em, 1fr));
+		grid-template-columns: 1fr;
 		gap: 1rem;
+
+		@container cards (min-width: 40rem) {
+			grid-template-columns: repeat(2, 1fr);
+		}
+
+		@container cards (min-width: 64rem) {
+			grid-template-columns: repeat(3, 1fr);
+		}
+	}
+
+	ul {
+		list-style: none;
 	}
 
 	article {
-		position: relative;
-		min-height: 50vh;
-		width: 100%;
-		max-width: 30rem;
-		border-radius: var(--border-card);
-		overflow: hidden;
-		margin-top: 1rem;
-	}
-
-	article a {
-		text-decoration: none;
-
 		display: flex;
-		width: 100%;
-		height: 100%;
-	}
-
-	article a:hover img {
-		scale: 1.1;
-	}
-
-	article a:focus img,
-	article a:focus h3 {
-		border: 8px solid var(--card-color-orange);
-	}
-
-	h2 {
-		font-family: var(--header-font);
-		font-size: clamp(2em, 10vw, 3em);
-		line-height: 1.25;
-		padding: 2em 1em 0 1em;
-	}
-
-	img {
-		position: absolute;
-		left: 0;
-		top: 0;
-		width: 100%;
-		height: 100%;
-		object-fit: cover;
-		transition: ease-out .35s;
+		overflow: hidden;
+		flex-direction: column;
+		gap: 1rem;
+		min-height: 50vh;
+		position: relative;
+		border-radius: var(--border-card);
 	}
 
 	h3 {
-		position: absolute;
 		bottom: 0;
-		color: white;
-		font-size: clamp(1em, 3.5vh, 2em);
-		line-height: 1.5em;
 		z-index: 5;
-		padding: 1rem;
 		width: 100%;
-		min-height: 25%;
-		background: var(--main-color-brown);
+		height: 25vh;
+		padding: 1rem;
 		display: flex;
-		transition: opacity 0.4s ease;
-		align-items: center;
-	}
+		color: white;
+		align-items: flex-start;
+		position: absolute;
+		font-size: clamp(1em, 3.3vh, 2em);
+		background: var(--main-color-brown);
 
-	article a:hover h3 {
-		opacity: 0;
-	}
-
-	@media (min-width: 64em) {
-		/* 1024px / 16 = 64em */
-		article {
-			min-height: 60vh;
+		@container cards (min-width: 64rem) {
+			height: 19vh;
+			align-items: self-start;
 		}
+	}
+
+	img {
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		position: absolute;
+		object-fit: cover;
 	}
 </style>
