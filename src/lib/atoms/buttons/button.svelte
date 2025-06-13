@@ -3,11 +3,12 @@
 		href,
 		buttonText,
 		buttonClass,
-		svgFill
+		svgFill,
+		layout = "absolute"
 	} = $props();
 </script>
 
-<div class="button-wrapper">
+<div class="button-wrapper {layout}">
 	<img src="/assets/blije Harry.svg" alt="" />
 
 	<a {href} class={buttonClass}>
@@ -50,6 +51,9 @@
 		display: flex;
 		flex-direction: column;
 		align-items: center;
+	}
+
+	.button-wrapper.absolute {
 		position: absolute;
 		right: 1em;
 		bottom: 1em;

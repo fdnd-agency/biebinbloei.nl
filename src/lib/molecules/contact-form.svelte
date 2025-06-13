@@ -209,22 +209,23 @@ button {
 }
 
 /* submit button styling */
-button[type='submit'] {
-    border-radius: 2em;
-    padding: 0.4em 1em;
-    text-decoration: none;
-    font-size: 1em;
-    transition: ease-in .1s;
+button[type="submit"] {
     background-color: var(--main-color-green);
-    color: var(	--text-color-white);
+    color: var(--main-color-beige);
+    align-items: center;
+    height: 3em;
+    border-radius: 0 1em 1em 1em;
     border: none;
-    cursor: pointer;
-    width: 8rem;    
-    margin: .5em 0;
+    font-size: 1.125em;
+    text-decoration: none;
+    transition: ease-in 0.1s;
+    z-index: 100;
 }
 
 button[type='submit']:hover {
     background-color: var(--main-color-orange);
+    transform: scale(0.9);
+    cursor: pointer;
 }
 
 /* animated form valid styling */
