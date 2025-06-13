@@ -36,8 +36,6 @@
 		font-size: 1.125em;
 		text-decoration: none;
 		transition: ease-in 0.1s;
-		z-index: 2;
-		margin-top: 1em;
 		z-index: 100;
 
 	}
