@@ -1,5 +1,5 @@
 <script>
-	import { AgendaButton } from '$lib/index.js';
+	import { Button } from '$lib/index';
 	import { onMount } from 'svelte';
 	let { data } = $props();
 
@@ -66,7 +66,7 @@
 					<address>{agenda.address}</address>
 					<p>{agenda.price}</p>
 
-					<AgendaButton
+					<Button
 						href="/agenda"
 						buttonText="Aanmelden"
 						buttonClass="btn-beige"
@@ -101,8 +101,8 @@
 	.card {
 		display: flex;
 		align-items: stretch;
-		min-width: calc(100vw - 4rem);
-		min-height: 15em;
+		min-width: calc(100vw - 3rem);
+		min-height: 21em;
 		position: relative;
 		scroll-snap-align: start;
 	}
@@ -114,16 +114,15 @@
 	.content {
 		position: relative;
 		z-index: 1;
-		width: 13em;
+		width: 15em;
 		height: 100%;
-		padding: 0.5em;
 		border-top-left-radius: 0.8em;
 		border-bottom-left-radius: 0.8em;
 		background-color: var(--main-color-brown);
 		padding: 1em;
 		display: flex;
 		flex-direction: column;
-		justify-content: center;
+		/* justify-content: center; */
 		color: var(--main-color-beige);
 	}
 

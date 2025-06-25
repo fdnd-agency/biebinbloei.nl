@@ -1,6 +1,5 @@
 <script>
-	import { GeveltuinButton } from '$lib/index.js';
-	import { HeroHeaders, IntroHeaders, ImageCarousel } from '$lib/index.js';
+	import { HeroHeaders, IntroHeaders, ImageCarousel, Button } from '$lib/index.js';
 	let { data } = $props();
 
 	const bulletPoints1 = data.facadeGardenActions[0].bulletText1.split('.');
@@ -25,11 +24,11 @@
 			{/each}
 		</ul>
 
-		<GeveltuinButton
-			buttonClass="btn-green"
+		<Button
 			href="/contact"
 			buttonText="Aanmelden"
-			svgFill="svg-beige"
+			buttonClass="btn-green svg-beige"
+			layout="inline"
 		/>
 	</article>
 

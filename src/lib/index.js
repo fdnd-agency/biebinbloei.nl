@@ -4,8 +4,6 @@
 export { default as Navlink } from '$lib/atoms/buttons/navlink.svelte';
 export { default as Button } from '$lib/atoms/buttons/button.svelte';
 export { default as HarryWeather } from '$lib/atoms/buttons/harryWeather.svelte';
-export { default as AgendaButton } from '$lib/atoms/buttons/agenda-button.svelte';
-export { default as GeveltuinButton } from '$lib/atoms/buttons/geveltuin-button.svelte';
 export { default as Dropdown } from '$lib/atoms/dropdown.svelte';
 
 // === Icons ===

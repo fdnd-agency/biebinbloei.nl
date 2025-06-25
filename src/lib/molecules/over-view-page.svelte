@@ -58,7 +58,7 @@
 		overflow: hidden;
 		flex-direction: column;
 		gap: 1rem;
-		min-height: 50vh;
+		min-height: 60vh;
 		position: relative;
 		border-radius: var(--border-card);
 	}
@@ -67,7 +67,7 @@
 		bottom: 0;
 		z-index: 5;
 		width: 100%;
-		height: 25vh;
+		height: 30vh;
 		padding: 1rem;
 		display: flex;
 		color: white;
