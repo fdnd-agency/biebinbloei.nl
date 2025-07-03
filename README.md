@@ -15,6 +15,7 @@ Bij de buurtcampus draaien verschillende duurzame projecten; De Stekjes bieb, De
 - [**Larissa**](https://github.com/Lmikkers)
 - [**Anne**](https://github.com/Annevd)
 - [**Wing San**](https://github.com/wingsvn)
+- [**Tristan**](https://github.com/TristanKatte)
 
 ## Beschrijving
 Wij hebben de opdracht gekregen om de huidige live bieb-in-bloei website te optimaliseren en te verrijken. Eerder hebben een aantal CMD minor studenten een eigen versie van de bieb-in-bloei website ontwikkelt. Hierin hebben zij geëxperimenteerd met een weather API. Ook hebben ze concepten bedacht als een seizoensthema en mascotte Harry. Het was aan ons de taak om deze concepten in de live bieb-in-bloei website te integreren. Uiteindelijk hebben wij Harry de mascotte geïmplementeerd:
