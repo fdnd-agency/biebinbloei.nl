@@ -40,6 +40,8 @@ Wij hebben het project verbeterd door een sterke focus te leggen op gebruikerser
 Met ons verbeteringen is de website nu gebruiksvriendelijker, visueel aantrekkelijker en beter afgestemd op de brede doelgroep van Bieb in Bloei.
 Voor een gedetailleerd overzicht van alle ontwerpkeuzes, interacties, kleuren, typografie en aanbevelingen, verwijs ik je graag naar de bijgevoegde Style Guide en Design Rationale (PDF) in deze repository.
 
+[**Ontwerpen**](https://www.figma.com/design/LzqERL2DPlqiWDZx4Qn86d/Bieb---Bloei?node-id=1793-981&p=f&t=Gkg4hVPEbdUjnBxC-0)
+
 ux & ui designer: [**Alyaman**](https://github.com/AlyamanAlhijazi)
 
 ## Visual
