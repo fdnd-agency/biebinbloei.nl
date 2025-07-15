@@ -30,6 +30,20 @@ Voorbeelden van verbeteringen die we hebben doorgevoerd:
 * Contrastchecks doen, en deze verbeteren waar nodig
 * Verbeteringen en optimalisatie op componentbasis, zoals goede user feedback, pleasurable user experience, etc.
 
+### Design
+
+De oorspronkelijke website van Bieb in Bloei bestond grotendeels uit placeholder-teksten, met een beperkte gebruikerservaring en een ontwerp dat druk oogt en niet optimaal aansloot bij de missie van BiB. De navigatie was herkenbaar maar kon duidelijker en overzichtelijker, veel informatie was overlappend en de leesbaarheid was slechten, de structuur van informatie en indeling van pagina’s was verwarrend voor de gebruikers, de content was niet altijd toegankelijk of uitnodigend voor de brede doelgroep.
+Wij hebben het project verbeterd door een sterke focus te leggen op gebruikerservaring en emotional design.
+
+ 
+Met ons verbeteringen is de website nu gebruiksvriendelijker, visueel aantrekkelijker en beter afgestemd op de brede doelgroep van Bieb in Bloei.
+Voor een gedetailleerd overzicht van alle ontwerpkeuzes, interacties, kleuren, typografie en aanbevelingen, verwijs ik je graag naar de bijgevoegde Style Guide en Design Rationale (PDF) in deze repository.
+
+[**Ontwerpen**](https://www.figma.com/design/LzqERL2DPlqiWDZx4Qn86d/Bieb---Bloei?node-id=1793-981&p=f&t=Gkg4hVPEbdUjnBxC-0)
+
+ux & ui designer: [**Alyaman**](https://github.com/AlyamanAlhijazi)
+
+
 ## Visual
 
 ![Group 2](https://github.com/user-attachments/assets/d1a639eb-9bcd-4881-bdbf-36cfec543f5c)
