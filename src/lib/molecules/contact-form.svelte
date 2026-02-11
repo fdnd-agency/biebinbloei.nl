@@ -29,7 +29,7 @@ function handleSubmit(event) {
 
 </script>
 
-<form action="https://api.web3forms.com/submit" method="POST" on:submit={handleSubmit}>
+<form action="https://api.web3forms.com/submit" method="POST" onsubmit={handleSubmit}>
     
     <input type="hidden" name="access_key" value="8b3a20d3-a650-44f4-80df-a5b93d5b251b">
     <input type="checkbox" name="botcheck" id="" style="display: none;">
@@ -38,43 +38,43 @@ function handleSubmit(event) {
         <legend>Reden voor contact:</legend>
         <label for="question">Ik heb een vraag</label>
         <input class="radio-question" type="radio" id="question" name="contact-reason" value="question" bind:group={contactReason} 
-        on:change={saveToLocalStorage} checked />
+        onchange={saveToLocalStorage} checked />
 
         <label for="workshop">Ik wil mij aanmelden voor een workshop</label>
         <input class="radio-question" type="radio" id="workshop" name="contact-reason" value="workshop" bind:group={contactReason} 
-        on:change={saveToLocalStorage} />
+        onchange={saveToLocalStorage} />
     </fieldset>
 
     <div class="fields-container">
         <div>
             <label for="name">Voornaam:<span aria-hidden="true">*</span></label>
             <input type="text" id="name" name="name" placeholder="Voer je voornaam in" required bind:value={name} 
-            on:input={saveToLocalStorage}
-            oninvalid="this.setCustomValidity('Vul hier uw voornaam in')"
-            oninput="this.setCustomValidity('')" />
+            oninput={saveToLocalStorage}
+            oninvalid={this.setCustomValidity('Vul hier uw voornaam in')}
+             />
         </div>
         
         <div>
             <label for="lastname">Achternaam:<span aria-hidden="true">*</span></label>
             <input type="text" id="lastname" name="lastname" placeholder="Voer je achternaam in" required bind:value={lastname} 
-            on:input={saveToLocalStorage}
-            oninvalid="this.setCustomValidity('Vul hier uw achternaam in')"
-            oninput="this.setCustomValidity('')" />
+            oninput={saveToLocalStorage}
+            oninvalid={this.setCustomValidity('Vul hier uw achternaam in')}
+            />
         </div>
         
         <div>
             <label for="email">E-mail:<span aria-hidden="true">*</span></label>
             <input type="email" id="email" name="email" placeholder="Voer je e-mailadres in" required bind:value={email} 
-            on:input={saveToLocalStorage}
-            oninvalid="this.setCustomValidity('Vul hier uw e-mail in')"
-            oninput="this.setCustomValidity('')" />
+            oninput={saveToLocalStorage}
+            oninvalid={this.setCustomValidity('Vul hier uw e-mail in')}
+            />
         </div>
         
         <label for="message">Stel je vraag of vertel voor welke workshop je je wilt aanmelden!<span aria-hidden="true">*</span></label>
         <textarea id="message" name="message" cols="30" rows="10" placeholder="Typ hier je bericht" required bind:value={message} 
-            on:input={saveToLocalStorage} 
-            oninvalid="this.setCustomValidity('Vul hier uw vraag of bericht in')"
-            oninput="this.setCustomValidity('')" ></textarea>
+            oninput={saveToLocalStorage} 
+            oninvalid={this.setCustomValidity('Vul hier uw vraag of bericht in')}
+            ></textarea>
     </div>
 
     <button type="submit" value="Verzenden">Verzenden</button>
