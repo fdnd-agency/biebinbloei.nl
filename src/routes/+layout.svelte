@@ -20,6 +20,9 @@
 
 
 <Menu />
+
 {@render children?.()}
+
 <Footer {data} />
+
 

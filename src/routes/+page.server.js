@@ -10,6 +10,13 @@ export async function load() {
 				}
 				sliderPictureAltText
 			}
+			
+			headerTexts {
+				createdAt
+				heading1
+				id
+			}
+
 			cardSlides {
 				titleCard
 				paragraphCard
@@ -23,6 +30,14 @@ export async function load() {
 				svgStyles
 				leafStyles
 			}
+
+			campusInfos {
+				title
+				title2
+				paragraph
+				paragraph2
+			}
+
 			agendas {
 				cardImage {
 					url
@@ -42,70 +57,69 @@ export async function load() {
 				agendaParagraph3
 			}
 
-			campusInfos {
-				title
-				title2
-				paragraph
-				paragraph2
-			}
-
 			partnersInfos {
 				title
 				paragraph
 				paragraph2
 			}
-
-			facadeGardenActions {
-				id
-				createdAt
-				title
-				description
-				image {
-					url
-				}
-				bulletText1
-			}
-
-			partners {
-				createdAt
-				id
-				title
-				subhead
-				description
-				description2
-				image {
-					url
-				}
-			}
-
-			abouts {
-				createdAt
-				description
-				description2
-				description3
-				description4
-				id
-				title
-			}
-
-			groenebiebs {
-				createdAt
-				description
-				id
-			}
-
-			headerTexts {
-				createdAt
-				heading1
-				id
-			}
-
-			copyrights {
-				title
-			}
 		}
 	`;
 
 	const data = await hygraph.request(query);
+
 	return data;
 }
+
+			//	cardSlides {
+			// 	titleCard
+			// 	paragraphCard
+			// 	paragraphCard2
+			// 	imageCard {
+			// 		url
+			// 	}
+			// 	imageCardAltText
+			// 	buttonStyles
+			// 	cardStyles
+			// 	svgStyles
+			// 	leafStyles
+			// }
+			// agendas {
+			// 	cardImage {
+			// 		url
+			// 	}
+			// 	date
+			// 	event
+			// 	time
+			// 	price
+			// 	address
+			// 	buttonText
+			// }
+
+			// agendaTexts {
+			// 	title
+			// 	agendaParagraph1
+			// 	agendaParagraph2
+			// 	agendaParagraph3
+			// }
+
+			// campusInfos {
+			// 	title
+			// 	title2
+			// 	paragraph
+			// 	paragraph2
+			// }
+
+			// partnersInfos {
+			// 	title
+			// 	paragraph
+			// 	paragraph2
+			// }
+
+		
+
+			// headerTexts {
+			// 	createdAt
+			// 	heading1
+			// 	id
+			// }
+
