@@ -1,0 +1,7 @@
+title: "Bieb in Bloei"
+client: "Buurtcampus Oost"
+status: "active"
+years: [2]
+main_link: "https://biebinbloei.nl/"
+dev_link: "https://biebinbloei.dev.fdnd.nl/"
+tech_stack: ["SvelteKit", "Hygraph"]
